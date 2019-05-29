@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="keywords" content="@ViewBag.KeyWord">
+    <meta charset="utf-8">
+    <meta name="language" content="fa">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/css/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="Content/css/w3.css" rel="stylesheet" />
+    <link href="ParsaFont/Style.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/ckeditor/ckeditor.js"></script>
+    <script src="Scripts/bootstrap-rtl.js"></script>
+    <script src="Scripts/jquery.validate.min.js"></script>
+    <script src="Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+</head>
+<body style="background-color:#E5E5E5">
+    <style>
+        .componentColor {
+            background-color: #F2F2F2 !important;
+        }
+
+        .btnColors {
+            background-color: #006DA0 !important;
+            color: #ECEDEF !important;
+        }
+
+        /*.btnHoverColor:hover {
+            background-color: #d3df13 !important;
+            color: #212121 !important;
+        }*/
+        .navigationBarColor {
+            background-color: #21262A !important;
+            color: #7B8084;
+        }
+
+        .rightMenuColor {
+            background-color: #2F3438 !important;
+            color: #EFF0F4;
+        }
+
+            .rightMenuColor:hover {
+                background-color: #181B20 !important;
+                color: #02B2E1;
+            }
+
+        .dropbtn {
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <nav class="w3-sidenav w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
+        <div class="w3-margin ">
+            <div class="w3-center " style="margin-top:8px !important">
+                <img class="w3-center w3-closenav w3-xlarge " src="avatar/man-with-tie.png" style="width:100px ; height:100px" />
+            </div>
+            <br />
+            <a href="www.google.com" class="rightMenuColor w3-center"> &nbsp;نام کاربر</a>
+            <br />
+            <a class="rightMenuColor" onclick="myFunction('Demo1')">
+                <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
+                &nbsp;<span class="glyphicon glyphicon-chevron-down " style="color:#7B8084;margin-top:2px"></span>
+            </a>
+            <div id="Demo1" class="w3-container w3-hide ">
+                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه اول</a>
+                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
+                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
+                <a class="w3-center rightMenuColor"> <span class="glyphicon glyphicon-plus"></span> &nbsp;جدید&nbsp;</a>
+            </div>
+            <br />
+            <div class="rightMenuColor">
+                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-signal" style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های من </a>
+            </div><br />
+            <div class="rightMenuColor">
+                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
+            </div><br />
+            <div class="rightMenuColor">
+                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
+            </div><br />
+            <div class="rightMenuColor">
+                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-off" style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل </a>
+            </div><br />
+        </div>
+    </nav>
+    <header class="w3-container navigationBarColor ">
+        <span class="w3-opennav w3-xlarge w3-right" id="rightMenu_open_btn">&#9776;</span>
+        <div class="text-center">
+            <h1> <span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text " style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important" href="HomePage.html">DisPoll</span></h1>
+        </div>
+    </header>
+    <br />
+
+          <div class="container">
+              <div class=" w3-xlarge w3-center" style="color:#7B8084; margin-bottom:20px">
+                  فرم ایجاد تخفیف
+              </div>
+              <div class="col-lg-offset-2">
+                  <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
+                      <div class="form-horizontal">
+
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  نام محصول * : <input type="text" required autofocus name="UserName" value="" class="form-control w3-margin"
+                                                       id="addDiscount-form-product-name-inp" accept="application/txt" />
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  تصویر بارکد * :  <input type="file" required autofocus name="ImageSrc" value="" class="form-control w3-margin"
+                                                          id="addDiscount-form-product-image-inp" accept="image/*" />
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  شناسه محصول * :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
+                                                          id="addDiscount-form-product-code-inp" accept="application/txt" />
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  برند محصول * : <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
+                                                        id="addDiscount-form-product-brand-inp" accept="application/txt" />
+                              </div>
+                              <!--<div class="form-group">
+                        <div class="col-md-10 w3-margin-right">
+                            تصویربارکد * :  <input type="file" required autofocus name="ImageSrc" value="" class="form-control w3-margin"
+                                          id="addDiscount-form-product-image-inp" accept="image/*" />
+                        </div>
+                    </div>-->
+                          </div>
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  درصد تخفیف :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
+                                                       id="addDiscount-form-percent-inp" accept="application/txt" />
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  کد تخفیف :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
+                                                     id="addDiscount-form-discount-code-inp" accept="application/txt" />
+                              </div>
+                          </div> <div class="form-group">
+                              <div class="col-md-10">
+                                  مهلت :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
+                                                 id="addDiscount-form-timeout-inp" accept="application/txt" />
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  توضیحات :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
+                                                    id="addDiscount-form-description-inp" accept="application/txt" />
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  تصویر  <input type="file" required autofocus name="ImageSrc" value="" class="form-control w3-margin"
+                                                id="addDiscount-form-product-image-inp" accept="image/*" />
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <div class="col-md-offset-5 col-md-10">
+                                  <input type="submit" value="ذخیره" id="addDiscount-form-submit-btn" class="btn btn-default btnColors" />
+                              </div>
+                          </div>
+                          <br />
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  * : وارد کردن تنها یکی از این موارد کافی می باشد.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+    <br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
+        تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
+        <br />
+        طراحی و پیاده سازی توسط Group G
+    </footer>
+
+    <script>
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+</body>
+</html>
