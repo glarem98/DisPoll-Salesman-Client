@@ -30,6 +30,8 @@
         .btnColors {
             background-color: #006DA0 !important;
             color: #ECEDEF !important;
+            width: 70px;
+            height: 30px
         }
 
         /*.btnHoverColor:hover {
@@ -83,6 +85,16 @@
             top: 20px;
         }
 
+        .pictureInput {
+            top: -1px;
+            font-size: 12px;
+            padding-left: 3px;
+            padding-right: 3px;
+            padding-bottom: 2px;
+            color: #7B8084 !important;
+            background: #F2F2F2 !important;
+            background-size: 50px 30px;
+        }
         input:focus ~ label,
         input:valid ~ label {
             top: -1px;
@@ -106,30 +118,32 @@
                 <img class="w3-center w3-closenav w3-xlarge " src="avatar/man-with-tie.png" style="width:100px ; height:100px" />
             </div>
             <br />
-            <a href="www.google.com" class="rightMenuColor w3-center"> &nbsp;نام کاربر</a>
+            <a href="editprofile.html" class="rightMenuColor w3-center"> &nbsp;نام کاربر</a>
             <br />
             <a class="rightMenuColor" onclick="myFunction('Demo1')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
                 &nbsp;<span class="glyphicon glyphicon-chevron-down " id="more" style="color:#7B8084;margin-top:2px"></span>
             </a>
             <div id="Demo1" class="w3-container w3-hide ">
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه اول</a>
-                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
-                <a class="w3-center rightMenuColor"> <span class="glyphicon glyphicon-plus"></span> &nbsp;جدید&nbsp;</a>
+                <a href="showShop.html" class="rightMenuColor"> &nbsp;فروشگاه اول</a>
+                <a href="showShop.html" class="rightMenuColor">&nbsp; فروشگاه دوم</a>
+                <a href="showShop.html" class="rightMenuColor"> &nbsp;فروشگاه سوم </a>
+                <a href="addShop.html" class="w3-center rightMenuColor">
+                    <span class="glyphicon glyphicon-plus"></span> &nbsp;جدید&nbsp;
+                </a>
             </div>
             <br />
             <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-signal" style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های من </a>
+                <a href="showPoll.html" class="rightMenuColor"><span class="glyphicon glyphicon-signal" style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های من </a>
             </div><br />
             <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
+                <a href="ShowDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
             </div><br />
             <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
+                <a href="support.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
             </div><br />
             <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-off" style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل </a>
+                <a href="HomePage.html" class="rightMenuColor"><span class="glyphicon glyphicon-off" style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل </a>
             </div><br />
         </div>
     </nav>
@@ -149,7 +163,7 @@
                 <div class="form-horizontal">
 
                     <div class="form-group">
-                        <div class="col-md-10">
+                        <div class="col-md-11">
                              <input type="text" required autofocus name="username" value="" class="form-control w3-margin w3-trasparent" id="editProfile-form-username-inp"
                                                accept="application/txt" />
                              <label>نام کاربری</label>
@@ -157,7 +171,7 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-10">
+                        <div class="col-md-11">
                             <input type="text" required autofocus name="username" value="" class="form-control w3-margin" id="editProfile-form-first-name-inp"
                                    accept="application/txt" />
                             <label>نام </label>
@@ -165,46 +179,46 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-10">
-                            <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-last-name-inp"
+                        <div class="col-md-11">
+                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-last-name-inp"
                                    accept="application/txt" />
                             <label>نام خانوادگی </label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-10">
-                             <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-phone-number-inp"
+                        <div class="col-md-11">
+                             <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-phone-number-inp"
                                                 accept="application/txt" />
                             <label> شماره تلفن</label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-10">
-                            <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-email-inp"
+                        <div class="col-md-11">
+                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-email-inp"
                                    accept="application/txt" />
                             <label> ایمیل</label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-10">
-                            <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-address-inp"
+                        <div class="col-md-11">
+                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-address-inp"
                                            accept="application/txt" />
                             <label> آدرس</label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-10">
-                            <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-city-inp"
+                        <div class="col-md-11">
+                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-city-inp"
                                    accept="application/txt" />
                             <label> شهر</label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-10"> 
+                        <div class="col-md-11"> 
          
-                            <select class="form-control w3-margin w3-trasparent" name="Type" style="height:40px" required>
+                            <select class="form-control w3-margin w3-trasparent" name="Type" style="height:40px;background-color:#F2F2F2 !important" required>
                                 <option value="">جنسیت انتخاب کنید</option>
                                 <!--need a for to read shop types from db-->
                                 <option value="female">زن</option>
@@ -215,14 +229,15 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-10">
-                            تصویر آواتار <input type="file" required autofocus name="ImageSrc" id="editProfile-form-image-inp"
+                        <div class="col-md-11" style="color:#7B8084 !important">
+                             <input type="file" required autofocus name="ImageSrc" id="editProfile-form-image-inp"
                                                 value="" class="form-control w3-margin" accept="image/*" />
+                             <label class="pictureInput">تصویر آواتار</label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
+                        <div class="col-md-offset-5 col-md-11">
                             <input type="submit" value="ذخیره" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
                         </div>
                     </div>
