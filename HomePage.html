@@ -129,12 +129,12 @@
                     <div class="col-lg-offset-2">
                         <div class="componentColor">
                             <div class="tab btn-group">
-                                <button style="width:50% " class="tablinks" onclick="openDIV(event, 'signUp')" onload="createCaptcha()">ثبت نام</button>
+                                <button style="width:50% " class="tablinks" onclick="openDIV(event, 'signUp')">ثبت نام</button>
                                 <button style="width:50%" class="tablinks" onclick="openDIV(event, 'login')" >ورود</button>
                             </div>
-                            </div>
                         </div>
-                            <div id="signUp" onload="createCaptcha()" style="display:block!important" class="tabcontent active">
+                    </div>
+                    <div id="signUp" onload="createCaptcha()" style="display:block!important" class="tabcontent active">
                                 <div onload="createCaptcha()">
                                     <div class="col-lg-offset-2">
                                         <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
@@ -344,6 +344,7 @@
                     // });
 
                     $(document).ready(function () {
+                        $("signUp").load(createCaptcha());
                         // alert(window.localStorage.getItem("username"));
                         // if (typeof (Storage) !== "undefined") {
                         //     // Store
