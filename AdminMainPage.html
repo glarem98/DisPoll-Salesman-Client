@@ -50,19 +50,44 @@
                 background-color: #181B20 !important;
                 color: #02B2E1;
             }
+
+        .dropbtn {
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+
     </style>
     <nav class="w3-sidenav w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
         <div class="w3-margin ">
             <div class="w3-center " style="margin-top:8px !important">
                 <img class="w3-center w3-closenav w3-xlarge " src="avatar/man-with-tie.png" style="width:100px ; height:100px" />
-            </div> 
+           </div>
             <br />
             <a href="www.google.com" class="rightMenuColor w3-center"> &nbsp;نام کاربر</a>
             <br />
-            <a href="www.google.com" class="rightMenuColor"><span class="glyphicon glyphicon-home" style="color:#7B8084"></span> &nbsp;صفحه اصلی سایت</a>
+            <a class="rightMenuColor" onclick="myFunction('Demo1')">
+                <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
+                &nbsp;<span class="glyphicon glyphicon-chevron-down " style="color:#7B8084;margin-top:2px"></span>
+            </a>
+            <div id="Demo1" class="w3-container w3-hide ">
+                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه اول</a>
+                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
+                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
+                <a class="w3-center rightMenuColor"> <span class="glyphicon glyphicon-plus"></span> &nbsp;جدید&nbsp;</a>
+            </div>
             <br />
-            <a href="~/Admin/AddShop" class="rightMenuColor"><span class="glyphicon glyphicon-plus" style="color:#7B8084"></span>&nbsp;افزودن فروشگاه </a>
-            <br />
+            <div class="rightMenuColor">
+                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-signal" style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های من </a>
+            </div><br />
+            <div class="rightMenuColor">
+                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
+            </div><br />
+            <div class="rightMenuColor">
+                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
+            </div><br />
             <div class="rightMenuColor">
                 <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-off" style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل </a>
             </div><br />
@@ -75,7 +100,7 @@
         </div>
     </header>
     <br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />  
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
     <footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
@@ -84,6 +109,15 @@
         طراحی و پیاده سازی توسط Group G
     </footer>
 
-
+    <script>
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
 </body>
 </html>
