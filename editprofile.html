@@ -57,6 +57,48 @@
             border: none;
             cursor: pointer;
         }
+        input[type=text] {
+            padding: 12px 20px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input {
+            font-size: 18px;
+            padding: 10px 10px 10px 5px;
+            display: block;
+            width: 300px;
+            border: 1px solid #212121;
+            background: transparent !important;
+            color: #212121;
+            /*border-radius: 10px;*/
+        }
+        label {
+            color: #7B8084 !important;
+            font-weight: normal !important;
+            position: absolute;
+            pointer-events: none;
+            right: 45px;
+            top: 20px;
+        }
+
+        input:focus ~ label,
+        input:valid ~ label {
+            top: -1px;
+            font-size: 12px;
+            padding-left:3px;
+            padding-right:3px;
+            color: #7B8084 !important;
+            background: #F2F2F2 !important;
+            background-size: 50px 30px;
+        }
+
+        input:focus,
+        input:valid {
+            border-color: #006DA0 !important;
+        }
+
     </style>
     <nav class="w3-sidenav w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
         <div class="w3-margin ">
@@ -108,54 +150,67 @@
 
                     <div class="form-group">
                         <div class="col-md-10">
-                            نام کاربری: <input type="text" required autofocus name="username" value="" class="form-control w3-margin" id="editProfile-form-username-inp"
+                             <input type="text" required autofocus name="username" value="" class="form-control w3-margin w3-trasparent" id="editProfile-form-username-inp"
                                                accept="application/txt" />
+                             <label>نام کاربری</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-10">
-                            نام : <input type="text" required autofocus name="username" value="" class="form-control w3-margin" id="editProfile-form-first-name-inp"
-                                         accept="application/txt" />
+                            <input type="text" required autofocus name="username" value="" class="form-control w3-margin" id="editProfile-form-first-name-inp"
+                                   accept="application/txt" />
+                            <label>نام </label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-10">
-                            نام خانوادگی:  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-last-name-inp"
-                                                  accept="application/txt" />
+                            <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-last-name-inp"
+                                   accept="application/txt" />
+                            <label>نام خانوادگی </label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-10">
-                            شماره تلفن:  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-phone-number-inp"
+                             <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-phone-number-inp"
                                                 accept="application/txt" />
+                            <label> شماره تلفن</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-10">
-                            ایمیل :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-email-inp"
-                                            accept="application/txt" />
+                            <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-email-inp"
+                                   accept="application/txt" />
+                            <label> ایمیل</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-10">
-                            آدرس :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-address-inp"
+                            <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-address-inp"
                                            accept="application/txt" />
+                            <label> آدرس</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-10">
-                            شهر :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-city-inp"
-                                          accept="application/txt" />
+                            <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-city-inp"
+                                   accept="application/txt" />
+                            <label> شهر</label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-10">
-                            جنسیت :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-gender-inp"
-                                            accept="application/txt" />
+                        <div class="col-md-10"> 
+         
+                            <select class="form-control w3-margin w3-trasparent" name="Type" style="height:40px" required>
+                                <option value="">جنسیت انتخاب کنید</option>
+                                <!--need a for to read shop types from db-->
+                                <option value="female">زن</option>
+                                <option value="male">مرد</option>
+                                <option value="other">سایر</option>
+                            </select>
                         </div>
                     </div>
 
