@@ -23,6 +23,26 @@
 </head>
 <body style="background-color:#E5E5E5 !important">
     <style>
+        .fa-refresh {
+            margin: 4px 0 0px 5px;
+            padding: 5px;
+            height: 75px;
+            width: 75px;
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            transition: color 0.2s ease-out, -webkit-transform 0.2s ease-out;
+            transition: transform 0.2s ease-out, color 0.2s ease-out;
+            transition: transform 0.2s ease-out, color 0.2s ease-out, -webkit-transform 0.2s ease-out;
+        }
+        .fa-refresh:hover {
+            color: rgba(0, 0, 0, 0);
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
         .componentColor {
             background-color: #F2F2F2 !important;
         }
@@ -110,11 +130,11 @@
                         <div class="componentColor">
                             <div class="tab btn-group">
                                 <button style="width:50% " class="tablinks" onclick="openDIV(event, 'signUp')">ثبت نام</button>
-                                <button style="width:50%" class="tablinks" onclick="openDIV(event, 'login')">ورود</button>
-                            </div>
+                                <button style="width:50%" class="tablinks" onclick="openDIV(event, 'login')" >ورود</button>
                             </div>
                         </div>
-                            <div id="signUp" style="display:block!important" class="tabcontent active">
+                    </div>
+                    <div id="signUp" onload="createCaptcha()" style="display:block!important" class="tabcontent active">
                                 <div onload="createCaptcha()">
                                     <div class="col-lg-offset-2">
                                         <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
@@ -159,7 +179,7 @@
                                                 <div class="form-group">
                                                     <div class="col-md-10 w3-margin">
                                                         <div class="captcha" id="signUp_email_auth_form_captcha_img"></div>
-                                                        <img src="8338-200.png" class="fa-refresh" onclick="createCaptcha()">
+                                                        <img src="icon/8338-200.png" class="fa-refresh" onclick="createCaptcha()">
                                                         <br />
                                                         <input type="text" required placeholder="Captcha" id="signUp_email_auth_form_captcha_inp"
                                                                accept="application/txt" />
@@ -181,48 +201,48 @@
                             </div>
 
                             <div id="login" class="tabcontent">
-                                    <div class="col-lg-offset-2">
-                                        <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                                            <form id="signUp_email_auth_form" class="form-horizontal" onsubmit="validateCaptcha()">
+<!--                                    <div class="col-lg-offset-2">-->
+<!--                                        <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">-->
+<!--                                            <form id="signUp_email_auth_form" class="form-horizontal" onsubmit="validateCaptcha()">-->
 
-                                                <br />
-                                                <div class="form-group">
-                                                    <div class="col-md-10">
-                                                        <!--autofocus ?-->
-                                                        <input type="email" required name="email" value=""
-                                                               class="form-control w3-margin w3-transparent"
-                                                               id="signUp_email_auth_form_email_inp"
-                                                               accept="application/txt" />
-                                                        <label>پست الکترونیکی</label>
-                                                        <!--                        <span class="input-group-addon">-->
-                                                        <!--                            <i class="glyphicon glyphicon-user"></i>-->
-                                                        <!--                        </span>-->
-                                                    </div>
-                                                </div>
+<!--                                                <br />-->
+<!--                                                <div class="form-group">-->
+<!--                                                    <div class="col-md-10">-->
+<!--                                                        &lt;!&ndash;autofocus ?&ndash;&gt;-->
+<!--                                                        <input type="email" required name="email" value=""-->
+<!--                                                               class="form-control w3-margin w3-transparent"-->
+<!--                                                               id="signUp_email_auth_form_email_inp"-->
+<!--                                                               accept="application/txt" />-->
+<!--                                                        <label>پست الکترونیکی</label>-->
+<!--                                                        &lt;!&ndash;                        <span class="input-group-addon">&ndash;&gt;-->
+<!--                                                        &lt;!&ndash;                            <i class="glyphicon glyphicon-user"></i>&ndash;&gt;-->
+<!--                                                        &lt;!&ndash;                        </span>&ndash;&gt;-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
 
-                                                <div class="form-group">
-                                                    <div class="col-md-10">
-                                                        <!--autofocus ?-->
-                                                        <input type="password" required name="password" value=""
-                                                               class="form-control w3-margin w3-transparent" id="signUp_email_auth_form_password_inp"
-                                                               accept="application/txt" />
-                                                        <label>کلمه عبور</label>
+<!--                                                <div class="form-group">-->
+<!--                                                    <div class="col-md-10">-->
+<!--                                                        &lt;!&ndash;autofocus ?&ndash;&gt;-->
+<!--                                                        <input type="password" required name="password" value=""-->
+<!--                                                               class="form-control w3-margin w3-transparent" id="signUp_email_auth_form_password_inp"-->
+<!--                                                               accept="application/txt" />-->
+<!--                                                        <label>کلمه عبور</label>-->
 
-                                                    </div>
-                                                </div>
+<!--                                                    </div>-->
+<!--                                                </div>-->
 
-                                                <div class="form-group">
-                                                    <div class="col-md-offset-2 col-md-10">
-                                                        <input type="submit" value=" ورود" class="btn btn-default btnColors"
-                                                               id="signUp_email_auth_form_submit_btn" />
+<!--                                                <div class="form-group">-->
+<!--                                                    <div class="col-md-offset-2 col-md-10">-->
+<!--                                                        <input type="submit" value=" ورود" class="btn btn-default btnColors"-->
+<!--                                                               id="signUp_email_auth_form_submit_btn" />-->
 
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </form>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                </div>
+                            </div>
                             </div>
 
                         </div>
@@ -324,17 +344,18 @@
                     // });
 
                     $(document).ready(function () {
+                        $("signUp").load(createCaptcha());
                         // alert(window.localStorage.getItem("username"));
-                        if (typeof (Storage) !== "undefined") {
-                            // Store
-                            // localStorage.setItem("lastname", "Smith");
-                            // Retrieve
-                            alert(sessionStorage.getItem("lastname"));
-
-                            // document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-                        } else {
-                            alert("Sorry, your browser does not support Web Storage...");
-                        }
+                        // if (typeof (Storage) !== "undefined") {
+                        //     // Store
+                        //     // localStorage.setItem("lastname", "Smith");
+                        //     // Retrieve
+                        //     alert(sessionStorage.getItem("lastname"));
+                        //
+                        //     // document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+                        // } else {
+                        //     alert("Sorry, your browser does not support Web Storage...");
+                        // }
                         $("#signUp_email_auth_form").submit(function (e) {
                             e.preventDefault();
 
