@@ -34,7 +34,15 @@
             float: right;
             width: 50%
         }
+        .col-container {
+            display: table;
+            width: 100%;
+        }
 
+        .col {
+            display: table-cell;
+            padding: 16px;
+        }
         .componentColor {
             background-color: #F2F2F2 !important;
         }
@@ -76,30 +84,31 @@
                 <img class="w3-center w3-closenav w3-xlarge " src="avatar/man-with-tie.png" style="width:100px ; height:100px" />
             </div>
             <br />
-            <a href="www.google.com" class="rightMenuColor w3-center"> &nbsp;نام کاربر</a>
+            <a href="editprofile.html" class="rightMenuColor w3-center"> &nbsp;نام کاربر</a>
             <br />
-            <a class="rightMenuColor" onclick="myFunction('Demo1')">
+            <a  class="rightMenuColor" onclick="myFunction('Demo1')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
                 &nbsp;<span class="glyphicon glyphicon-chevron-down " style="color:#7B8084;margin-top:2px"></span>
             </a>
             <div id="Demo1" class="w3-container w3-hide ">
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه اول</a>
-                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
-                <a class="w3-center rightMenuColor"> <span class="glyphicon glyphicon-plus"></span> &nbsp;جدید&nbsp;</a>
+                <a href="showShop.html" class="rightMenuColor"> &nbsp;فروشگاه اول</a>
+                <a href="showShop.html"  class="rightMenuColor">&nbsp; فروشگاه دوم</a>
+                <a href="showShop.html" class="rightMenuColor" > &nbsp;فروشگاه سوم </a>
+                <a href="addShop.html" class="w3-center rightMenuColor">
+                <span class="glyphicon glyphicon-plus"></span> &nbsp;جدید&nbsp;</a>
             </div>
             <br />
             <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-signal" style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های من </a>
+                <a href="showPoll.html" class="rightMenuColor"><span class="glyphicon glyphicon-signal" style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های من </a>
             </div><br />
             <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
+                <a href="ShowDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
             </div><br />
             <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
+                <a href="support.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
             </div><br />
             <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-off" style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل </a>
+                <a href="HomePage.html" class="rightMenuColor"><span class="glyphicon glyphicon-off" style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل </a>
             </div><br />
         </div>
     </nav>
@@ -112,12 +121,12 @@
     <br /><br />
     <div class="container">
         <div class="col-lg-offset-2">
-            <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
+            <div class="w3-border w3-border-light-gray w3-card-12 w3-padding ">
                 <div class="form-horizontal">
-                    <ul class="ulClass">
+                    <div class="col-container">
 
-                        <li style="direction:rtl !important ;" class="liClass">
-                            <h6><b> تخفیف های فعال</b></h6>
+                        <div style="direction:rtl !important ;" class="col ">
+                            <h6 class="componentColor w3-center" style="padding-bottom:15px ; padding-top:15px ;padding-right:6px"><b>  تخفیف های فعال  </b></h6>
                             <hr />
                             <div class="w3-border-black">
                                 <div class="w3-center"> کدتخفیف </div>
@@ -127,10 +136,10 @@
                                     <p> مهلت:</p>
                                 </div>
                             </div>
-                        </li>
-                   
-                        <li style="direction:rtl !important ; padding-right:8px !important;border-right : solid 2px gray;" class="liClass w3-padding">
-                            <h6><b> &nbsp;تخفیف های منقضی</b></h6>
+                        </div>
+                        <div style="border:none">&nbsp;&nbsp; </div>
+                        <div style="direction:rtl !important ; padding-right:8px !important;" class="col  w3-padding">
+                            <h6 class="componentColor w3-center" style="padding-bottom:15px ; padding-top:15px ;padding-right:6px"><b> &nbsp; تخفیف های منقضی</b></h6>
                             <hr />
                             <div class="w3-border-black">
                                 <div class="w3-center"> &nbsp;کدتخفیف </div>
@@ -140,8 +149,15 @@
                                     <p> &nbsp;مهلت:</p>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-1 col-md-11">
+                            <input type="submit" value="اضافه کردن تخفیف" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
