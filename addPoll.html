@@ -190,13 +190,6 @@
                 x.className = x.className.replace(" w3-show", "");
             }
 
-            window.addEventListener("mouseup",
-                function (event) {
-                    var rightMenu = document.getElementById("rightMenu");
-                    if (event.target != rightMenu && event.target.parentNode != rightMenu) {
-                        rightMenu.style.display = 'none';
-                    }
-                });
             $(document).ready(function () {
                 $("select").change(function () {
                     $("select option:selected").each(function () {
