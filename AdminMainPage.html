@@ -23,6 +23,7 @@
 </head>
 <body style="background-color:#E5E5E5">
     <style>
+
         .componentColor {
             background-color: #F2F2F2 !important;
         }
@@ -70,7 +71,7 @@
             <br />
             <a class="rightMenuColor" onclick="myFunction('Demo1')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
-                &nbsp;<span class="glyphicon glyphicon-chevron-down " style="color:#7B8084;margin-top:2px"></span>
+                &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
             </a>
             <div id="Demo1" class="w3-container w3-hide ">
                 <a class="rightMenuColor" href="#"> &nbsp;فروشگاه اول</a>
@@ -112,10 +113,13 @@
     <script>
         function myFunction(id) {
             var x = document.getElementById(id);
+            const y =document.getElementById("more");
+            y.style.transform = "rotate(180deg)";
             if (x.className.indexOf("w3-show") == -1) {
                 x.className += " w3-show";
             } else {
                 x.className = x.className.replace(" w3-show", "");
+                y.style.transform = "rotate(0deg)";
             }
         }
     </script>

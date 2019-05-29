@@ -68,7 +68,7 @@
             <br />
             <a class="rightMenuColor" onclick="myFunction('Demo1')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
-                &nbsp;<span class="glyphicon glyphicon-chevron-down " style="color:#7B8084;margin-top:2px"></span>
+                &nbsp;<span class="glyphicon glyphicon-chevron-down " id="more" style="color:#7B8084;margin-top:2px"></span>
             </a>
             <div id="Demo1" class="w3-container w3-hide ">
                 <a class="rightMenuColor" href="#"> &nbsp;فروشگاه اول</a>
@@ -105,69 +105,77 @@
               </div>
               <div class="col-lg-offset-2">
                   <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                      <div class="form-horizontal">
+                      <form class="form-horizontal" id="addDiscount-form">
 
                           <div class="form-group">
                               <div class="col-md-10">
-                                  نام محصول * : <input type="text" required autofocus name="UserName" value="" class="form-control w3-margin"
+                                  نام محصول * : <input type="text" required name="productName" value=""
+                                                       class="form-control w3-margin"
                                                        id="addDiscount-form-product-name-inp" accept="application/txt" />
                               </div>
                           </div>
 
                           <div class="form-group">
                               <div class="col-md-10">
-                                  تصویر بارکد * :  <input type="file" required autofocus name="ImageSrc" value="" class="form-control w3-margin"
-                                                          id="addDiscount-form-product-image-inp" accept="image/*" />
+                                  تصویر بارکد * :  <input type="file" required name="productBarcodeImage" value=""
+                                                          class="form-control w3-margin"
+                                                          id="addDiscount-form-product-barcode-image-file" accept="image/*" />
                               </div>
                           </div>
 
                           <div class="form-group">
                               <div class="col-md-10">
-                                  شناسه محصول * :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
+                                  شناسه محصول * :  <input type="text" required name="productCode" value=""
+                                                          class="form-control w3-margin"
                                                           id="addDiscount-form-product-code-inp" accept="application/txt" />
                               </div>
                           </div>
                           <div class="form-group">
                               <div class="col-md-10">
-                                  برند محصول * : <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
+                                  برند محصول * : <input type="text" required name="productBrand" value=""
+                                                        class="form-control w3-margin"
                                                         id="addDiscount-form-product-brand-inp" accept="application/txt" />
                               </div>
-                              <!--<div class="form-group">
-                        <div class="col-md-10 w3-margin-right">
-                            تصویربارکد * :  <input type="file" required autofocus name="ImageSrc" value="" class="form-control w3-margin"
-                                          id="addDiscount-form-product-image-inp" accept="image/*" />
-                        </div>
-                    </div>-->
                           </div>
+
                           <div class="form-group">
-                              <div class="col-md-10">
-                                  درصد تخفیف :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
-                                                       id="addDiscount-form-percent-inp" accept="application/txt" />
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-md-10">
-                                  کد تخفیف :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
-                                                     id="addDiscount-form-discount-code-inp" accept="application/txt" />
-                              </div>
-                          </div> <div class="form-group">
-                              <div class="col-md-10">
-                                  مهلت :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
-                                                 id="addDiscount-form-timeout-inp" accept="application/txt" />
+                              <div class="col-md-10" >
+                                  درصد تخفیف :  <input type="range" required name="percent" min="0" max="100" step="5" value="10"
+                                                       class="form-control w3-margin"
+                                                       id="addDiscount-form-percent-inp" accept="application/txt"/>
                               </div>
                           </div>
 
                           <div class="form-group">
                               <div class="col-md-10">
-                                  توضیحات :  <input type="password" required autofocus name="Password" value="" class="form-control w3-margin"
+                                  کد تخفیف :  <input type="text" name="percentCode" value=""
+                                                     class="form-control w3-margin"
+                                                     id="addDiscount-form-percent-code-inp" accept="application/txt" />
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <div class="col-md-10">
+<!--                                  تعویض تاریخ-->
+                                  مهلت :  <input type="date" value="" name="timeout"
+                                                 class="form-control w3-margin"
+                                                 id="addDiscount-form-timeout-inp" accept="application/txt">
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <div class="col-md-10">
+                                  توضیحات :  <input type="text" name="description" value=""
+                                                    class="form-control w3-margin"
                                                     id="addDiscount-form-description-inp" accept="application/txt" />
                               </div>
                           </div>
 
                           <div class="form-group">
                               <div class="col-md-10">
-                                  تصویر  <input type="file" required autofocus name="ImageSrc" value="" class="form-control w3-margin"
-                                                id="addDiscount-form-product-image-inp" accept="image/*" />
+                                  تصویر محصول <input type="file" name="ImageSrc" value="productImage"
+                                                     class="form-control w3-margin"
+                                                     id="addDiscount-form-product-image-inp" accept="image/*" />
                               </div>
                           </div>
 
@@ -176,13 +184,14 @@
                                   <input type="submit" value="ذخیره" id="addDiscount-form-submit-btn" class="btn btn-default btnColors" />
                               </div>
                           </div>
+
                           <br />
                           <div class="form-group">
                               <div class="col-md-10">
                                   * : وارد کردن تنها یکی از این موارد کافی می باشد.
                               </div>
                           </div>
-                      </div>
+                      </form>
                   </div>
               </div>
 
@@ -198,14 +207,64 @@
     </footer>
 
     <script>
+        //script for design website
+
+
         function myFunction(id) {
             var x = document.getElementById(id);
+            const y =document.getElementById("more");
+            y.style.transform = "rotate(180deg)";
             if (x.className.indexOf("w3-show") == -1) {
                 x.className += " w3-show";
             } else {
                 x.className = x.className.replace(" w3-show", "");
+                y.style.transform = "rotate(0deg)";
             }
         }
+    </script>
+
+    <script>
+         //script for design connection to the server
+
+
+        $(document).ready( function () {
+            $("#addDiscount-form").submit(function (e) {
+                e.preventDefault();
+
+                const addDiscount_form_var = document.getElementById("login_form");
+                const username_var = addDiscount_form_var.username.value;
+                const password_var = addDiscount_form_var.password.value;
+
+
+                if (username_var.length >= 5 && password_var.length >= 5) {
+                    const login_obj = {
+                        username: username_var,
+                        password: password_var
+                    };
+                    const login_json = JSON.stringify(login_obj);
+
+                    $.post("address.txt", function (data) {
+                        const my_address = data + "login-salesman/";
+
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            contentType: 'application/json',
+                            url: my_address,
+                            data: login_json,
+                            success: function(result, status, xhr){
+                                alert(result.message);},
+                            error: function () {
+                                alert(" اتصال به اینترنت برقرار نیست. ");}
+                        })
+
+                    });
+                } else
+                    alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
+            });
+
+        });
+
     </script>
 </body>
 </html>
