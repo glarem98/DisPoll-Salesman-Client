@@ -7,7 +7,7 @@
     <meta name="language" content="fa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Content/bootstrap.min.css" rel="stylesheet"/>
+<!--    <link href="Content/bootstrap.min.css" rel="stylesheet"/>-->
     <link href="Content/css/bootstrap-rtl.css" rel="stylesheet"/>
     <link href="Content/css/w3.css" rel="stylesheet"/>
     <link href="ParsaFont/Style.css" rel="stylesheet"/>
@@ -140,14 +140,14 @@
             <div class="col-lg-offset-2">
                 <div class="componentColor">
                     <div class="tab btn-group">
-                        <button style="width:50% " class="tablinks signupActive" onclick="openDIV(event, 'signUp')">ثبت
+                        <button style="width:50% " class="tablinks signupActive" onclick="openDIV(event, 'signUp_email_auth')">ثبت
                             نام
                         </button>
                         <button style="width:50%" class="tablinks" onclick="openDIV(event, 'login')">ورود</button>
                     </div>
                 </div>
             </div>
-            <div id="signUp" onload="createCaptcha()" style="display:block!important" class="tabcontent">
+            <div id="signUp_email_auth" style="display:block!important" class="tabcontent">
                 <div onload="createCaptcha()">
                     <div class="col-lg-offset-2">
                         <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
@@ -178,9 +178,10 @@
 
                                 <div class="form-group">
                                     <div class="col-md-10 w3-margin">
-                                        <!--autofocus ?-->شرایط و قوانین استفاده را می پذیرم.
+                                        شرایط و قوانین استفاده را می پذیرم.
                                         <input type="checkbox" required name="checkbox" value=""
-                                               class="form-control w3-margin" id="signUp_email_auth_form_checkbox_inp"
+                                               class="form-control w3-margin"
+                                               id="signUp_email_auth_form_checkbox_inp"
                                                accept="application/txt"/>
 
                                     </div>
@@ -199,7 +200,8 @@
 
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="ثبت نام" class="btn btn-default btnColors"
+                                        <input type="submit" value="ثبت نام"
+                                               class="btn btn-default btnColors"
                                                id="signUp_email_auth_form_submit_btn"/>
 
                                     </div>
@@ -217,7 +219,9 @@
 
                             <div class="form-group">
                                 <div class="col-md-10">
-                                    نام کاربری : <input type="text" required autofocus name="username" value="" class="form-control w3-margin" id="login_form_username_inp"
+                                    نام کاربری : <input type="text" required autofocus name="username" value=""
+                                                        class="form-control w3-margin"
+                                                        id="login_form_username_inp"
                                                         accept="application/txt" />
 
                                 </div>
@@ -225,7 +229,9 @@
 
                             <div class="form-group">
                                 <div class="col-md-10">
-                                    کلمه عبور:  <input type="password" required autofocus name="password" value="" class="form-control w3-margin" id="login_form_password_inp"
+                                    کلمه عبور:  <input type="password" required autofocus name="password" value=""
+                                                       class="form-control w3-margin"
+                                                       id="login_form_password_inp"
                                                        accept="application/txt" />
 
                                 </div>
@@ -234,9 +240,6 @@
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <input type="submit" value="ورود " class="btn btn-default btnColors" id="login_form_submit_btn" />
-
-                                    <input type="button" value="ثبت نام " class="btn btn-default btnColors" id="login_form_btn" />
-
                                 </div>
                             </div>
 
@@ -246,9 +249,63 @@
 
             </div>
         </div>
-
     </div>
 </div>
+
+
+<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<!--Modal container-->
+<div class="modal fade" role="dialog" id="signUp_confirm_email_model">
+    <div class="modal-dialog ">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">کد ارسالی</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <img class="w3-" style="width:300px ; height:300px" src="icon/app_icon.png"/>
+                        <br/>
+                    </div>
+                    <br/>
+                    <div class="col-md-6 w3-center">
+                        <br/><br/>
+                        <div class="form-group col-md-offset-2">
+                            <div class="col-md-10">
+                                کد دریافتی:<input type="password" required autofocus name="password" value=""
+                                                  class="form-control w3-margin"
+                                                  id="signUp_confirm_email_model_inp"
+                                                  accept="application/txt"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10 w3-padding">
+                                <input data-toggle="modal" data-target="#1" type="submit" value="ثبت کد"
+                                       class="btn btn-default btnColors"
+                                       id="signUp_confirm_email_model_btn"/>
+                            </div>
+                        </div>
+                        <br/><br/>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10 w3-padding">
+                                <a style="text-decoration:none ; color:#d3df13"> ارسال مجدد کد </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <script>
     function openDIV(evt, divName) {
         var i, tabcontent, tablinks;
@@ -311,14 +368,18 @@
 </script>
 <script>
 
-    // $(document).ready(function () {
-    //     $("#signUp_email_auth_form_submit_btn").click(function () {
-    //         $("#signUp_email_auth_model").modal({backdrop: "static"});
-    //     });
-    //
-    // });
+    $(document).ready(function () {
+
+        $("#signUp_confirm_email_model").modal({backdrop: "static"});
+        // $("#signUp_confirm_email_model_btn").click(function () {
+        //
+        // });
+        ///debuger ra dorost lon
+
+    });
 
     $(document).ready(function () {
+        //load captcha ro dorost kon
         // $("signUp").load(createCaptcha());
 
         if (typeof (Storage) !== "undefined") {
@@ -368,6 +429,43 @@
             } else
                 alert(" رمزعبور باید حداقل 5 کاراکتر باشد. ");
         });
+
+
+        $("#login_form").submit(function (e) {
+            e.preventDefault();
+
+            const login_form_var = document.getElementById("login_form");
+            const username_var = login_form_var.username.value;
+            const password_var = login_form_var.password.value;
+
+
+            if (username_var.length >= 5 && password_var.length >= 5) {
+                const login_obj = {
+                    username: username_var,
+                    password: password_var
+                };
+                const login_json = JSON.stringify(login_obj);
+
+                $.post("address.txt", function (data) {
+                    const my_address = data + "login-salesman/";
+
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        url: my_address,
+                        data: login_json,
+                        success: function(result, status, xhr){
+                            alert(result.message);},
+                        error: function () {
+                            alert(" اتصال به اینترنت برقرار نیست. ");}
+                    })
+
+                });
+            } else
+                alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
+        });
+
 
     });
 
