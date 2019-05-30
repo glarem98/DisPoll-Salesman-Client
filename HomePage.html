@@ -162,7 +162,6 @@
                                                id="signUp_email_auth_form_email_inp"
                                                accept="application/txt"/>
                                         <label>پست الکترونیکی</label>
-
                                     </div>
                                 </div>
 
@@ -173,7 +172,6 @@
                                                id="signUp_email_auth_form_password_inp"
                                                accept="application/txt"/>
                                         <label>کلمه عبور</label>
-
                                     </div>
                                 </div>
 
@@ -184,7 +182,6 @@
                                                class="form-control w3-margin"
                                                id="signUp_email_auth_form_checkbox_inp"
                                                accept="application/txt"/>
-
                                     </div>
                                 </div>
 
@@ -204,7 +201,6 @@
                                         <input type="submit" value="ثبت نام"
                                                class="btn btn-default btnColors"
                                                id="signUp_email_auth_form_submit_btn"/>
-
                                     </div>
                                 </div>
                             </form>
@@ -224,7 +220,6 @@
                                                         class="form-control w3-margin"
                                                         id="login_form_username_inp"
                                                         accept="application/txt" />
-
                                 </div>
                             </div>
 
@@ -234,7 +229,6 @@
                                                        class="form-control w3-margin"
                                                        id="login_form_password_inp"
                                                        accept="application/txt" />
-
                                 </div>
                             </div>
 
@@ -370,7 +364,7 @@
 
     $(document).ready(function () {
         //load captcha ro dorost kon
-        //jae onsubmit ro bayad avaz knam
+        //jae onsubmit captcha ro bayad avaz knam
         createCaptcha();
         // $("#signUp_email_auth_form_submit_btn").click(function () {
         //     $("#signUp_confirm_email_model").modal({backdrop: "static"});
@@ -395,7 +389,7 @@
             e.preventDefault();
 
             //shart captcha ro dorost kon
-            //bad az zadan beravad
+            //bad az zadan beravad modal
 
 
             const signUp_email_auth_form_var = document.getElementById("signUp_email_auth_form");
@@ -465,7 +459,9 @@
                                         success: function (resultData, status, xhr) {
                                             alert(resultData.message);
                                             if (resultData.result.toString() === "true") {
-                                                alert("change");
+                                                window.sessionStorage.setItem("email", email_var);
+                                                alert(window.sessionStorage.email);
+                                                window.location.href="editprofile.html";
                                             }
                                         },
                                         error: function () {
