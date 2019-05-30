@@ -276,7 +276,7 @@
                         <br/><br/>
                         <div class="form-group col-md-offset-2">
                             <div class="col-md-10">
-                                کد دریافتی:<input type="password" required autofocus name="password" value=""
+                                کد دریافتی:<input type="text" required autofocus name="code" value=""
                                                   class="form-control w3-margin"
                                                   id="signUp_confirm_email_model_inp"
                                                   accept="application/txt"/>
@@ -292,7 +292,7 @@
                         <br/><br/>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10 w3-padding">
-                                <a style="text-decoration:none ; color:#d3df13"> ارسال مجدد کد </a>
+                                <a style="text-decoration:none ; color:#d3df13" id="signUp_resend_code"> ارسال مجدد کد </a>
                             </div>
                         </div>
                     </div>
@@ -356,7 +356,6 @@
 
     function validateCaptcha() {
         event.preventDefault();
-        debugger;
         if (document.getElementById("signUp_email_auth_form_captcha_inp").value === code) {
             alert("Valid Captcha")
         } else {
@@ -370,35 +369,38 @@
 <script>
 
     $(document).ready(function () {
-
-        $("#signUp_confirm_email_model").modal({backdrop: "static"});
-        // $("#signUp_confirm_email_model_btn").click(function () {
-        //
+        //load captcha ro dorost kon
+        //jae onsubmit ro bayad avaz knam
+        createCaptcha();
+        // $("#signUp_email_auth_form_submit_btn").click(function () {
+        //     $("#signUp_confirm_email_model").modal({backdrop: "static"});
         // });
         ///debuger ra dorost lon
 
     });
 
     $(document).ready(function () {
-        //load captcha ro dorost kon
-        // $("signUp").load(createCaptcha());
-
-        if (typeof (Storage) !== "undefined") {
-            // Store
-            sessionStorage.setItem("lastname", "saba");
-            // Retrieve
-            // alert(sessionStorage.getItem("lastname"));
-        } else {
-            alert("Sorry, your browser does not support Web Storage...");
-        }
+        //session ro bayad dorost konam
+        // if (typeof (Storage) !== "undefined") {
+        //     // Store
+        //     sessionStorage.setItem("lastname", "saba");
+        //     // Retrieve
+        //     // alert(sessionStorage.getItem("lastname"));
+        // } else {
+        //     alert("Sorry, your browser does not support Web Storage...");
+        // }
 
 
         $("#signUp_email_auth_form").submit(function (e) {
             e.preventDefault();
 
-            const login_form_var = document.getElementById("signUp_email_auth_form");
-            const email_var = login_form_var.email.value;
-            const password_var = login_form_var.password.value;
+            //shart captcha ro dorost kon
+            //bad az zadan beravad
+
+
+            const signUp_email_auth_form_var = document.getElementById("signUp_email_auth_form");
+            const email_var = signUp_email_auth_form_var.email.value;
+            const password_var = signUp_email_auth_form_var.password.value;
 
             if (password_var.length >= 5) {
                 const signUp_obj = {
@@ -418,8 +420,62 @@
                         data: signUp_json,
                         success: function (resultData, status, xhr) {
                             alert(resultData.message);
-                            if (resultData.result.toString() === "true")
-                                $("#signUp_email_auth_model").modal({backdrop: "static"});
+                            if (resultData.result.toString() === "true") {
+                                $("#signUp_confirm_email_model").modal({backdrop: "static"});
+
+                                $("#signUp_resend_code").click(function () {
+                                    const signUp_resend_code_obj = {
+                                        email: email_var,
+                                    };
+                                    const signUp_resend_code_json = JSON.stringify(signUp_resend_code_obj);
+                                    const first_address = data + "signup-salesman/resend-code/";
+                                    $.ajax({
+                                        type: 'POST',
+                                        dataType: 'json',
+                                        contentType: 'application/json',
+                                        url: first_address,
+                                        data: signUp_resend_code_json,
+                                        success: function (resultData, status, xhr) {
+                                            alert(resultData.message);
+                                            if (resultData.result.toString() === "true") {
+                                                alert("change");
+                                            }
+                                        },
+                                        error: function () {
+                                            alert(" اتصال به اینترنت برقرار نیست. ");
+                                        }
+                                    })
+                                });
+
+                                $("#signUp_confirm_email_model_btn").click(function () {
+                                    const code_var = document.getElementById("signUp_confirm_email_model_inp").value;
+
+                                    const signUp_confirm_email_obj = {
+                                        email: email_var,
+                                        code: code_var
+                                    };
+                                    const signUp_confirm_email_json = JSON.stringify(signUp_confirm_email_obj);
+                                    const second_address = data + "signup-salesman/confirm-email/";
+                                    $.ajax({
+                                        type: 'POST',
+                                        dataType: 'json',
+                                        contentType: 'application/json',
+                                        url: second_address,
+                                        data: signUp_confirm_email_json,
+                                        success: function (resultData, status, xhr) {
+                                            alert(resultData.message);
+                                            if (resultData.result.toString() === "true") {
+                                                alert("change");
+                                            }
+                                        },
+                                        error: function () {
+                                            alert(" اتصال به اینترنت برقرار نیست. ");
+                                        }
+                                    })
+
+                                });
+
+                            }
                         },
                         error: function () {
                             alert(" اتصال به اینترنت برقرار نیست. ");
