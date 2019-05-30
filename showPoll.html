@@ -23,17 +23,19 @@
 </head>
 <body style="background-color:#E5E5E5">
     <style>
-        .col-container {
-            display: table;
-            width: 100%;
-        }
-
-        .col {
-            display: table-cell;
-            padding: 16px;
-        }
         .componentColor {
             background-color: #F2F2F2 !important;
+        }
+
+        .pictureInput {
+            top: -1px;
+            font-size: 12px;
+            padding-left: 3px;
+            padding-right: 3px;
+            padding-bottom: 2px;
+            color: #7B8084 !important;
+            background: #F2F2F2 !important;
+            background-size: 50px 30px;
         }
 
         .btnColors {
@@ -68,6 +70,7 @@
             border: none;
             cursor: pointer;
         }
+
         input[type=text] {
             padding: 12px 20px;
             display: inline-block;
@@ -112,6 +115,15 @@
         input:valid {
             border-color: #006DA0 !important;
         }
+        .col-container {
+            display: table;
+            width: 100%;
+        }
+
+        .col {
+            display: table-cell;
+            padding: 16px;
+        }
     </style>
     <nav class="w3-sidenav w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
         <div class="w3-margin ">
@@ -154,103 +166,37 @@
             <h1> <span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text " style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important" href="HomePage.html">DisPoll</span></h1>
         </div>
     </header>
-    <br /> 
+    <br />
     <div class="container">
-        <div class=" w3-xlarge w3-center" style="color:#7B8084; margin-bottom:20px">
-           فرم ایجاد نظرسنجی
-        </div>
         <div class="col-lg-offset-2">
-            <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
+            <div class="w3-border w3-border-light-gray w3-card-12 w3-padding ">
                 <div class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-md-11">
-                            <input type="text" required autofocus name="username" value="" class=" form-control  w3-margin" id="editProfile-form-first-name-inp"
-                                   accept="application/txt" />
-                            <label> سوال </label>
-                        </div>
-                    </div>
+                    <div class="col-container">
 
-                    <div class="form-group">
-                        <div class="col-md-11">
-
-                            <select class="form-control w3-margin" name="Type" style="height:40px;background-color:#F2F2F2" required>
-                                <option value=""> نوع نظر سنجی انتخاب کنید</option>
-                                <!--need a for to read shop types from db-->
-
-                                <option value="MultiChoice"> چند گزینه ای</option>
-                                <option value="CheckBox"> تک گزینه ای </option>
-                                <option value="Paragragh">پاسخ چند خطی </option>
-                                <option value="ShortAnswer">پاسخ کوتاه </option>
-                                <option value="LinearScale">نوار شناور</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- this one need a style="display:none;"-->
-                    <div class="form-group" id="choices">
-
-                        <div class="w3-center">
-                            گزینه ها
-                        </div>
-                        <div style="border : solid 1px gray" class="w3-margin"></div>
-                        <!--this htlm should be copy in next div when the + bottom is clicked-->
-                        <div class="col-md-11" id="cloneChoice">
-                            <span style="margin-top:20px ; direction:rtl">
-                                <input type="text" required autofocus name="username" value="" class="form-control w3-center w3-margin" id="editProfile-form-first-name-inp"
-                                       accept="application/txt" />
-                                <label> گزینه </label>
-                            </span>
-                        </div>
-                        <div class="col-md-2" style="margin-top:15px">
-                            <button style="margin:20px" class="btn btn-default btnColors" data-action="add"><i class="fa fa-plus"><strong style="text-align:center;font-style:normal!important">+</strong></i></button>
-
-                        </div>
-                    </div>
-                    <!-- for next div we should add  style="display:none;"  -->
-                    <div id="LinearScale">
-                        <div class="w3-center">
-                            محدودیت ها
-                        </div>
-                        <div style="border : solid 1px gray" class="w3-margin"></div>
-                        <div class="col-container"></div>
-                        <div class="form-group col">
-                            <div class="col-md-11">
-                                <input class="form-control question-format-max w3-margin" type="number" placeholder="شروع بازه" value="">
-                            </div>
-                        </div>
-                        <div class="form-group col">
-                            <div class="col-md-11">
-                                <input class="form-control question-format-max w3-margin" type="number" placeholder=" اندازه گام" value="">
-                            </div>
-                        </div>                        
-                        <div class="form-group col">
-                            <div class="col-md-11">
-                                <input class="form-control question-format-max w3-margin" type="number" placeholder=" تعداد گام ها " value="">
+                        <div style="direction:rtl !important ;" class="col ">
+                            <h6 class="componentColor w3-center" style="padding-bottom:15px ; padding-top:15px ;padding-right:6px"><b>  نظرسنجی ها  </b></h6>
+                            <hr />
+                            <div class="w3-border-black">
+                                <div class="w3-center"> @questoin </div>
+                                <br />
+                                <div>
+                                    این نظر سنجی از نوع @polltype
+                                    <br />
+                                </div>
+                                <div id="multiChoice">
+                                    <!-- b tedade gozine ha -->
+                                    <div> @choiceBdy</div>
+                                    <br />
+                                    <div> @choiceBdy</div>
+                                    <br />
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-11">
 
-                            <input type="range" required name="percent" min="0" max="100" step="10" value="10"
-                                   class="form-control w3-margin"
-                                   id="addDiscount-form-percent-inp" accept="application/txt" onchange="show_value(this.value);" />
-                            <label> درصد اهمیت    </label>
-                            <div class="col" style="color:#7B8084"> درصد انتخابی :  </div>
-                            <div class="col" id="slider_value" style="color:#7B8084;padding-right:5px !important"> 10% </div>
-                        </div>
-                    </div>
                     <div class="form-group">
-                        <div class="col-md-11">
-                            <!--                                  تعویض تاریخ-->
-                            <input type="date" required autofocus value="" name="timeout"
-                                   class="form-control w3-margin pictureInput"
-                                   id="addDiscount-form-timeout-inp" accept="application/txt">
-                            <label> مهلت </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-5 col-md-11">
-                            <input type="submit" value="ذخیره" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
+                        <div class="col-md-offset-1 col-md-11">
+                            <input type="submit" value="اضافه کردن تخفیف" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
                         </div>
                     </div>
                 </div>
@@ -268,13 +214,9 @@
     </footer>
 
     <script>
-        function show_value(x) {
-            document.getElementById("slider_value").innerHTML = x + "%";
-        } 
-
         function myFunction(id) {
             var x = document.getElementById(id);
-            const y =document.getElementById("more");
+            const y = document.getElementById("more");
             y.style.transform = "rotate(180deg)";
             if (x.className.indexOf("w3-show") == -1) {
                 x.className += " w3-show";
@@ -283,21 +225,6 @@
                 y.style.transform = "rotate(0deg)";
             }
         }
-
-            $(document).ready(function () {
-                $("select").change(function () {
-                    $("select option:selected").each(function () {
-                        if (($(this).attr("value") == "MultiChoice") || ($(this).attr("value") == "CheckBox")) {
-                            $("choices").show();
-                        }
-                        if ($(this).attr("value") == "LinearScale") {
-                            $("LinearScale").show();
-                        }
-                    });
-                }).change();
-            });
-       
-
     </script>
 </body>
 </html>
