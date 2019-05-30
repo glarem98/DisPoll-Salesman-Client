@@ -52,6 +52,8 @@
     .btnColors {
         background-color: #006DA0 !important;
         color: #ECEDEF !important;
+        width: 70px;
+        height: 30px
     }
 
     /*.btnHoverColor:hover {
@@ -107,7 +109,7 @@
     }
 
     .signupActive {
-        background-color: #ddd;
+        background-color: #ccc !important;
     }
 
     /* Create an active/current tablink class */
@@ -118,6 +120,50 @@
     /* Style the tab content */
     .tabcontent {
         display: none;
+    }
+    input[type=text] {
+        padding: 12px 20px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 300px;
+        border: 1px solid #212121;
+        background: transparent !important;
+        color: #212121;
+        /*border-radius: 10px;*/
+    }
+
+    label {
+        color: #7B8084 !important;
+        font-weight: normal !important;
+        position: absolute;
+        pointer-events: none;
+        right: 45px;
+        top: 20px;
+    }
+
+    input:focus ~ label,
+    input:valid ~ label {
+        top: -1px;
+        font-size: 12px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-bottom: 3px;
+        color: #7B8084 !important;
+        background: #F2F2F2 !important;
+        background-size: 50px 30px;
+    }
+
+    input:focus,
+    input:valid {
+        border-color: #006DA0 !important;
     }
 </style>
 <br/><br/>
@@ -176,33 +222,51 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="col-md-10 w3-margin">
+                                    <input id="cb" type="checkbox" style="float: right;margin-left:13px !important; margin-top:20px !important; margin-right:13px !important; width:15px;height:15px" >
+                                    <div style="margin-left:8px;" class="w3-margin">
                                         شرایط و قوانین استفاده را می پذیرم.
-                                        <input type="checkbox" required name="checkbox" value=""
-                                               class="form-control w3-margin"
-                                               id="signUp_email_auth_form_checkbox_inp"
-                                               accept="application/txt"/>
                                     </div>
-                                </div>
+                                    <!--<div class="col-md-10 w3-margin" style="display: table; width: 100%">
+        <span style=" display: table-cell;">
+            <input type="checkbox" required name="checkbox" value=""
+                   class="form-control w3-margin"
+                   id="signUp_email_auth_form_checkbox_inp"
+                   accept="application/txt"
+                   style="width : 25px ; height:25px ;" />
+            شرایط و قوانین استفاده را می پذیرم.
+        </span>
 
-                                <div class="form-group">
-                                    <div class="col-md-10 w3-margin">
-                                        <div class="captcha" id="signUp_email_auth_form_captcha_img"></div>
-                                        <img src="icon/8338-200.png" class="fa-refresh" onclick="createCaptcha()">
-                                        <br/>
-                                        <input type="text" required placeholder="Captcha"
-                                               id="signUp_email_auth_form_captcha_inp"
-                                               accept="application/txt"/>
-                                    </div>
+    </div>-->
                                 </div>
+                                <div class="w3-margin">تصویر امنیتی زیر را وارد کنید و به خاطر داشته باشید که کد به حروف بزرگ و کوچک حساس است.</div>
+                                <div class="w3-center">
+                                    
+                                    <div class="form-group w3-center">
+                                        <div class="col-md-10 w3-margin">
+                                            <div class="captcha" id="signUp_email_auth_form_captcha_img"></div>
+                                            <br />
+                                            <div style="display: table;width: 100%;margin-left:5px !important">
+                                                <div style="display:table-cell">
+                                                    <input type="text" required placeholder="Captcha"
+                                                           id="signUp_email_auth_form_captcha_inp"
+                                                           accept="application/txt" style="width:300px ; height:40px" />
+                                                </div>
+                                                <div  style="display:table-cell">
+                                                    <img src="icon/8338-200.png" class="fa-refresh" style="width:30px; height:30px;margin-right:5px !important" onclick="createCaptcha()">
+                                                </div>
+                                            </div>
 
-                                <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="ثبت نام"
-                                               class="btn btn-default btnColors"
-                                               id="signUp_email_auth_form_submit_btn"/>
+                                        </div>
                                     </div>
                                 </div>
+                                    <div class="form-group ">
+                                        <div class="col-md-offset-5 col-md-11">
+                                            <input type="submit" value="ثبت نام"
+                                                   class="btn btn-default btnColors"
+                                                   id="signUp_email_auth_form_submit_btn" />
+                                        </div>
+                                    </div>
+                                
                             </form>
                         </div>
                     </div>
@@ -216,24 +280,26 @@
 
                             <div class="form-group">
                                 <div class="col-md-10">
-                                    نام کاربری : <input type="text" required autofocus name="username" value=""
+                                     <input type="text" required autofocus name="username" value=""
                                                         class="form-control w3-margin"
                                                         id="login_form_username_inp"
                                                         accept="application/txt" />
+                                    <label> نام کاربری </label>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-md-10">
-                                    کلمه عبور:  <input type="password" required autofocus name="password" value=""
+                                    <input type="password" required autofocus name="password" value=""
                                                        class="form-control w3-margin"
                                                        id="login_form_password_inp"
                                                        accept="application/txt" />
+                                    <label> کلمه عبور </label>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-offset-2 col-md-10">
+                                <div class="col-md-offset-5 col-md-10">
                                     <input type="submit" value="ورود " class="btn btn-default btnColors" id="login_form_submit_btn" />
                                 </div>
                             </div>
@@ -284,7 +350,7 @@
                             </div>
                         </div>
                         <br/><br/>
-                        <div class="form-group">
+                        <div class="form-group w3-center">
                             <div class="col-md-offset-2 col-md-10 w3-padding">
                                 <a style="text-decoration:none ; color:#d3df13" id="signUp_resend_code"> ارسال مجدد کد </a>
                             </div>
