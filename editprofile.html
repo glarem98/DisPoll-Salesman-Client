@@ -160,19 +160,33 @@
         </div>
         <div class="col-lg-offset-2">
             <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                <div class="form-horizontal">
+                <form class="form-horizontal" id="editProfile-form">
 
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="text" required autofocus name="username" value="" class="form-control w3-margin w3-trasparent" id="editProfile-form-username-inp"
-                                               accept="application/txt" />
+                            <input type="email" required autofocus name="email" value=""
+                                   class="form-control w3-margin"
+                                   id="editProfile-form-email-inp"
+                                   accept="application/txt" />
+                            <label> ایمیل</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-11">
+                             <input type="username" required autofocus name="username" value=""
+                                    class="form-control w3-margin w3-trasparent"
+                                    id="editProfile-form-username-inp"
+                                    accept="application/txt" />
                              <label>نام کاربری</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="username" value="" class="form-control w3-margin" id="editProfile-form-first-name-inp"
+                            <input type="text" required autofocus name="firstName" value=""
+                                   class="form-control w3-margin"
+                                   id="editProfile-form-first-name-inp"
                                    accept="application/txt" />
                             <label>نام </label>
                         </div>
@@ -180,7 +194,9 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-last-name-inp"
+                            <input type="text" required autofocus name="lastName" value=""
+                                   class="form-control w3-margin"
+                                   id="editProfile-form-last-name-inp"
                                    accept="application/txt" />
                             <label>نام خانوادگی </label>
                         </div>
@@ -188,37 +204,52 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-phone-number-inp"
-                                                accept="application/txt" />
+                             <input type="tel" required autofocus name="phoneNumber" value=""
+                                    class="form-control w3-margin"
+                                    id="editProfile-form-phone-number-inp"
+                                    accept="application/txt" />
                             <label> شماره تلفن</label>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-email-inp"
+                            <input type="text" required autofocus name="address" value=""
+                                   class="form-control w3-margin"
+                                   id="editProfile-form-address-inp"
                                    accept="application/txt" />
-                            <label> ایمیل</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-11">
-                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-address-inp"
-                                           accept="application/txt" />
                             <label> آدرس</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-city-inp"
-                                   accept="application/txt" />
-                            <label> شهر</label>
+                            <select class="form-control w3-margin w3-trasparent" name="city"
+                                    id="editProfile-form-city-inp"
+                                    style="height:40px ; background-color:#F2F2F2" required>
+                                <option value=""> شهر مورد نظر را انتخاب کنید</option>
+                                <!--need a for to read city names from db-->
+                                <option value="@cityID1">@cityName1</option>
+                                <option value="@cityID2">@cityName2</option>
+                                <option value="@cotyID3">@cityName3</option>
+                            </select>
                         </div>
                     </div>
+
+<!--                    <div class="form-group">-->
+<!--                        <div class="col-md-11">-->
+<!--                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-city-inp"-->
+<!--                                   accept="application/txt" />-->
+<!--                            <label> شهر</label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
                     <div class="form-group">
                         <div class="col-md-11"> 
          
-                            <select class="form-control w3-margin w3-trasparent" name="Type" style="height:40px;background-color:#F2F2F2 !important" required>
+                            <select class="form-control w3-margin w3-trasparent" name="Type"
+                                    id="editProfile-form-gender-inp"
+                                    style="height:40px;background-color:#F2F2F2 !important" required>
                                 <option value="">جنسیت انتخاب کنید</option>
                                 <!--need a for to read shop types from db-->
                                 <option value="female">زن</option>
@@ -230,7 +261,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11" style="color:#7B8084 !important">
-                             <input type="file" required autofocus name="ImageSrc" id="editProfile-form-image-inp"
+                             <input type="file" required autofocus name="image" id="editProfile-form-image-inp"
                                                 value="" class="form-control w3-margin" accept="image/*" />
                              <label class="pictureInput">تصویر آواتار</label>
                         </div>
@@ -238,10 +269,12 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
-                            <input type="submit" value="ذخیره" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
+                            <input type="submit" value="ذخیره"
+                                   class="btn btn-default btnColors"
+                                   id="editProfile-form-submit-btn" />
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -276,32 +309,53 @@
     <script>
 
         $(document).ready( function () {
-            $("#login_form").submit(function (e) {
+            $("#editProfile-form").submit(function (e) {
                 e.preventDefault();
 
-                const login_form_var = document.getElementById("login_form");
-                const username_var = login_form_var.username.value;
-                const password_var = login_form_var.password.value;
+                const editProfile_form_var = document.getElementById("editProfile-form");
+                // const password_var = editProfile_form_var.password.value;
 
 
-                if (username_var.length >= 5 && password_var.length >= 5) {
-                    const login_obj = {
+                const username_var = editProfile_form_var.username.value;
+                const  firstName_var = editProfile_form_var.firstName.value;
+                const  lastName_var = editProfile_form_var.lastName.value;
+                const  phoneNumber_var = editProfile_form_var.phoneNumber.value;
+                const  email_var = editProfile_form_var.email.value;
+                const  address_var = editProfile_form_var.address.value;
+                const  city_var = editProfile_form_var.city.value;
+                const  gender_var = editProfile_form_var.gender.value;
+                //const  image_var = editProfile_form_var.image.value;
+
+
+                if (username_var.length >= 5 ) {
+                    const editProfile_obj = {
                         username: username_var,
-                        password: password_var
+                        first_name: firstName_var,
+                        last_name: lastName_var,
+                        phone_number: phoneNumber_var,
+                        email: email_var,
+                        address: address_var,
+                        city: city_var,
+                        gender: gender_var
+                        //image
                     };
-                    const login_json = JSON.stringify(login_obj);
+                    const editProfile_json = JSON.stringify(editProfile_obj);
 
                     $.post("address.txt", function (data) {
-                        const my_address = data + "login-salesman/";
+                        const my_address = data + "edit-profile-salesman/";
 
                         $.ajax({
                             type: 'POST',
                             dataType: 'json',
                             contentType: 'application/json',
                             url: my_address,
-                            data: login_json,
-                            success: function(result, status, xhr){
-                                alert(result.message);},
+                            data: editProfile_json,
+                            success: function(resultData, status, xhr){
+                                alert(resultData.message);
+                                if (resultData.result.toString() === "true") {
+                                    window.location.href="AdminMainPage.html";
+                                }
+                                },
                             error: function () {
                                 alert(" اتصال به اینترنت برقرار نیست. ");}
                         })
