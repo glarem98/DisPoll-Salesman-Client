@@ -142,6 +142,9 @@
                 <a href="ShowDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
             </div><br />
             <div class="rightMenuColor">
+                <a href="support.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; تبلیغات </a>
+            </div><br />
+            <div class="rightMenuColor">
                 <a href="support.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
             </div><br />
             <div class="rightMenuColor">
@@ -162,80 +165,102 @@
         </div>
         <div class="col-lg-offset-2">
             <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                <div class="form-horizontal">
+                <form class="form-horizontal" id="addShop-form">
 
                     <div class="form-group">
                         <div class="col-md-11">
                             
-                            <select class="form-control w3-margin" name="Type" style="height:40px; background-color:#F2F2F2" required>
-                                <option value=""> نوع فروشگاه را انتخاب کنید</option>
+                            <select class="form-control w3-margin" required name="shopKind"
+                                    id="addShop-form-shopKind-inp"
+                                    style="height:40px; background-color:#F2F2F2">
+                                <option class="placeholder" selected disabled hidden value="" >نوع فروشگاه</option>
+                                <option value="" disabled ></option>
                                 <!--need a for to read shop types from db-->
-                                <option value="@shopTypeID1">@shopType1</option>
-                                <option value="@shopTypeID2">@shopType2</option>
-                                <option value="@shopTypeID3">@shopType3</option>
+                                <option value="" id="addShop-form-shopKind-lastOp-op" disabled ></option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="username" value="" class="form-control w3-margin" id="editProfile-form-first-name-inp"
-                                         accept="application/txt" />
-                            <label> نام </label>
+                            <input type="text" required name="shopName" value=""
+                                   class="form-control w3-margin"
+                                   id="addShop-form-shopName-inp"
+                                   accept="application/txt" />
+                            <label> نام فروشگاه </label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="file" required autofocus name="ImageSrc" id="editProfile-form-image-inp"
-                                                 value="" class="form-control w3-margin" accept="image/*" />
+                             <input type="file" required name="shopImage" value=""
+                                    class="form-control w3-margin"
+                                    id="addShop-form-shopImage-inp"
+                                    accept="image/*" />
                              <label class="pictureInput">تصویر فروشگاه</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="text" required autofocus name="phoneNumber" value="" class="form-control w3-margin" id="editProfile-form-phone-number-inp"
-                                                accept="application/txt" />
+                             <input type="tel" required name="phoneNumber" value=""
+                                    class="form-control w3-margin"
+                                    id="addShop-form-phoneNumber-inp"
+                                    accept="application/txt" />
                              <label> شماره تلفن </label>
                         </div>
                     </div>
 
-
-
                     <div class="form-group">
                         <div class="col-md-11">
-                          
-                            <select class="form-control w3-margin" name="Type" style="height:40px ; background-color:#F2F2F2" required>
-                                <option value=""> شهر مورد نظر را انتخاب کنید</option>
+                            <select class="form-control w3-margin w3-trasparent" required name="city"
+                                    id="addShop-form-city-inp"
+                                    style="height:40px ; background-color:#F2F2F2">
+                                <option class="placeholder" selected disabled hidden value="" >شهر</option>
+                                <option value="" disabled ></option>
                                 <!--need a for to read city names from db-->
-                                <option value="@cityID1">@cityName1</option>
-                                <option value="@cityID2">@cityName2</option>
-                                <option value="@cotyID3">@cityName3</option>
+                                <option value="" id="addShop-form-city-lastOp-op" disabled ></option>
                             </select>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="text" required autofocus name="address" value="" class="form-control w3-margin" id="editProfile-form-address-inp"
-                                           accept="application/txt" />
+                             <input type="text" required name="address" value=""
+                                    class="form-control w3-margin"
+                                    id="addShop-form-address-inp"
+                                    accept="application/txt" />
                             <label> آدرس </label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="file" required autofocus name="ImageSrc" id="editProfile-form-image-inp"
-                                   value="" class="form-control w3-margin" accept="image/*" />
+                            <input type="text" required name="code" value=""
+                                   class="form-control w3-margin"
+                                   id="addShop-form-code-inp"
+                                   accept="application/txt" />
+                            <label> کد جواز کسب </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <input type="file" required name="codeImage" value=""
+                                   class="form-control w3-margin"
+                                   id="addShop-form-codeImage-inp"
+                                   accept="image/*" />
                             <label class="pictureInput">تصویر جواز کسب</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
-                            <input type="submit" value="ذخیره" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
+                            <input type="submit" value="ذخیره" class="btn btn-default btnColors"
+                                   id="addShop-form-submit-btn" />
                         </div>
                     </div>
-                </div>
+
+                </form>
             </div>
         </div>
     </div>
@@ -262,5 +287,126 @@
             }
         }
     </script>
+
+    <script>
+
+        $(document).ready( function () {
+
+            const addShop_form_var = document.getElementById("addShop-form");
+            // addShop_form_var.email.value=window.sessionStorage.email;
+
+
+            $.get("address.txt", function (data) {
+                const my_address = data + "shops/";
+                $.ajax({
+                    type: 'GET',
+                    // dataType: 'json',
+                    // contentType: 'application/json',
+                    url: my_address,
+                    // data: signUp_complete_info_json,
+                    success: function(resultData, status, xhr){
+                        alert(resultData.message);
+                        if (resultData.result.toString() === "true") {
+                            for (let val of (resultData.shops)) {
+                                const op = document.createElement("option");
+                                const opText = document.createTextNode(val.name);
+                                const lastOp = document.getElementById("addShop-form-shopKind-lastOp-op");
+                                op.value = val.id;
+                                op.appendChild(opText);
+                                addShop_form_var.shopKind.insertBefore(op,lastOp);
+                            }
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");}
+                })
+            });
+
+
+            $.get("address.txt", function (data) {
+                const my_address = data + "cities/";
+                $.ajax({
+                    type: 'GET',
+                    // dataType: 'json',
+                    // contentType: 'application/json',
+                    url: my_address,
+                    // data: signUp_complete_info_json,
+                    success: function(resultData, status, xhr){
+                        alert(resultData.message);
+                        if (resultData.result.toString() === "true") {
+                            for (let val of (resultData.cities)) {
+                                const op = document.createElement("option");
+                                const opText = document.createTextNode(val.name);
+                                const lastOp = document.getElementById("addShop-form-city-lastOp-op");
+                                op.value = val.id;
+                                op.appendChild(opText);
+                                addShop_form_var.city.insertBefore(op,lastOp);
+                            }
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");}
+                })
+            });
+
+
+            $("#addShop-form").submit(function (e) {
+                e.preventDefault();
+
+                const shopKind_var = addShop_form_var.shopKind.value;
+                const shopName_var = addShop_form_var.shopName.value;
+                const shopImage_var = addShop_form_var.shopImage.value;
+                const phoneNumber_var = addShop_form_var.phoneNumber.value;
+                const city_var = addShop_form_var.city.value;
+                const address_var = addShop_form_var.address.value;
+                const  code_var = addShop_form_var.code.value;
+                const  codeImage_var = addShop_form_var.codeImage.value;
+
+
+                // if (username_var.length >= 5 ) {
+                    const addShop_obj = {
+
+                        shop_kind : shopKind_var,
+                        shop_name : shopName_var,
+                        shop_image : shopImage_var,
+                        phone_number : phoneNumber_var,
+                        city : city_var,
+                        address : address_var,
+                        code : code_var,
+                        code_image : codeImage_var
+
+                    };
+
+                    const addShop_json = JSON.stringify(addShop_obj);
+
+                    $.get("address.txt", function (data) {
+                        const my_address = data + "add-shop/";
+                        $.ajax({
+                            type: 'POST',
+                            // dataType: 'json',
+                            // contentType: 'application/json',
+                            url: my_address,
+                            data: addShop_json,
+                            success: function(resultData, status, xhr){
+                                alert(resultData.message);
+                                if (resultData.result.toString() === "true") {
+                                    // window.location.href="AdminMainPage.html";
+                                }
+                            },
+                            error: function () {
+                                alert(" اتصال به اینترنت برقرار نیست. ");}
+                        })
+
+                    });
+                // } else
+                //     alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
+            });
+
+        });
+
+
+    </script>
+
+
 </body>
 </html>
