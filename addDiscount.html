@@ -168,7 +168,7 @@
                               <div class="col-md-11">
                                   <input type="text" required name="productName" value=""
                                          class="form-control w3-margin"
-                                         id="addDiscount-form-product-name-inp" accept="application/txt" />
+                                         id="addDiscount-form-productName-inp" accept="application/txt" />
                                   <label> نام محصول * </label>
                               </div>
                           </div>
@@ -177,7 +177,7 @@
                               <div class="col-md-11">
                                   <input type="file" required name="productBarcodeImage" value=""
                                          class="form-control w3-margin pictureInput" 
-                                         id="addDiscount-form-product-barcode-image-file" accept="image/*" />
+                                         id="addDiscount-form-productBarcodeImage-file" accept="image/*" />
                                   <label> تصویر بارکد * </label>
                               </div>
                           </div>
@@ -186,7 +186,7 @@
                               <div class="col-md-11">
                                    <input type="text" required name="productCode" value=""
                                                           class="form-control w3-margin"
-                                                          id="addDiscount-form-product-code-inp" accept="application/txt" />
+                                                          id="addDiscount-form-productCode-inp" accept="application/txt" />
                                      <label> شناسه محصول * </label>
                               </div>
                           </div>
@@ -194,7 +194,7 @@
                               <div class="col-md-11">
                                   <input type="text" required name="productBrand" value=""
                                                         class="form-control w3-margin pictureInput"
-                                                        id="addDiscount-form-product-brand-inp" accept="application/txt" />
+                                                        id="addDiscount-form-productBrand-inp" accept="application/txt" />
                                   <label> برند محصول * </label>
                               </div>
                           </div>
@@ -211,7 +211,7 @@
                               <div class="col-md-11">
                                     <input type="text" required name="percentCode" value=""
                                                      class="form-control w3-margin"
-                                                     id="addDiscount-form-percent-code-inp" accept="application/txt" />
+                                                     id="addDiscount-form-percentCode-inp" accept="application/txt" />
                                   <label> کد تخفیف </label>
                               </div>
                           </div>
@@ -236,9 +236,9 @@
 
                           <div class="form-group">
                               <div class="col-md-11">
-                                   <input type="file" required name="ImageSrc" value="productImage"
+                                   <input type="file" required name="productImage" value=""
                                                      class="form-control w3-margin pictureInput"
-                                                     id="addDiscount-form-product-image-inp" accept="image/*" />
+                                                     id="addDiscount-form-productImage-inp" accept="image/*" />
                                    <label> تصویر محصول </label>
                               </div>
                           </div>
@@ -295,29 +295,34 @@
             $("#addDiscount-form").submit(function (e) {
                 e.preventDefault();
 
-                const addDiscount_form_var = document.getElementById("login_form");
+                const addDiscount_form_var = document.getElementById("addDiscount_form");
                 const username_var = addDiscount_form_var.username.value;
                 const password_var = addDiscount_form_var.password.value;
 
 
                 // if (username_var.length >= 5 && password_var.length >= 5) {
-                    const login_obj = {
+                    const addDiscount_obj = {
                         username: username_var,
                         password: password_var
                     };
-                    const login_json = JSON.stringify(login_obj);
+                    const addDiscount_json = JSON.stringify(addDiscount_obj);
 
                     $.post("address.txt", function (data) {
-                        const my_address = data + "login-salesman/";
+                        const my_address = data + "addDiscount/";
 
                         $.ajax({
                             type: 'POST',
+                            ///شاید باید کامنت کنم تست شود
                             dataType: 'json',
                             contentType: 'application/json',
                             url: my_address,
-                            data: login_json,
-                            success: function(result, status, xhr){
-                                alert(result.message);},
+                            data: addDiscount_json,
+                            success: function(resultData, status, xhr){
+                                alert(resultData.message);
+                                if (resultData.result.toString() === "true") {
+                                    // window.location.href="AdminMainPage.html";
+                                }
+                                },
                             error: function () {
                                 alert(" اتصال به اینترنت برقرار نیست. ");}
                         })
