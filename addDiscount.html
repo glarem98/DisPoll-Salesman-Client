@@ -138,7 +138,7 @@
                 <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
             </div><br />
             <div class="rightMenuColor">
-                <a href="support.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; تبلیغات </a>
+                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; تبلیغات </a>
             </div><br />
             <div class="rightMenuColor">
                 <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
@@ -300,7 +300,7 @@
                 const password_var = addDiscount_form_var.password.value;
 
 
-                if (username_var.length >= 5 && password_var.length >= 5) {
+                // if (username_var.length >= 5 && password_var.length >= 5) {
                     const login_obj = {
                         username: username_var,
                         password: password_var
@@ -323,8 +323,8 @@
                         })
 
                     });
-                } else
-                    alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
+                // } else
+                //     alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
             });
 
         });
