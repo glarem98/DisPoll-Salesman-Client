@@ -7,10 +7,11 @@
     <meta name="language" content="fa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+<!--    <link href="Content/bootstrap.min.css" rel="stylesheet" />-->
     <link href="Content/css/bootstrap-rtl.css" rel="stylesheet" />
     <link href="Content/css/w3.css" rel="stylesheet" />
     <link href="ParsaFont/Style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/ckeditor/ckeditor.js"></script>
     <script src="Scripts/bootstrap-rtl.js"></script>
@@ -18,7 +19,6 @@
     <script src="Scripts/jquery.validate.unobtrusive.min.js"></script>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 </head>
 <body style="background-color:#E5E5E5">
@@ -140,6 +140,9 @@
                 <a href="ShowDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
             </div><br />
             <div class="rightMenuColor">
+                <a href="support.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; تبلیغات </a>
+            </div><br />
+            <div class="rightMenuColor">
                 <a href="support.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
             </div><br />
             <div class="rightMenuColor">
@@ -164,17 +167,37 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="email" required autofocus name="email" value=""
+                            <input type="email" required name="email" value=""
                                    class="form-control w3-margin"
                                    id="editProfile-form-email-inp"
                                    accept="application/txt" />
-                            <label> ایمیل</label>
+<!--                            <label> ایمیل</label>-->
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="username" required autofocus name="username" value=""
+                            <input type="password" required  name="oldPassword" value=""
+                                   class="form-control w3-margin"
+                                   id="editProfile-form-old-password-inp"
+                                   accept="application/txt" />
+                            <label> رمز فعلی </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <input type="password" required name="newPassword" value=""
+                                   class="form-control w3-margin"
+                                   id="editProfile-form-new-password-inp"
+                                   accept="application/txt" />
+                            <label>رمز جدید</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-11">
+                             <input type="username" required name="username" value=""
                                     class="form-control w3-margin w3-trasparent"
                                     id="editProfile-form-username-inp"
                                     accept="application/txt" />
@@ -184,7 +207,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="firstName" value=""
+                            <input type="text" required name="firstName" value=""
                                    class="form-control w3-margin"
                                    id="editProfile-form-first-name-inp"
                                    accept="application/txt" />
@@ -194,7 +217,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="lastName" value=""
+                            <input type="text" required name="lastName" value=""
                                    class="form-control w3-margin"
                                    id="editProfile-form-last-name-inp"
                                    accept="application/txt" />
@@ -204,7 +227,25 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="tel" required autofocus name="phoneNumber" value=""
+
+                            <select class="form-control w3-margin w3-trasparent" name="gender"
+                                    id="editProfile-form-gender-inp"
+                                    style="height:40px;background-color:#F2F2F2 !important" required>
+                                <option class="placeholder" selected disabled hidden value="" >جنسیت</option>
+                                <!--distance in another way-->
+                                <option value="" disabled ></option>
+                                <option value="female">زن</option>
+                                <option value="male">مرد</option>
+                                <option value="other">سایر</option>
+                                <option value="" disabled ></option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-11">
+                             <input type="tel" required name="phoneNumber" value=""
                                     class="form-control w3-margin"
                                     id="editProfile-form-phone-number-inp"
                                     accept="application/txt" />
@@ -214,7 +255,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="address" value=""
+                            <input type="text" name="address" value=""
                                    class="form-control w3-margin"
                                    id="editProfile-form-address-inp"
                                    accept="application/txt" />
@@ -227,41 +268,17 @@
                             <select class="form-control w3-margin w3-trasparent" name="city"
                                     id="editProfile-form-city-inp"
                                     style="height:40px ; background-color:#F2F2F2" required>
-                                <option value=""> شهر مورد نظر را انتخاب کنید</option>
+                                <option class="placeholder" selected disabled hidden value="" >شهر</option>
+                                <option value="" disabled ></option>
                                 <!--need a for to read city names from db-->
-                                <option value="@cityID1">@cityName1</option>
-                                <option value="@cityID2">@cityName2</option>
-                                <option value="@cotyID3">@cityName3</option>
-                            </select>
-                        </div>
-                    </div>
-
-<!--                    <div class="form-group">-->
-<!--                        <div class="col-md-11">-->
-<!--                            <input type="text" required autofocus name="Password" value="" class="form-control w3-margin" id="editProfile-form-city-inp"-->
-<!--                                   accept="application/txt" />-->
-<!--                            <label> شهر</label>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-                    <div class="form-group">
-                        <div class="col-md-11"> 
-         
-                            <select class="form-control w3-margin w3-trasparent" name="Type"
-                                    id="editProfile-form-gender-inp"
-                                    style="height:40px;background-color:#F2F2F2 !important" required>
-                                <option value="">جنسیت انتخاب کنید</option>
-                                <!--need a for to read shop types from db-->
-                                <option value="female">زن</option>
-                                <option value="male">مرد</option>
-                                <option value="other">سایر</option>
+                                <option value=""  id="editProfile-form-city-lastOp-op" disabled ></option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-11" style="color:#7B8084 !important">
-                             <input type="file" required autofocus name="image" id="editProfile-form-image-inp"
+                             <input type="file" name="image" id="editProfile-form-image-inp"
                                                 value="" class="form-control w3-margin" accept="image/*" />
                              <label class="pictureInput">تصویر آواتار</label>
                         </div>
@@ -309,10 +326,40 @@
     <script>
 
         $(document).ready( function () {
+            const editProfile_form_var = document.getElementById("editProfile-form");
+
+            $.get("address.txt", function (data) {
+                const my_address = data + "cities/";
+                $.ajax({
+                    type: 'GET',
+                    // dataType: 'json',
+                    // contentType: 'application/json',
+                    url: my_address,
+                    // data: signUp_complete_info_json,
+                    success: function(resultData, status, xhr){
+                        alert(resultData.message);
+                        if (resultData.result.toString() === "true") {
+                            for (let val of (resultData.cities)) {
+                                const op = document.createElement("option");
+                                const opText = document.createTextNode(val.name);
+                                const lastOp = document.getElementById("editProfile-form-city-lastOp-op");
+                                op.value = val.id;
+                                op.appendChild(opText);
+                                editProfile_form_var.city.insertBefore(op,lastOp);
+                            }
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");}
+                })
+            });
+
+
+
+            editProfile_form_var.email.value=window.sessionStorage.email;
             $("#editProfile-form").submit(function (e) {
                 e.preventDefault();
 
-                const editProfile_form_var = document.getElementById("editProfile-form");
                 // const password_var = editProfile_form_var.password.value;
 
 
@@ -326,8 +373,8 @@
                 const  gender_var = editProfile_form_var.gender.value;
                 //const  image_var = editProfile_form_var.image.value;
 
+                alert(city_var);
 
-                if (username_var.length >= 5 ) {
                     const editProfile_obj = {
                         username: username_var,
                         first_name: firstName_var,
@@ -341,13 +388,13 @@
                     };
                     const editProfile_json = JSON.stringify(editProfile_obj);
 
-                    $.post("address.txt", function (data) {
+                    $.get("address.txt", function (data) {
                         const my_address = data + "edit-profile-salesman/";
 
                         $.ajax({
                             type: 'POST',
-                            dataType: 'json',
-                            contentType: 'application/json',
+                            // dataType: 'json',
+                            // contentType: 'application/json',
                             url: my_address,
                             data: editProfile_json,
                             success: function(resultData, status, xhr){
@@ -361,9 +408,7 @@
                         })
 
                     });
-                } else
-                    alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
-            });
+               });
 
         });
 
