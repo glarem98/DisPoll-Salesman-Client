@@ -161,102 +161,36 @@
     <br />
     <div class="container">
         <div class=" w3-xlarge w3-center" style="color:#7B8084; margin-bottom:20px">
-            فرم ایجاد فروشگاه
+            فرم ایجاد تبلیغ
         </div>
         <div class="col-lg-offset-2">
             <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                <form class="form-horizontal" id="addShop-form">
+                <form class="form-horizontal" id="advertisement-form">
+
+<!--                    <div class="form-group">-->
+<!--                        <div class="col-md-11">-->
+<!--                            <input type="text" required name="code" value=""-->
+<!--                                   class="form-control w3-margin"-->
+<!--                                   id="advertisement-form-code-inp"-->
+<!--                                   accept="application/txt" />-->
+<!--                            <label> ? </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            
-                            <select class="form-control w3-margin" required name="shopKind"
-                                    id="addShop-form-shopKind-inp"
-                                    style="height:40px; background-color:#F2F2F2">
-                                <option class="placeholder" selected disabled hidden value="" >نوع فروشگاه</option>
-                                <option value="" disabled ></option>
-                                <!--need a for to read shop types from db-->
-                                <option value="" id="addShop-form-shopKind-lastOp-op" disabled ></option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-11">
-                            <input type="text" required name="shopName" value=""
+                            <input type="file" required name="image" value=""
                                    class="form-control w3-margin"
-                                   id="addShop-form-shopName-inp"
-                                   accept="application/txt" />
-                            <label> نام فروشگاه </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-11">
-                             <input type="file" required name="shopImage" value=""
-                                    class="form-control w3-margin"
-                                    id="addShop-form-shopImage-inp"
-                                    accept="image/*" />
-                             <label class="pictureInput">تصویر فروشگاه</label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-11">
-                             <input type="tel" required name="phoneNumber" value=""
-                                    class="form-control w3-margin"
-                                    id="addShop-form-phoneNumber-inp"
-                                    accept="application/txt" />
-                             <label> شماره تلفن </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-11">
-                            <select class="form-control w3-margin w3-trasparent" required name="city"
-                                    id="addShop-form-city-inp"
-                                    style="height:40px ; background-color:#F2F2F2">
-                                <option class="placeholder" selected disabled hidden value="" >شهر</option>
-                                <option value="" disabled ></option>
-                                <!--need a for to read city names from db-->
-                                <option value="" id="addShop-form-city-lastOp-op" disabled ></option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-11">
-                             <input type="text" required name="address" value=""
-                                    class="form-control w3-margin"
-                                    id="addShop-form-address-inp"
-                                    accept="application/txt" />
-                            <label> آدرس </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-11">
-                            <input type="text" required name="code" value=""
-                                   class="form-control w3-margin"
-                                   id="addShop-form-code-inp"
-                                   accept="application/txt" />
-                            <label> کد جواز کسب </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-11">
-                            <input type="file" required name="codeImage" value=""
-                                   class="form-control w3-margin"
-                                   id="addShop-form-codeImage-inp"
+                                   id="advertisement-form-image-inp"
                                    accept="image/*" />
-                            <label class="pictureInput">تصویر جواز کسب</label>
+                            <label class="pictureInput"> تصویر تبلیغ </label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
-                            <input type="submit" value="ذخیره" class="btn btn-default btnColors"
-                                   id="addShop-form-submit-btn" />
+                            <input type="submit" value="ارسال تبلیغ" class="btn btn-default btnColors"
+                                   id="advertisement-form-submit-btn" />
                         </div>
                     </div>
 
@@ -295,98 +229,30 @@
             const addShop_form_var = document.getElementById("addShop-form");
             // addShop_form_var.email.value=window.sessionStorage.email;
 
+            //اوردن فروشگاه ها
 
-            $.get("address.txt", function (data) {
-                const my_address = data + "shops/";
-                $.ajax({
-                    type: 'GET',
-                    // dataType: 'json',
-                    // contentType: 'application/json',
-                    url: my_address,
-                    // data: signUp_complete_info_json,
-                    success: function(resultData, status, xhr){
-                        alert(resultData.message);
-                        if (resultData.result.toString() === "true") {
-                            for (let val of (resultData.shops)) {
-                                const op = document.createElement("option");
-                                const opText = document.createTextNode(val.name);
-                                const lastOp = document.getElementById("addShop-form-shopKind-lastOp-op");
-                                op.value = val.id;
-                                op.appendChild(opText);
-                                addShop_form_var.shopKind.insertBefore(op,lastOp);
-                            }
-                        }
-                    },
-                    error: function () {
-                        alert(" اتصال به اینترنت برقرار نیست. ");}
-                })
-            });
-
-
-            $.get("address.txt", function (data) {
-                const my_address = data + "cities/";
-                $.ajax({
-                    type: 'GET',
-                    // dataType: 'json',
-                    // contentType: 'application/json',
-                    url: my_address,
-                    // data: signUp_complete_info_json,
-                    success: function(resultData, status, xhr){
-                        alert(resultData.message);
-                        if (resultData.result.toString() === "true") {
-                            for (let val of (resultData.cities)) {
-                                const op = document.createElement("option");
-                                const opText = document.createTextNode(val.name);
-                                const lastOp = document.getElementById("addShop-form-city-lastOp-op");
-                                op.value = val.id;
-                                op.appendChild(opText);
-                                addShop_form_var.city.insertBefore(op,lastOp);
-                            }
-                        }
-                    },
-                    error: function () {
-                        alert(" اتصال به اینترنت برقرار نیست. ");}
-                })
-            });
-
-
-            $("#addShop-form").submit(function (e) {
+            $("#advertisement-form").submit(function (e) {
                 e.preventDefault();
 
-                const shopKind_var = addShop_form_var.shopKind.value;
-                const shopName_var = addShop_form_var.shopName.value;
-                const shopImage_var = addShop_form_var.shopImage.value;
-                const phoneNumber_var = addShop_form_var.phoneNumber.value;
-                const city_var = addShop_form_var.city.value;
-                const address_var = addShop_form_var.address.value;
-                const  code_var = addShop_form_var.code.value;
-                const  codeImage_var = addShop_form_var.codeImage.value;
-
+                const  image_var = advertisement_form_var.image.value;
 
                 // if (username_var.length >= 5 ) {
-                    const addShop_obj = {
+                    const advertisement_obj = {
 
-                        shop_kind : shopKind_var,
-                        shop_name : shopName_var,
-                        shop_image : shopImage_var,
-                        phone_number : phoneNumber_var,
-                        city : city_var,
-                        address : address_var,
-                        code : code_var,
-                        code_image : codeImage_var
+                        image : image_var
 
                     };
 
-                    const addShop_json = JSON.stringify(addShop_obj);
+                    const advertisement_json = JSON.stringify(advertisement_obj);
 
                     $.get("address.txt", function (data) {
-                        const my_address = data + "add-shop/";
+                        const my_address = data + "add-advertisement/";
                         $.ajax({
                             type: 'POST',
                             // dataType: 'json',
                             // contentType: 'application/json',
                             url: my_address,
-                            data: addShop_json,
+                            data: advertisement_json,
                             success: function(resultData, status, xhr){
                                 alert(resultData.message);
                                 if (resultData.result.toString() === "true") {
