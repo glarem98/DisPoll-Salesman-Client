@@ -296,14 +296,21 @@
                 e.preventDefault();
 
                 const addDiscount_form_var = document.getElementById("addDiscount_form");
-                const username_var = addDiscount_form_var.username.value;
-                const password_var = addDiscount_form_var.password.value;
+                const productName_var = addDiscount_form_var.productName.value;
+                const productBarcodeImage_var = addDiscount_form_var.productBarcodeImage.value;
+                const productCode_var = addDiscount_form_var.productCode.value;
+                const productBrand_var = addDiscount_form_var.productBrand.value;
+                const percent_var = addDiscount_form_var.percent.value;
+                const percentCode_var = addDiscount_form_var.percentCode.value;
+                const timeout_var = addDiscount_form_var.timeout.value;
+                const description_var = addDiscount_form_var.description.value;
+                const productImage_var = addDiscount_form_var.productImage.value;
+                
 
-
-                // if (username_var.length >= 5 && password_var.length >= 5) {
+                // if (productName_var.length >= 5 && productBarcodeImage_var.length >= 5) {
                     const addDiscount_obj = {
-                        username: username_var,
-                        password: password_var
+                        product_name: productName_var
+                        //اشتباه در نام گذاری و فیلد ها
                     };
                     const addDiscount_json = JSON.stringify(addDiscount_obj);
 
