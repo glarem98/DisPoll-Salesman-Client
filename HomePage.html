@@ -469,7 +469,7 @@
                 };
                 const signUp_json = JSON.stringify(signUp_obj);
 
-                $.post("address.txt", function (data) {
+                $.get("address.txt", function (data) {
                     const my_address = data + "signup-salesman/email-auth/";
 
                     $.ajax({
@@ -481,61 +481,70 @@
                         success: function (resultData, status, xhr) {
                             alert(resultData.message);
                             if (resultData.result.toString() === "true") {
-                                $("#signUp_confirm_email_model").modal({backdrop: "static"});
 
-                                $("#signUp_resend_code").click(function () {
-                                    const signUp_resend_code_obj = {
-                                        email: email_var,
-                                    };
-                                    const signUp_resend_code_json = JSON.stringify(signUp_resend_code_obj);
-                                    const first_address = data + "signup-salesman/resend-code/";
-                                    $.ajax({
-                                        type: 'POST',
-                                        dataType: 'json',
-                                        contentType: 'application/json',
-                                        url: first_address,
-                                        data: signUp_resend_code_json,
-                                        success: function (resultData, status, xhr) {
-                                            alert(resultData.message);
-                                            if (resultData.result.toString() === "true") {
-                                                alert("change");
+                                if (document.getElementById("signUp_email_auth_form_captcha_inp").value === code) {
+                                    alert("Valid Captcha")
+
+                                    $("#signUp_confirm_email_model").modal({backdrop: "static"});
+
+                                    $("#signUp_resend_code").click(function () {
+                                        const signUp_resend_code_obj = {
+                                            email: email_var,
+                                        };
+                                        const signUp_resend_code_json = JSON.stringify(signUp_resend_code_obj);
+                                        const first_address = data + "signup-salesman/resend-code/";
+                                        $.ajax({
+                                            type: 'POST',
+                                            dataType: 'json',
+                                            contentType: 'application/json',
+                                            url: first_address,
+                                            data: signUp_resend_code_json,
+                                            success: function (resultData, status, xhr) {
+                                                alert(resultData.message);
+                                                if (resultData.result.toString() === "true") {
+                                                    alert("change");
+                                                }
+                                            },
+                                            error: function () {
+                                                alert(" اتصال به اینترنت برقرار نیست. ");
                                             }
-                                        },
-                                        error: function () {
-                                            alert(" اتصال به اینترنت برقرار نیست. ");
-                                        }
-                                    })
-                                });
+                                        })
+                                    });
 
-                                $("#signUp_confirm_email_model_btn").click(function () {
-                                    const code_var = document.getElementById("signUp_confirm_email_model_inp").value;
+                                    $("#signUp_confirm_email_model_btn").click(function () {
+                                        const code_var = document.getElementById("signUp_confirm_email_model_inp").value;
 
-                                    const signUp_confirm_email_obj = {
-                                        email: email_var,
-                                        code: code_var
-                                    };
-                                    const signUp_confirm_email_json = JSON.stringify(signUp_confirm_email_obj);
-                                    const second_address = data + "signup-salesman/confirm-email/";
-                                    $.ajax({
-                                        type: 'POST',
-                                        dataType: 'json',
-                                        contentType: 'application/json',
-                                        url: second_address,
-                                        data: signUp_confirm_email_json,
-                                        success: function (resultData, status, xhr) {
-                                            alert(resultData.message);
-                                            if (resultData.result.toString() === "true") {
-                                                window.sessionStorage.setItem("email", email_var);
-                                                alert(window.sessionStorage.email);
-                                                window.location.href="editprofile.html";
+                                        const signUp_confirm_email_obj = {
+                                            email: email_var,
+                                            code: code_var
+                                        };
+                                        const signUp_confirm_email_json = JSON.stringify(signUp_confirm_email_obj);
+                                        const second_address = data + "signup-salesman/confirm-email/";
+                                        $.ajax({
+                                            type: 'POST',
+                                            dataType: 'json',
+                                            contentType: 'application/json',
+                                            url: second_address,
+                                            data: signUp_confirm_email_json,
+                                            success: function (resultData, status, xhr) {
+                                                alert(resultData.message);
+                                                if (resultData.result.toString() === "true") {
+                                                    window.sessionStorage.setItem("email", email_var);
+                                                    alert(window.sessionStorage.email);
+                                                    window.location.href="completeInfo.html";
+                                                }
+                                            },
+                                            error: function () {
+                                                alert(" اتصال به اینترنت برقرار نیست. ");
                                             }
-                                        },
-                                        error: function () {
-                                            alert(" اتصال به اینترنت برقرار نیست. ");
-                                        }
-                                    })
+                                        })
 
-                                });
+                                    });
+
+                                } else {
+                                    alert("Invalid Captcha. try Again");
+                                    createCaptcha();
+                                }
 
                             }
                         },
@@ -560,12 +569,12 @@
 
             if (username_var.length >= 5 && password_var.length >= 5) {
                 const login_obj = {
-                    username: username_var,
+                    email: username_var,
                     password: password_var
                 };
                 const login_json = JSON.stringify(login_obj);
 
-                $.post("address.txt", function (data) {
+                $.get("address.txt", function (data) {
                     const my_address = data + "login-salesman/";
 
                     $.ajax({
@@ -575,7 +584,9 @@
                         url: my_address,
                         data: login_json,
                         success: function(result, status, xhr){
-                            alert(result.message);},
+                            alert(result.message);
+                            window.location.href="AdminMainPage.html";
+                            },
                         error: function () {
                             alert(" اتصال به اینترنت برقرار نیست. ");}
                     })
