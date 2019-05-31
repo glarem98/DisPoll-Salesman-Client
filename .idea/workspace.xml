@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d10e1cb-5767-43e3-b348-44c2480bd13d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/HomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/addShop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/address.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/completeInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/completeInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/editprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminMainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminMainPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addDiscount.html" beforeDir="false" afterPath="$PROJECT_DIR$/addDiscount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addPoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/addPoll.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showDiscount.html" beforeDir="false" afterPath="$PROJECT_DIR$/showDiscount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showPoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/showPoll.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/showShop.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,7 +26,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HomePage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="796">
+            <state relative-caret-position="4772">
               <caret line="541" column="39" selection-start-line="541" selection-start-column="39" selection-end-line="541" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -49,11 +50,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/showShop.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editprofile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1944">
-              <caret line="342" column="50" lean-forward="true" selection-start-line="342" selection-start-column="50" selection-end-line="342" selection-end-column="50" />
+            <state relative-caret-position="228">
+              <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -61,17 +71,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/completeInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-341">
-              <caret line="333" column="109" selection-start-line="333" selection-start-column="109" selection-end-line="333" selection-end-column="109" />
+            <state relative-caret-position="197">
+              <caret line="144" column="24" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addShop.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="144" column="134" selection-start-line="144" selection-start-column="134" selection-end-line="144" selection-end-column="134" />
+            <state relative-caret-position="218">
+              <caret line="145" column="24" lean-forward="true" selection-start-line="143" selection-start-column="12" selection-end-line="145" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -99,9 +109,15 @@
       <list>
         <option value="$PROJECT_DIR$/testfor.html" />
         <option value="$PROJECT_DIR$/HomePage.html" />
+        <option value="$PROJECT_DIR$/addShop.html" />
         <option value="$PROJECT_DIR$/completeInfo.html" />
         <option value="$PROJECT_DIR$/editprofile.html" />
-        <option value="$PROJECT_DIR$/addShop.html" />
+        <option value="$PROJECT_DIR$/addPoll.html" />
+        <option value="$PROJECT_DIR$/addDiscount.html" />
+        <option value="$PROJECT_DIR$/AdminMainPage.html" />
+        <option value="$PROJECT_DIR$/showDiscount.html" />
+        <option value="$PROJECT_DIR$/showPoll.html" />
+        <option value="$PROJECT_DIR$/showShop.html" />
       </list>
     </option>
   </component>
@@ -187,12 +203,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559164441602</updated>
-      <workItem from="1559164446344" duration="52944000" />
+      <workItem from="1559164446344" duration="53492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52944000" />
+    <option name="totallyTimeSpent" value="53492000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -297,9 +313,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/completeInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="144" column="24" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editprofile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addShop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="145" column="24" lean-forward="true" selection-start-line="143" selection-start-column="12" selection-end-line="145" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addPoll.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="144" column="24" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addDiscount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="141" column="24" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showDiscount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="108" column="24" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminMainPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showPoll.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="156" column="24" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HomePage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
+        <state relative-caret-position="4772">
           <caret line="541" column="39" selection-start-line="541" selection-start-column="39" selection-end-line="541" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -322,27 +394,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AdminMainPage.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editprofile.html">
+    <entry file="file://$PROJECT_DIR$/showShop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1944">
-          <caret line="342" column="50" lean-forward="true" selection-start-line="342" selection-start-column="50" selection-end-line="342" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/completeInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341">
-          <caret line="333" column="109" selection-start-line="333" selection-start-column="109" selection-end-line="333" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addShop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="144" column="134" selection-start-line="144" selection-start-column="134" selection-end-line="144" selection-end-column="134" />
+        <state relative-caret-position="222">
+          <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
         </state>
       </provider>
     </entry>
