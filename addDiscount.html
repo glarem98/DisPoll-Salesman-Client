@@ -7,340 +7,393 @@
     <meta name="language" content="fa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/css/bootstrap-rtl.css" rel="stylesheet" />
-    <link href="Content/css/w3.css" rel="stylesheet" />
-    <link href="ParsaFont/Style.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet"/>
+    <link href="Content/css/bootstrap-rtl.css" rel="stylesheet"/>
+    <link href="Content/css/w3.css" rel="stylesheet"/>
+    <link href="ParsaFont/Style.css" rel="stylesheet"/>
     <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/ckeditor/ckeditor.js"></script>
     <script src="Scripts/bootstrap-rtl.js"></script>
     <script src="Scripts/jquery.validate.min.js"></script>
     <script src="Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
     <title>@ViewBag.Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 </head>
 <body style="background-color:#E5E5E5">
-    <style>
-        .componentColor {
-            background-color: #F2F2F2 !important;
-        }
+<style>
+    .componentColor {
+        background-color: #F2F2F2 !important;
+    }
 
-        .btnColors {
-            background-color: #006DA0 !important;
-            color: #ECEDEF !important;
-        }
+    .btnColors {
+        background-color: #006DA0 !important;
+        color: #ECEDEF !important;
+    }
 
-        /*.btnHoverColor:hover {
-            background-color: #d3df13 !important;
-            color: #212121 !important;
-        }*/
-        .navigationBarColor {
-            background-color: #21262A !important;
-            color: #7B8084;
-        }
+    /*.btnHoverColor:hover {
+        background-color: #d3df13 !important;
+        color: #212121 !important;
+    }*/
+    .navigationBarColor {
+        background-color: #21262A !important;
+        color: #7B8084;
+    }
 
-        .rightMenuColor {
-            background-color: #2F3438 !important;
-            color: #EFF0F4;
-        }
+    .rightMenuColor {
+        background-color: #2F3438 !important;
+        color: #EFF0F4;
+    }
 
-            .rightMenuColor:hover {
-                background-color: #181B20 !important;
-                color: #02B2E1;
-            }
+    .rightMenuColor:hover {
+        background-color: #181B20 !important;
+        color: #02B2E1;
+    }
 
-        .dropbtn {
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
-        .pictureInput {
-            top: -1px;
-            font-size: 12px;
-            padding-left: 3px;
-            padding-right: 3px;
-            padding-bottom: 2px;
-            color: #7B8084 !important;
-            background: #F2F2F2 !important;
-            background-size: 50px 30px;
-        }
-        input[type=text] {
-            padding: 12px 20px;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+    .dropbtn {
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
 
-        input {
-            font-size: 18px;
-            padding: 10px 10px 10px 5px;
-            display: block;
-            width: 300px;
-            border: 1px solid #212121;
-            background: transparent !important;
-            color: #212121;
-            /*border-radius: 10px;*/
-        }
+    .pictureInput {
+        top: -1px;
+        font-size: 12px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-bottom: 2px;
+        color: #7B8084 !important;
+        background: #F2F2F2 !important;
+        background-size: 50px 30px;
+    }
 
-        label {
-            color: #7B8084 !important;
-            font-weight: normal !important;
-            position: absolute;
-            pointer-events: none;
-            right: 45px;
-            top: 20px;
-        }
+    input[type=text] {
+        padding: 12px 20px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-        input:focus ~ label,
-        input:valid ~ label {
-            top: -1px;
-            font-size: 12px;
-            padding-left: 3px;
-            padding-right: 3px;
-            padding-bottom: 3px;
-            color: #7B8084 !important;
-            background: #F2F2F2 !important;
-            background-size: 50px 30px;
-        }
+    input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 300px;
+        border: 1px solid #212121;
+        background: transparent !important;
+        color: #212121;
+        /*border-radius: 10px;*/
+    }
 
-        input:focus,
-        input:valid {
-            border-color: #006DA0 !important;
-        }
-    </style>
-    <nav class="w3-sidenav w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
-        <div class="w3-margin ">
-            <div class="w3-center " style="margin-top:8px !important">
-                <img class="w3-center w3-closenav w3-xlarge " src="avatar/man-with-tie.png" style="width:100px ; height:100px" />
-            </div>
-            <br />
-            <a href="www.google.com" class="rightMenuColor w3-center"> &nbsp;نام کاربر</a>
-            <br />
-            <a class="rightMenuColor" onclick="myFunction('Demo1')">
-                <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
-                &nbsp;<span class="glyphicon glyphicon-chevron-down " id="more" style="color:#7B8084;margin-top:2px"></span>
+    label {
+        color: #7B8084 !important;
+        font-weight: normal !important;
+        position: absolute;
+        pointer-events: none;
+        right: 45px;
+        top: 20px;
+    }
+
+    input:focus ~ label,
+    input:valid ~ label {
+        top: -1px;
+        font-size: 12px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-bottom: 3px;
+        color: #7B8084 !important;
+        background: #F2F2F2 !important;
+        background-size: 50px 30px;
+    }
+
+    input:focus,
+    input:valid {
+        border-color: #006DA0 !important;
+    }
+</style>
+<nav class="w3-sidenav w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
+    <div class="w3-margin ">
+        <div class="w3-center " style="margin-top:8px !important">
+            <img class="w3-center w3-closenav w3-xlarge " src="avatar/man-with-tie.png"
+                 style="width:100px ; height:100px"/>
+        </div>
+        <br/>
+        <a href="www.google.com" class="rightMenuColor w3-center"> &nbsp;نام کاربر</a>
+        <br/>
+        <a class="rightMenuColor" onclick="myFunction('Demo1')">
+            <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
+            &nbsp;<span class="glyphicon glyphicon-chevron-down " id="more" style="color:#7B8084;margin-top:2px"></span>
+        </a>
+        <div id="Demo1" class="w3-container w3-hide ">
+            <a class="rightMenuColor" href="#"> &nbsp;فروشگاه اول</a>
+            <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
+            <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
+            <a class="w3-center rightMenuColor"> <span class="glyphicon glyphicon-plus"></span> &nbsp;جدید&nbsp;</a>
+        </div>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
+                                                                  style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
+                من </a>
+        </div>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
+                                                                  style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
             </a>
-            <div id="Demo1" class="w3-container w3-hide ">
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه اول</a>
-                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
-                <a class="w3-center rightMenuColor"> <span class="glyphicon glyphicon-plus"></span> &nbsp;جدید&nbsp;</a>
-            </div>
-            <br />
-            <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-signal" style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های من </a>
-            </div><br />
-            <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
-            </div><br />
-            <div class="rightMenuColor">
-                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; تبلیغات </a>
-            </div><br />
-            <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
-            </div><br />
-            <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-off" style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل </a>
-            </div><br />
         </div>
-    </nav>
-    <header class="w3-container navigationBarColor ">
-        <span class="w3-opennav w3-xlarge w3-right" id="rightMenu_open_btn">&#9776;</span>
-        <div class="text-center">
-            <h1> <span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text " style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important" href="HomePage.html">DisPoll</span></h1>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                                                                          style="color:#7B8084"></span>&nbsp;&nbsp;
+                تبلیغات </a>
         </div>
-    </header>
-    <br />
+        <br/>
+        <div class="rightMenuColor">
+            <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                                                                  style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی
+            </a>
+        </div>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-off"
+                                                                  style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+            </a>
+        </div>
+        <br/>
+    </div>
+</nav>
+<header class="w3-container navigationBarColor ">
+    <span class="w3-opennav w3-xlarge w3-right" id="rightMenu_open_btn">&#9776;</span>
+    <div class="text-center">
+        <h1><span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text "
+                  style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important"
+                  href="HomePage.html">DisPoll</span></h1>
+    </div>
+</header>
+<br/>
 
-          <div class="container">
-              <div class=" w3-xlarge w3-center" style="color:#7B8084; margin-bottom:20px">
-                  فرم ایجاد تخفیف
-              </div>
-              <div class="col-lg-offset-2">
-                  <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                      <form class="form-horizontal" id="addDiscount-form">
+<div class="container">
+    <div class=" w3-xlarge w3-center" style="color:#7B8084; margin-bottom:20px">
+        فرم ایجاد تخفیف
+    </div>
+    <div class="col-lg-offset-2">
+        <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
+            <form class="form-horizontal" id="addDiscount-form">
 
-                          <div class="form-group">
-                              <div class="col-md-11">
-                                  <input type="text" required name="productName" value=""
-                                         class="form-control w3-margin"
-                                         id="addDiscount-form-productName-inp" accept="application/txt" />
-                                  <label> نام محصول * </label>
-                              </div>
-                          </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="text" required name="productName" value=""
+                               class="form-control w3-margin"
+                               id="addDiscount-form-productName-inp" accept="application/txt"/>
+                        <label> نام محصول * </label>
+                    </div>
+                </div>
 
-                          <div class="form-group">
-                              <div class="col-md-11">
-                                  <input type="file" required name="productBarcodeImage" value=""
-                                         class="form-control w3-margin pictureInput" 
-                                         id="addDiscount-form-productBarcodeImage-file" accept="image/*" />
-                                  <label> تصویر بارکد * </label>
-                              </div>
-                          </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="file" required name="productBarcodeImage" value=""
+                               class="form-control w3-margin pictureInput"
+                               id="addDiscount-form-productBarcodeImage-file" accept="image/*"/>
+                        <label> تصویر بارکد * </label>
+                    </div>
+                </div>
 
-                          <div class="form-group">
-                              <div class="col-md-11">
-                                   <input type="text" required name="productCode" value=""
-                                                          class="form-control w3-margin"
-                                                          id="addDiscount-form-productCode-inp" accept="application/txt" />
-                                     <label> شناسه محصول * </label>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-md-11">
-                                  <input type="text" required name="productBrand" value=""
-                                                        class="form-control w3-margin pictureInput"
-                                                        id="addDiscount-form-productBrand-inp" accept="application/txt" />
-                                  <label> برند محصول * </label>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-md-11" >
-                                  <input type="range" required name="percent" min="0" max="100" step="5" value="10"
-                                                       class="form-control w3-margin"
-                                                       id="addDiscount-form-percent-inp" accept="application/txt"/>
-                                  <label> درصد تخفیف   </label>
-                              </div>
-                          </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="text" required name="productCode" value=""
+                               class="form-control w3-margin"
+                               id="addDiscount-form-productCode-inp" accept="application/txt"/>
+                        <label> شناسه محصول * </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="text" required name="productBrand" value=""
+                               class="form-control w3-margin pictureInput"
+                               id="addDiscount-form-productBrand-inp" accept="application/txt"/>
+                        <label> برند محصول * </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="range" required name="percent" min="0" max="100" step="5" value="10"
+                               class="form-control w3-margin"
+                               id="addDiscount-form-percent-inp" accept="application/txt"/>
+                        <label> درصد تخفیف </label>
+                    </div>
+                </div>
 
-                          <div class="form-group">
-                              <div class="col-md-11">
-                                    <input type="text" required name="percentCode" value=""
-                                                     class="form-control w3-margin"
-                                                     id="addDiscount-form-percentCode-inp" accept="application/txt" />
-                                  <label> کد تخفیف </label>
-                              </div>
-                          </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="text" required name="percentCode" value=""
+                               class="form-control w3-margin"
+                               id="addDiscount-form-percentCode-inp" accept="application/txt"/>
+                        <label> کد تخفیف </label>
+                    </div>
+                </div>
 
-                          <div class="form-group">
-                              <div class="col-md-11">
-<!--                                  تعویض تاریخ-->
-                                  <input type="date" required autofocus value="" name="timeout"
-                                                 class="form-control w3-margin pictureInput"
-                                                 id="addDiscount-form-timeout-inp" accept="application/txt">
-                                  <label> مهلت </label>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-md-11">
-                                  <input type="text" required name="description" value=""
-                                                    class="form-control w3-margin"
-                                                    id="addDiscount-form-description-inp" accept="application/txt" />
-                                  <label> توضیحات </label>
-                              </div>
-                          </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="text" required name="countNumber" value=""
+                               class="form-control w3-margin"
+                               id="addDiscount-form-countNumber-inp" accept="application/txt"/>
+                        <label> تعداد </label>
+                    </div>
+                </div>
 
-                          <div class="form-group">
-                              <div class="col-md-11">
-                                   <input type="file" required name="productImage" value=""
-                                                     class="form-control w3-margin pictureInput"
-                                                     id="addDiscount-form-productImage-inp" accept="image/*" />
-                                   <label> تصویر محصول </label>
-                              </div>
-                          </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <!--                                  تعویض تاریخ-->
+                        <input type="date" required autofocus value="" name="expireDate"
+                               class="form-control w3-margin pictureInput"
+                               id="addDiscount-form-expireDate-inp" accept="application/txt">
+                        <label> تاریخ انقضا </label>
+                    </div>
+                </div>
 
-                          <div class="form-group">
-                              <div class="col-md-offset-5 col-md-11">
-                                  <input type="submit" value="ذخیره" id="addDiscount-form-submit-btn" class="btn btn-default btnColors" />
-                              </div>
-                          </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="text" required name="timeout" value=""
+                               class="form-control w3-margin"
+                               id="addDiscount-form-timeout-inp" accept="application/txt"/>
+                        <label> مهلت </label>
+                    </div>
+                </div>
 
-                          <br />
-                          <div class="form-group">
-                              <div class="col-md-11">
-                                  * : وارد کردن تنها یکی از این موارد کافی می باشد.
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-              </div>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="text" required name="description" value=""
+                               class="form-control w3-margin"
+                               id="addDiscount-form-description-inp" accept="application/txt"/>
+                        <label> توضیحات </label>
+                    </div>
+                </div>
 
-          </div>
-    <br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="file" required name="productImage" value=""
+                               class="form-control w3-margin pictureInput"
+                               id="addDiscount-form-productImage-inp" accept="image/*"/>
+                        <label> تصویر محصول </label>
+                    </div>
+                </div>
 
-    <footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
-        تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
-        <br />
-        طراحی و پیاده سازی توسط Group G
-    </footer>
+                <div class="form-group">
+                    <div class="col-md-offset-5 col-md-11">
+                        <input type="submit" value="ذخیره" id="addDiscount-form-submit-btn"
+                               class="btn btn-default btnColors"/>
+                    </div>
+                </div>
 
-    <script>
-        //script for design website
+                <br/>
+                <div class="form-group">
+                    <div class="col-md-11">
+                        * : وارد کردن تنها یکی از این موارد کافی می باشد.
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
+    تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
+    <br/>
+    طراحی و پیاده سازی توسط Group G
+</footer>
+
+<script>
+    //script for design website
 
 
-        function myFunction(id) {
-            var x = document.getElementById(id);
-            const y =document.getElementById("more");
-            y.style.transform = "rotate(180deg)";
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-                y.style.transform = "rotate(0deg)";
-            }
+    function myFunction(id) {
+        var x = document.getElementById(id);
+        const y = document.getElementById("more");
+        y.style.transform = "rotate(180deg)";
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+            y.style.transform = "rotate(0deg)";
         }
-    </script>
+    }
+</script>
 
-    <script>
-         //script for design connection to the server
+<script>
+    //script for design connection to the server
 
 
-        $(document).ready( function () {
-            $("#addDiscount-form").submit(function (e) {
-                e.preventDefault();
+    $(document).ready(function () {
+        $("#addDiscount-form").submit(function (e) {
+            e.preventDefault();
 
-                const addDiscount_form_var = document.getElementById("addDiscount_form");
-                const productName_var = addDiscount_form_var.productName.value;
-                const productBarcodeImage_var = addDiscount_form_var.productBarcodeImage.value;
-                const productCode_var = addDiscount_form_var.productCode.value;
-                const productBrand_var = addDiscount_form_var.productBrand.value;
-                const percent_var = addDiscount_form_var.percent.value;
-                const percentCode_var = addDiscount_form_var.percentCode.value;
-                const timeout_var = addDiscount_form_var.timeout.value;
-                const description_var = addDiscount_form_var.description.value;
-                const productImage_var = addDiscount_form_var.productImage.value;
-                
+            const addDiscount_form_var = document.getElementById("addDiscount_form");
+            // const productName_var = addDiscount_form_var.productName.value;
+            // const productBarcodeImage_var = addDiscount_form_var.productBarcodeImage.value;
+            // const productCode_var = addDiscount_form_var.productCode.value;
+            // const productBrand_var = addDiscount_form_var.productBrand.value;
+            // const percent_var = addDiscount_form_var.percent.value;
+            // const percentCode_var = addDiscount_form_var.percentCode.value;
+            // const count_var = addDiscount_form_var.countNumber.value;
+            // const expireDate_var = addDiscount_form_var.expireDate.value;
+            // const timeout_var = addDiscount_form_var.timeout.value;
+            // const description_var = addDiscount_form_var.description.value;
+            // const productImage_var = addDiscount_form_var.productImage.value;
 
-                // if (productName_var.length >= 5 && productBarcodeImage_var.length >= 5) {
-                    const addDiscount_obj = {
-                        product_name: productName_var
-                        //اشتباه در نام گذاری و فیلد ها
-                    };
-                    const addDiscount_json = JSON.stringify(addDiscount_obj);
+            //درست شود همه ای دی های ذخیره شده در سشن
+            alert(window.sessionStorage.shop_id);
 
-                    $.post("address.txt", function (data) {
-                        const my_address = data + "addDiscount/";
 
-                        $.ajax({
-                            type: 'POST',
-                            ///شاید باید کامنت کنم تست شود
-                            dataType: 'json',
-                            contentType: 'application/json',
-                            url: my_address,
-                            data: addDiscount_json,
-                            success: function(resultData, status, xhr){
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    // window.location.href="AdminMainPage.html";
-                                }
-                                },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");}
-                        })
+            // if (productName_var.length >= 5 && productBarcodeImage_var.length >= 5) {
+            const addDiscount_obj = {
+                product_name: "کیف",
+                product_id: "123456789",
+                percent: "30",
+                count: "12",
+                shop: "1",
+                expire_date: "2019-12-21",
+                days: "17"
+                //اشتباه در نام گذاری و فیلد ها
+            };
+            const addDiscount_json = JSON.stringify(addDiscount_obj);
 
-                    });
-                // } else
-                //     alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
+
+            $.post("address.txt", function (data) {
+                const my_address = data + "add-discount/";
+
+                $.ajax({
+                    type: 'POST',
+                    ///شاید باید کامنت کنم تست شود
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    url: my_address,
+                    data: addDiscount_json,
+                    success: function (resultData, status, xhr) {
+                        alert(resultData.message);
+                        if (resultData.result.toString() === "true") {
+                            // window.location.href="AdminMainPage.html";
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");
+                    }
+                })
+
             });
-
+            // } else
+            //     alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
         });
 
-    </script>
+    });
+
+</script>
 </body>
 </html>
