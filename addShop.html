@@ -170,13 +170,13 @@
                     <div class="form-group">
                         <div class="col-md-11">
                             
-                            <select class="form-control w3-margin" required name="shopKind"
-                                    id="addShop-form-shopKind-inp"
+                            <select class="form-control w3-margin" required name="shopKinds"
+                                    id="addShop-form-shopKinds-inp"
                                     style="height:40px; background-color:#F2F2F2">
                                 <option class="placeholder" selected disabled hidden value="" >نوع فروشگاه</option>
                                 <option value="" disabled ></option>
                                 <!--need a for to read shop types from db-->
-                                <option value="" id="addShop-form-shopKind-lastOp-op" disabled ></option>
+                                <option value="" id="addShop-form-shopKinds-lastOp-op" disabled ></option>
                             </select>
                         </div>
                     </div>
@@ -297,7 +297,7 @@
 
 
             $.get("address.txt", function (data) {
-                const my_address = data + "shops/";
+                const my_address = data + "shop-kinds/";
                 $.ajax({
                     type: 'GET',
                     // dataType: 'json',
@@ -307,13 +307,13 @@
                     success: function(resultData, status, xhr){
                         alert(resultData.message);
                         if (resultData.result.toString() === "true") {
-                            for (let val of (resultData.shops)) {
+                            for (let val of (resultData.shop_kinds)) {
                                 const op = document.createElement("option");
                                 const opText = document.createTextNode(val.name);
-                                const lastOp = document.getElementById("addShop-form-shopKind-lastOp-op");
+                                const lastOp = document.getElementById("addShop-form-shopKinds-lastOp-op");
                                 op.value = val.id;
                                 op.appendChild(opText);
-                                addShop_form_var.shopKind.insertBefore(op,lastOp);
+                                addShop_form_var.shopKinds.insertBefore(op,lastOp);
                             }
                         }
                     },
@@ -353,40 +353,62 @@
             $("#addShop-form").submit(function (e) {
                 e.preventDefault();
 
-                const shopKind_var = addShop_form_var.shopKind.value;
+                const shopKind_var = addShop_form_var.shopKinds.value;
                 const shopName_var = addShop_form_var.shopName.value;
                 const shopImage_var = addShop_form_var.shopImage.value;
                 const phoneNumber_var = addShop_form_var.phoneNumber.value;
                 const city_var = addShop_form_var.city.value;
                 const address_var = addShop_form_var.address.value;
-                const  code_var = addShop_form_var.code.value;
-                const  codeImage_var = addShop_form_var.codeImage.value;
+                // const code_var = addShop_form_var.code.value;
+                // const codeImage_var = addShop_form_var.codeImage.src;
 
+                alert(window.sessionStorage.id);
+                //dorost shavad
 
                 // if (username_var.length >= 5 ) {
-                    const addShop_obj = {
+                //     const addShop_obj = {
+                //
+                //         salesman : '1',
+                //         shop_kind : shopKind_var,
+                //         name : shopName_var,
+                //         // picture : shopImage_var,
+                //         phone_number : phoneNumber_var,
+                //         city : city_var,
+                //         address : address_var,
+                //         // code : code_var,
+                //         // business_license :
+                //
+                //     };
 
-                        shop_kind : shopKind_var,
-                        shop_name : shopName_var,
-                        shop_image : shopImage_var,
-                        phone_number : phoneNumber_var,
-                        city : city_var,
-                        address : address_var,
-                        code : code_var,
-                        code_image : codeImage_var
+                var codeImg =$("#addShop-form-codeImage-inp").get(0).files[0];
 
-                    };
+                var formData = new FormData();
+                formData.append("business_license", codeImg);
+                formData.append("salesman", "1");
+                formData.append("shop_kind", shopKind_var);
+                formData.append("name", shopName_var);
+                formData.append("phone_number", phoneNumber_var);
+                formData.append("city", city_var);
+                formData.append("address", address_var);
 
-                    const addShop_json = JSON.stringify(addShop_obj);
 
-                    $.get("address.txt", function (data) {
+
+                // const addShop_json = JSON.stringify(addShop_obj);
+
+
+                alert(formData.toString());
+
+
+                $.get("address.txt", function (data) {
                         const my_address = data + "add-shop/";
                         $.ajax({
                             type: 'POST',
-                            // dataType: 'json',
-                            // contentType: 'application/json',
                             url: my_address,
-                            data: addShop_json,
+                            dataType: 'json',
+                            contentType: false,
+                            processData: false,
+                            data: formData,
+
                             success: function(resultData, status, xhr){
                                 alert(resultData.message);
                                 if (resultData.result.toString() === "true") {
