@@ -114,8 +114,8 @@
     <div class="container" style="background-color:none !important">
         <div class="col-lg-offset-2">
             <div class="col-container">
-                <div class="col componentColor">
-                    <h2 class="w3-margin-right">  نام فروشگاه </h2>
+                <div class="col componentColor" >
+                    <h2 class="w3-margin-right" id="showShop-name" >  نام فروشگاه </h2>
                     <br />
                     <img src="avatar/shop.jpg" style=" width:400px;height:400px" />
                     <br />
@@ -123,19 +123,19 @@
                 <div class="col componentColor">
                     <br />
                     <br />
-                    <div>
+                    <div id="showShop-shopKind">
                          این فروشگاه در دسته ی @shopType قرار دارد .
                     </div>
                     <div>
-                        <div>
+                        <div id="showShop-city">
                             <br />
                             واقع در شهر @City
                         </div>
-                        <div>
+                        <div id="showShop-address">
                             <br />
                             با آدرس  @address .
                         </div>
-                        <div>
+                        <div id="showShop-phoneNumber">
                             <br />
                             شماره تماس : @phone
                         </div>
@@ -143,11 +143,15 @@
                     </div>
                     <br />
                     <br />
-                    <div class="form-group">
-                        <div class="col-md-offset-7 col-md-11">
-                            <input type="submit" value=" ویرایش اطلاعات " class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
-                        </div>
-                    </div>
+
+
+                    <button class="btn btnColors" id="showShop-btn"> ویرایش اطلاعات<button/>
+
+<!--                    <div class="form-group">-->
+<!--                        <div class="col-md-offset-7 col-md-11">-->
+<!--                            <input type="submit" value=" ویرایش اطلاعات " class="btn btn-default btnColors" id="editProfile-form-submit-btn" />-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
             </div>
