@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d10e1cb-5767-43e3-b348-44c2480bd13d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminMainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminMainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addDiscount.html" beforeDir="false" afterPath="$PROJECT_DIR$/addDiscount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/addShop.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/address.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advertisementPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/advertisementPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/completeInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/completeInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/editprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/salePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/showShop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcsrf.html" beforeDir="false" afterPath="$PROJECT_DIR$/testcsrf.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -90,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testcsrf.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="52" column="31" lean-forward="true" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+            <state relative-caret-position="425">
+              <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -117,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HomePage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="681" column="7" lean-forward="true" selection-start-line="681" selection-start-column="7" selection-end-line="681" selection-end-column="7" />
+            <state relative-caret-position="530">
+              <caret line="670" column="46" selection-start-line="670" selection-start-column="46" selection-end-line="670" selection-end-column="46" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -178,13 +170,13 @@
         <option value="$PROJECT_DIR$/AdminMainPage.html" />
         <option value="$PROJECT_DIR$/addDiscount.html" />
         <option value="$PROJECT_DIR$/addShop.html" />
-        <option value="$PROJECT_DIR$/testcsrf.html" />
         <option value="$PROJECT_DIR$/completeInfo.html" />
         <option value="$PROJECT_DIR$/HomePage.html" />
+        <option value="$PROJECT_DIR$/testcsrf.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="21" />
     <option name="width" value="1346" />
@@ -273,12 +265,12 @@
       <updated>1559164441602</updated>
       <workItem from="1559164446344" duration="57669000" />
       <workItem from="1559394765075" duration="54006000" />
-      <workItem from="1559558061997" duration="1586000" />
+      <workItem from="1559558061997" duration="2547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113261000" />
+    <option name="totallyTimeSpent" value="114222000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,13 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testcsrf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="52" column="31" lean-forward="true" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdminMainPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -522,8 +507,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HomePage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="681" column="7" lean-forward="true" selection-start-line="681" selection-start-column="7" selection-end-line="681" selection-end-column="7" />
+        <state relative-caret-position="530">
+          <caret line="670" column="46" selection-start-line="670" selection-start-column="46" selection-end-line="670" selection-end-column="46" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -539,6 +524,13 @@
             <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcsrf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
         </state>
       </provider>
     </entry>
