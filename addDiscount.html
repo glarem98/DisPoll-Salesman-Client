@@ -7,7 +7,7 @@
     <meta name="language" content="fa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Content/bootstrap.min.css" rel="stylesheet"/>
+  <!--  <link href="Content/bootstrap.min.css" rel="stylesheet"/>-->
     <link href="Content/css/bootstrap-rtl.css" rel="stylesheet"/>
     <link href="Content/css/w3.css" rel="stylesheet"/>
     <link href="ParsaFont/Style.css" rel="stylesheet"/>
@@ -30,6 +30,8 @@
     .btnColors {
         background-color: #006DA0 !important;
         color: #ECEDEF !important;
+        width:auto!important;
+
     }
 
     /*.btnHoverColor:hover {
@@ -59,11 +61,11 @@
     }
 
     .pictureInput {
-        top: -1px;
+        top: -1px !important;
         font-size: 12px;
         padding-left: 3px;
         padding-right: 3px;
-        padding-bottom: 2px;
+        padding-bottom: 3px;
         color: #7B8084 !important;
         background: #F2F2F2 !important;
         background-size: 50px 30px;
@@ -202,7 +204,7 @@
                         <input type="file" required name="productBarcodeImage" value=""
                                class="form-control w3-margin pictureInput"
                                id="addDiscount-form-productBarcodeImage-file" accept="image/*"/>
-                        <label> تصویر بارکد * </label>
+                        <label class="pictureInput"> تصویر بارکد * </label>
                     </div>
                 </div>
 
@@ -255,14 +257,14 @@
                         <input type="date" required value="" name="expireDate"
                                class="form-control w3-margin pictureInput"
                                id="addDiscount-form-expireDate-inp" accept="application/txt">
-                        <label> تاریخ انقضا </label>
+                        <label class="pictureInput"> تاریخ انقضا </label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-11">
                         <input type="text" required name="timeout" value=""
-                               class="form-control w3-margin"
+                               class="form-control w3-margin pictureInput"
                                id="addDiscount-form-timeout-inp" accept="application/txt"/>
                         <label> مهلت </label>
                     </div>
@@ -280,9 +282,9 @@
                 <div class="form-group">
                     <div class="col-md-11">
                         <input type="file" required name="productImage" value=""
-                               class="form-control w3-margin pictureInput"
+                               class="form-control w3-margin"
                                id="addDiscount-form-productImage-inp" accept="image/*"/>
-                        <label> تصویر محصول </label>
+                        <label class="pictureInput"> تصویر محصول </label>
                     </div>
                 </div>
 
