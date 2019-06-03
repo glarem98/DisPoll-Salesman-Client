@@ -185,7 +185,7 @@
             <!-- <img  style="width:300px;height:200px" src="avatar/shop.jpg"  />-->
         </div>
         <div class="col componentColor ">
-            <div class="col-lg-offset-2">
+            <div class="col-lg-offset-4">
                 <div class="componentColor">
                     <div class="tab btn-group">
                         <button class="tablinks active" onclick="openDIV(event, 'signUp-email-auth')"
@@ -197,8 +197,7 @@
                 </div>
             </div>
             <div id="signUp-email-auth" class="tabcontent" style="display: block">
-                <div>
-                    <div class="col-lg-offset-2">
+                    <div class="col-lg-offset-4">
                         <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
                             <form id="signUp-email-auth-form" class="form-horizontal">
 
@@ -232,9 +231,9 @@
                                     </div>
                                 </div>
 
-                                <div class="w3-margin">تصویر امنیتی زیر را وارد کنید و به خاطر داشته باشید که کد به حروف
+                                <!--<div class="w3-margin">تصویر امنیتی زیر را وارد کنید و به خاطر داشته باشید که کد به حروف
                                     بزرگ و کوچک حساس است.
-                                </div>
+                                </div>-->
                                 <div class="w3-center">
 
                                     <div class="form-group w3-center">
@@ -243,7 +242,7 @@
                                             <br/>
                                             <div style="display: table;width: 100%;margin-left:5px !important">
                                                 <div style="display:table-cell">
-                                                    <input type="text" required placeholder="Captcha"
+                                                    <input class="w3-center" type="text" required placeholder="Captcha"
                                                            id="signUp-email-auth-form-captcha-inp"
                                                            accept="application/txt" style="width:300px ; height:40px"/>
                                                 </div>
@@ -268,11 +267,9 @@
                             </form>
                         </div>
                     </div>
-
-                </div>
             </div>
             <div id="login" class="tabcontent">
-                <div class="col-lg-offset-2">
+                <div class="col-lg-offset-4">
                     <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
                         <form id="login-form" class="form-horizontal">
 
@@ -281,7 +278,7 @@
                                     <input type="text" required autofocus name="email" value=""
                                            class="form-control w3-margin"
                                            id="login-form-email-inp"
-                                           accept="application/txt"/>
+                                           accept="application/txt" />
                                     <label> پست الکترونیکی </label>
                                 </div>
                             </div>
@@ -291,15 +288,21 @@
                                     <input type="password" required autofocus name="password" value=""
                                            class="form-control w3-margin"
                                            id="login-form-password-inp"
-                                           accept="application/txt"/>
+                                           accept="application/txt" />
                                     <label> کلمه عبور </label>
                                 </div>
                             </div>
-
+                            <div class="form-group w3-margin">
+                                <input id="signUp-email-auth-form-condition-chbox" required type="checkbox"
+                                       style="float: right;margin-left:13px !important; margin-top:20px !important; margin-right:13px !important; width:15px;height:15px">
+                                <div style="margin-left:8px;" class="w3-margin">
+                                    ورود به عنوان فروشنده
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <div class="col-md-offset-5 col-md-10">
                                     <input type="submit" value="ورود " class="btn btn-default btnColors"
-                                           id="login-form-submit-btn"/>
+                                           id="login-form-submit-btn" />
                                 </div>
                             </div>
 
