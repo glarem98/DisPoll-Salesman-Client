@@ -293,7 +293,7 @@
                                 </div>
                             </div>
                             <div class="form-group w3-margin">
-                                <input id="signUp-email-auth-form-condition-chbox" required type="checkbox"
+                                <input id="login-form-condition-chbox" type="checkbox"
                                        style="float: right;margin-left:13px !important; margin-top:20px !important; margin-right:13px !important; width:15px;height:15px">
                                 <div style="margin-left:8px;" class="w3-margin">
                                     ورود به عنوان فروشنده
@@ -649,29 +649,12 @@
                                 window.sessionStorage.setItem("lastName", resultData.salesman.last_name);
                                 window.sessionStorage.setItem("shops", resultData.salesman.shops);
                                 //فروشگاه ها رو هم میخواهم
-                                window.location.href="AdminMainPage.html";
-
-
-                                function getCookie(name) {
-                                    var cookieValue = null;
-                                    if (document.cookie && document.cookie !== '') {
-                                        var cookies = document.cookie.split(';');
-                                        for (var i = 0; i < cookies.length; i++) {
-                                            var cookie = cookies[i].trim();
-                                            // Does this cookie string begin with the name we want?
-                                            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    return cookieValue;
+                                // window.location.href="AdminMainPage.html";
+                                if(document.getElementById("login-form-condition-chbox").checked){
+                                    window.location.href="AdminMainPage.html";
+                                }else{
+                                    window.location.href="PatronMainPage.html";
                                 }
-
-                                var sd=getCookie('csrftoken');
-                                console.log(sd)
-
-                                alert("wait");
                                 //
                                 // console.log(xhr)
                                 // console.dir(xhr)
