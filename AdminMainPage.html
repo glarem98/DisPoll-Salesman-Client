@@ -7,124 +7,180 @@
     <meta name="language" content="fa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/css/bootstrap-rtl.css" rel="stylesheet" />
-    <link href="Content/css/w3.css" rel="stylesheet" />
-    <link href="ParsaFont/Style.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet"/>
+    <link href="Content/css/bootstrap-rtl.css" rel="stylesheet"/>
+    <link href="Content/css/w3.css" rel="stylesheet"/>
+    <link href="ParsaFont/Style.css" rel="stylesheet"/>
     <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/ckeditor/ckeditor.js"></script>
     <script src="Scripts/bootstrap-rtl.js"></script>
     <script src="Scripts/jquery.validate.min.js"></script>
     <script src="Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
     <title>@ViewBag.Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 </head>
 <body style="background-color:#E5E5E5">
-    <style>
+<style>
 
-        .componentColor {
-            background-color: #F2F2F2 !important;
-        }
+    .componentColor {
+        background-color: #F2F2F2 !important;
+    }
 
-        .btnColors {
-            background-color: #006DA0 !important;
-            color: #ECEDEF !important;
-        }
+    .btnColors {
+        background-color: #006DA0 !important;
+        color: #ECEDEF !important;
+    }
 
-        /*.btnHoverColor:hover {
-            background-color: #d3df13 !important;
-            color: #212121 !important;
-        }*/
-        .navigationBarColor {
-            background-color: #21262A !important;
-            color: #7B8084;
-        }
+    /*.btnHoverColor:hover {
+        background-color: #d3df13 !important;
+        color: #212121 !important;
+    }*/
+    .navigationBarColor {
+        background-color: #21262A !important;
+        color: #7B8084;
+    }
 
-        .rightMenuColor {
-            background-color: #2F3438 !important;
-            color: #EFF0F4;
-        }
+    .rightMenuColor {
+        background-color: #2F3438 !important;
+        color: #EFF0F4;
+    }
 
-            .rightMenuColor:hover {
-                background-color: #181B20 !important;
-                color: #02B2E1;
-            }
+    .rightMenuColor:hover {
+        background-color: #181B20 !important;
+        color: #02B2E1;
+    }
 
-        .dropbtn {
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
+    .dropbtn {
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
 
 
-    </style>
-    <nav class="w3-sidenav w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
-        <div class="w3-margin ">
-            <div class="w3-center " style="margin-top:8px !important">
-                <img class="w3-center w3-closenav w3-xlarge " src="avatar/man-with-tie.png" style="width:100px ; height:100px" />
-           </div>
-            <br />
-            <a href="www.google.com" class="rightMenuColor w3-center"> &nbsp;نام کاربر</a>
-            <br />
-            <a class="rightMenuColor" onclick="myFunction('Demo1')">
-                <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
-                &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
+</style>
+<nav class="w3-sidenav w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
+    <div class="w3-margin ">
+        <div class="w3-center " style="margin-top:8px !important">
+            <img class="w3-center w3-closenav w3-xlarge " src="avatar/man-with-tie.png"
+                 id="admin-img"
+                 style="width:100px ; height:100px"/>
+        </div>
+        <br/>
+        <a href="editprofile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
+        <br/>
+        <a class="rightMenuColor" onclick="myFunction('Demo1')">
+            <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
+            &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
+        </a>
+        <div id="Demo1" class="w3-container w3-hide ">
+            <a class="rightMenuColor" href="showShop.html"> &nbsp;فروشگاه اول</a>
+            <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
+            <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
+            <a class="w3-center rightMenuColor" href="addShop.html"> <span class="glyphicon glyphicon-plus"></span>
+                &nbsp;جدید&nbsp;</a>
+        </div>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
+                                                                  style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
+                من </a>
+        </div>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
+                                                                  style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
             </a>
-            <div id="Demo1" class="w3-container w3-hide ">
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه اول</a>
-                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
-                <a class="w3-center rightMenuColor"> <span class="glyphicon glyphicon-plus"></span> &nbsp;جدید&nbsp;</a>
-            </div>
-            <br />
-            <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-signal" style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های من </a>
-            </div><br />
-            <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-usd" style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من </a>
-            </div><br />
-            <div class="rightMenuColor">
-                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; تبلیغات </a>
-            </div><br />
-            <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-earphone" style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی </a>
-            </div><br />
-            <div class="rightMenuColor">
-                <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-off" style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل </a>
-            </div><br />
         </div>
-    </nav>
-    <header class="w3-container navigationBarColor ">
-        <span class="w3-opennav w3-xlarge w3-right" id="rightMenu_open_btn">&#9776;</span>
-        <div class="text-center">
-            <h1> <span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text " style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important" href="HomePage.html">DisPoll</span></h1>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                                                                          style="color:#7B8084"></span>&nbsp;&nbsp;
+                تبلیغات </a>
         </div>
-    </header>
-    <br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br/>
+        <div class="rightMenuColor">
+            <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                                                                  style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی
+            </a>
+        </div>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="~/Admin/Logout" class="rightMenuColor"><span class="glyphicon glyphicon-off"
+                                                                  style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+            </a>
+        </div>
+        <br/>
+    </div>
+</nav>
+<header class="w3-container navigationBarColor ">
+    <span class="w3-opennav w3-xlarge w3-right" id="rightMenu_open_btn">&#9776;</span>
+    <div class="text-center">
+        <h1><span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text "
+                  style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important"
+                  href="HomePage.html">DisPoll</span></h1>
+    </div>
+</header>
+<br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-    <footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
-        تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
-        <br />
-        طراحی و پیاده سازی توسط Group G
-    </footer>
+<footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
+    تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
+    <br/>
+    طراحی و پیاده سازی توسط Group G
+</footer>
 
-    <script>
-        function myFunction(id) {
-            var x = document.getElementById(id);
-            const y =document.getElementById("more");
-            y.style.transform = "rotate(180deg)";
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-                y.style.transform = "rotate(0deg)";
-            }
+<script>
+    function myFunction(id) {
+        var x = document.getElementById(id);
+        const y = document.getElementById("more");
+        y.style.transform = "rotate(180deg)";
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+            y.style.transform = "rotate(0deg)";
         }
-    </script>
+    }
+</script>
+
+<script>
+
+    $(document).ready(function () {
+        // alert(window.sessionStorage.avatar);
+        //در غیر اینصورت ها گذاشته شود
+        $("#admin-img").attr("src", window.sessionStorage.avatar);
+        $("#admin-name").text(window.sessionStorage.lastName+ " " + window.sessionStorage.firstName);
+        //فروشگاه ها رو هم میخواهم
+
+        // function getCookie(name) {
+        //     var cookieValue = null;
+        //     console.log(document.cookie)
+        //     if (document.cookie && document.cookie !== '') {
+        //         console.log('SALAM')
+        //         var cookies = document.cookie.split(';');
+        //         console.log(cookies)
+        //         for (var i = 0; i < cookies.length; i++) {
+        //             var cookie = cookies[i].trim();
+        //             // Does this cookie string begin with the name we want?
+        //             if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        //                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //     return cookieValue;
+        // }
+
+        // console.log(getCookie('csrftoken'))
+    });
+
+
+</script>
+
+
 </body>
 </html>

@@ -297,7 +297,7 @@
 
 
             $.get("address.txt", function (data) {
-                const my_address = data + "shop-kinds/";
+                const my_address = data + "/shop-kinds/";
                 $.ajax({
                     type: 'GET',
                     // dataType: 'json',
@@ -324,7 +324,7 @@
 
 
             $.get("address.txt", function (data) {
-                const my_address = data + "cities/";
+                const my_address = data + "/cities/";
                 $.ajax({
                     type: 'GET',
                     // dataType: 'json',
@@ -396,11 +396,12 @@
                 // const addShop_json = JSON.stringify(addShop_obj);
 
 
-                alert(formData.toString());
-
+                // alert(formData.toString());
+                //
+                // alert(window.sessionStorage.csrfToken);
 
                 $.get("address.txt", function (data) {
-                        const my_address = data + "add-shop/";
+                        const my_address = data + "/add-shop/";
                         $.ajax({
                             type: 'POST',
                             url: my_address,
@@ -408,7 +409,11 @@
                             contentType: false,
                             processData: false,
                             data: formData,
-
+                            // headers:{
+                            //     "X-CSRFToken" : window.sessionStorage.csrfToken.toString()
+                            // },
+                            crossDomain: true,
+                            xhrField: {withCredentials: true},
                             success: function(resultData, status, xhr){
                                 alert(resultData.message);
                                 if (resultData.result.toString() === "true") {

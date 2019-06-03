@@ -181,16 +181,6 @@
                         </div>
                     </div>
 
-<!--                    <div class="form-group">-->
-<!--                        <div class="col-md-11">-->
-<!--                            <input type="file" required name="image" value=""-->
-<!--                                   class="form-control w3-margin"-->
-<!--                                   id="sale-form-image-inp"-->
-<!--                                   accept="image/*" />-->
-<!--                            <label class="pictureInput"> تصویر تبلیغ </label>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
                             <input type="submit" value="ثبت کد" class="btn btn-default btnColors"
@@ -230,38 +220,30 @@
 
         $(document).ready( function () {
 
-            const sale_form_var = document.getElementById("sale-form");
-            // sale_form_var.email.value=window.sessionStorage.email;
-
             //اوردن فروشگاه ها
 
             $("#sale-form").submit(function (e) {
                 e.preventDefault();
 
-                const  image_var = sale_form_var.discountCode.value;
-
-                // if (username_var.length >= 5 ) {
-                    const sale_obj = {
-
-                        image : image_var
-
-                    };
-
-                    const sale_json = JSON.stringify(sale_obj);
 
                     $.get("address.txt", function (data) {
                         //ادرس را وارد کن
-                        const my_address = data + "?/";
+                        const my_address = data + "/?/";
+
                         $.ajax({
                             type: 'POST',
-                            // dataType: 'json',
-                            // contentType: 'application/json',
+                            dataType: 'json',
+                            contentType: 'application/json',
                             url: my_address,
-                            data: sale_json,
+                            data: JSON.stringify({
+                                code : $("#sale-form-discountCode-inp"),
+                                shop : "?"
+                            }),
                             success: function(resultData, status, xhr){
                                 alert(resultData.message);
                                 if (resultData.result.toString() === "true") {
-                                    // window.location.href="AdminMainPage.html";
+                                    // window.location.href="salePage.html";
+                                    window.location.reload();
                                 }
                             },
                             error: function () {
@@ -269,10 +251,8 @@
                         })
 
                     });
-                // } else
-                //     alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
-            });
 
+                  });
         });
 
 

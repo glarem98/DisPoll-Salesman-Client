@@ -329,7 +329,7 @@
             const editProfile_form_var = document.getElementById("editProfile-form");
 
             $.get("address.txt", function (data) {
-                const my_address = data + "cities/";
+                const my_address = data + "/cities/";
                 $.ajax({
                     type: 'GET',
                     // dataType: 'json',
@@ -389,7 +389,7 @@
                     const editProfile_json = JSON.stringify(editProfile_obj);
 
                     $.get("address.txt", function (data) {
-                        const my_address = data + "edit-profile-salesman/";
+                        const my_address = data + "/edit-profile-salesman/";
 
                         $.ajax({
                             type: 'POST',

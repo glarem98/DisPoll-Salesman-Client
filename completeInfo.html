@@ -168,7 +168,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="email" required autofocus name="email" value=""
+                            <input type="email" name="email" value=""
                                    class="form-control w3-margin"
                                    id="signUp-complete-info-form-email-inp"
                                    accept="application/txt" disabled />
@@ -178,7 +178,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="password" required autofocus name="email" value=""
+                            <input type="password" name="email" value=""
                                    class="form-control w3-margin"
                                    id="signUp-complete-info-form-password-inp"
                                    accept="application/txt" disabled />
@@ -188,7 +188,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="username" required autofocus name="username" value=""
+                             <input type="username" required name="username" value=""
                                                 class="form-control w3-margin"
                                                 id="signUp-complete-info-form-username-inp"
                                                 accept="application/txt" />
@@ -198,7 +198,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="firstName" value=""
+                            <input type="text" required name="firstName" value=""
                                    class="form-control w3-margin"
                                    id="signUp-complete-info-form-first-name-inp"
                                    accept="application/txt" />
@@ -208,7 +208,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="lastName" value=""
+                            <input type="text" required name="lastName" value=""
                                    class="form-control w3-margin"
                                    id="signUp-complete-info-form-last-name-inp"
                                    accept="application/txt" />
@@ -224,8 +224,8 @@
                                 <option class="placeholder" selected disabled hidden value="" >جنسیت</option>
                                 <!--distance in another way-->
                                 <option value="" disabled ></option>
-                                <option value="female">زن</option>
-                                <option value="male">مرد</option>
+                                <option value="f">زن</option>
+                                <option value="m">مرد</option>
                                 <option value="other">سایر</option>
                                 <option value="" disabled ></option>
                             </select>
@@ -234,7 +234,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="tel" required autofocus name="phoneNumber" value=""
+                             <input type="tel" required name="phoneNumber" value=""
                                                 class="form-control w3-margin"
                                                 id="signUp-complete-info-form-phone-number-inp"
                                                 accept="application/txt" />
@@ -244,7 +244,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="address" value=""
+                            <input type="text" required name="address" value=""
                                             class="form-control w3-margin"
                                             id="signUp-complete-info-form-address-inp"
                                             accept="application/txt" />
@@ -256,7 +256,7 @@
                         <div class="col-md-11">
                             <select class="form-control w3-margin w3-trasparent" name="city"
                                     id="signUp-complete-info-form-city-inp"
-                                    style="height:40px ; background-color:#F2F2F2" required>
+                                    style="height:40px ; background-color:#F2F2F2">
                                 <option class="placeholder" selected disabled hidden value="" >شهر</option>
                                 <option value="" disabled ></option>
                                 <!--need a for to read city names from db-->
@@ -267,7 +267,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11" style="color:#7B8084 !important">
-                             <input type="file" required autofocus name="Image" value=""
+                             <input type="file" name="Image" value=""
                                                 id="signUp-complete-info-form-image-inp"
                                                 class="form-control w3-margin" accept="image/*" />
                              <label class="pictureInput">تصویر آواتار</label>
@@ -318,10 +318,11 @@
         $(document).ready( function () {
 
             const signUp_complete_info_form_var = document.getElementById("signUp-complete-info-form");
-            signUp_complete_info_form_var.email.value=window.sessionStorage.email;
+            $("#signUp-complete-info-form-email-inp").attr("value", window.sessionStorage.email);
+            $("#signUp-complete-info-form-password-inp").attr("value", window.sessionStorage.password);
 
             $.get("address.txt", function (data) {
-                const my_address = data + "cities/";
+                const my_address = data + "/cities/";
                 $.ajax({
                     type: 'GET',
                     // dataType: 'json',
@@ -353,45 +354,50 @@
                 // const password_var = signUp_complete_info_form_var.password.value;
 
 
-                const username_var = signUp_complete_info_form_var.username.value;
-                // const  firstName_var = signUp_complete_info_form_var.firstName.value;
-                // const  lastName_var = signUp_complete_info_form_var.lastName.value;
+                const  username_var = signUp_complete_info_form_var.username.value;
+                const  firstName_var = signUp_complete_info_form_var.firstName.value;
+                const  lastName_var = signUp_complete_info_form_var.lastName.value;
                 const  phoneNumber_var = signUp_complete_info_form_var.phoneNumber.value;
-                const  email_var = signUp_complete_info_form_var.email.value;
                 const  address_var = signUp_complete_info_form_var.address.value;
-                // const  city_var = signUp_complete_info_form_var.city.value;
-                // const  gender_var = signUp_complete_info_form_var.gender.value;
-                //const  image_var = signUp_complete_info_form_var.image.value;
+                const  city_var = signUp_complete_info_form_var.city.value;
+                const  gender_var = signUp_complete_info_form_var.gender.value;
 
 
-                if (username_var.length >= 5 ) {
-                    const signUp_complete_info_obj = {
-                        username: username_var,
-                        password: "12345",
-                        // first_name: firstName_var,
-                        // last_name: lastName_var,
-                        phone_number: phoneNumber_var,
-                        email: email_var,
-                        // address: address_var,
-                        // city: city_var,
-                        // gender: gender_var
-                        //image
-                    };
+                // if (username_var.length >= 5 ) {
 
-                    const signUp_complete_info_json = JSON.stringify(signUp_complete_info_obj);
+
+                var avatar =$("#signUp-complete-info-form-image-inp").get(0).files[0];
+
+                var signUp_formData = new FormData();
+
+                signUp_formData.append("email", window.sessionStorage.email);
+                signUp_formData.append("password", window.sessionStorage.password);
+                signUp_formData.append("username", username_var);
+                signUp_formData.append("first_name", firstName_var);
+                signUp_formData.append("last_name", lastName_var);
+                signUp_formData.append("phone_number", phoneNumber_var);
+                // signUp_formData.append("city", city_var);
+                signUp_formData.append("address", address_var);
+                signUp_formData.append("gender", gender_var);
+                signUp_formData.append("avatar", avatar);
+
+
+
 
                     $.get("address.txt", function (data) {
-                        const my_address = data + "signup-salesman/complete-info/";
+                        const my_address = data + "/signup-salesman/complete-info/";
                         $.ajax({
                             type: 'POST',
-                            // dataType: 'json',
-                            // contentType: 'application/json',
+                            dataType: 'json',
                             url: my_address,
-                            data: signUp_complete_info_json,
+                            data: signUp_formData,
+                            contentType: false,
+                            processData: false,
+                            crossDomain: true,
                             success: function(resultData, status, xhr){
                                 alert(resultData.message);
                                 if (resultData.result.toString() === "true") {
-                                    window.location.href="AdminMainPage.html";
+                                    window.location.href="HomePage.html";
                                 }
                             },
                             error: function () {
@@ -399,8 +405,8 @@
                         })
 
                     });
-                } else
-                    alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
+                // } else
+                //     alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
             });
 
         });

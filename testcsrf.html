@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="@ViewBag.KeyWord">
+    <meta charset="utf-8">
+    <meta name="language" content="fa">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--    <link href="Content/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="Content/css/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="Content/css/w3.css" rel="stylesheet" />
+    <link href="ParsaFont/Style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/ckeditor/ckeditor.js"></script>
+    <script src="Scripts/bootstrap-rtl.js"></script>
+    <script src="Scripts/jquery.validate.min.js"></script>
+    <script src="Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Title</title>
+</head>
+<body>
+
+
+<form method="post" id="login-form">
+    <div>
+        <div >
+            <img src="" id="login-form-img-inp" >
+            <input type="submit" value="ذخیره"
+                   id="login-form-submit-btn" />
+        </div>
+    </div>
+</form>
+
+<script>
+
+    var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+
+    $(document).ready( function () {
+
+        $("#login-form").submit(function (e) {
+
+            var formData = new FormData();
+            formData.append("email", "ghazalarab@gmail.com");
+            formData.append("password", "123456");
+
+            e.preventDefault();
+                alert("1");
+                $.get("address.txt", function (data) {
+                    const my_address = data + "/login-salesman/";
+                    alert("2");
+                    $.ajax({
+                        type: 'POST',
+                        url: my_address,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        data: formData,
+                        crossDomain: true,
+                        xhrField: {withCredentials: true},
+                        success: function(resultData, status, xhr){
+                            alert(resultData.message);
+                            if (resultData.result.toString() === "true") {
+                                window.sessionStorage.setItem("avatar", data + resultData.salesman.avatar);
+                                $("#login-form-img-inp").attr("src", window.sessionStorage.avatar);
+                                // window.location.href="AdminMainPage.html";
+                            }
+                        },
+                        error: function () {
+                            alert(" اتصال به اینترنت برقرار نیست. ");}
+                    })
+
+                });
+        });
+
+
+    });
+
+
+</script>
+
+
+
+</body>
+</html>

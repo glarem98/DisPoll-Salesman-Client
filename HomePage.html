@@ -7,7 +7,7 @@
     <meta name="language" content="fa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link href="Content/bootstrap.min.css" rel="stylesheet"/>-->
+    <!--    <link href="Content/bootstrap.min.css" rel="stylesheet"/>-->
     <link href="Content/css/bootstrap-rtl.css" rel="stylesheet"/>
     <link href="Content/css/w3.css" rel="stylesheet"/>
     <link href="ParsaFont/Style.css" rel="stylesheet"/>
@@ -121,6 +121,7 @@
     .tabcontent {
         display: none;
     }
+
     input[type=text] {
         padding: 12px 20px;
         display: inline-block;
@@ -187,25 +188,26 @@
             <div class="col-lg-offset-2">
                 <div class="componentColor">
                     <div class="tab btn-group">
-                        <button style="width:50% " class="tablinks signupActive" onclick="openDIV(event, 'signUp_email_auth')">ثبت
+                        <button class="tablinks active" onclick="openDIV(event, 'signUp-email-auth')"
+                                style="width:50% ">ثبت
                             نام
                         </button>
                         <button style="width:50%" class="tablinks" onclick="openDIV(event, 'login')">ورود</button>
                     </div>
                 </div>
             </div>
-            <div id="signUp_email_auth" style="display:block!important" class="tabcontent">
-                <div onload="createCaptcha()">
+            <div id="signUp-email-auth" class="tabcontent" style="display: block">
+                <div>
                     <div class="col-lg-offset-2">
                         <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                            <form id="signUp_email_auth_form" class="form-horizontal" onsubmit="validateCaptcha()">
+                            <form id="signUp-email-auth-form" class="form-horizontal">
 
                                 <br/>
                                 <div class="form-group">
                                     <div class="col-md-10">
                                         <input type="email" required name="email" value=""
                                                class="form-control w3-margin w3-transparent"
-                                               id="signUp_email_auth_form_email_inp"
+                                               id="signUp-email-auth-form-email-inp"
                                                accept="application/txt"/>
                                         <label>پست الکترونیکی</label>
                                     </div>
@@ -215,58 +217,54 @@
                                     <div class="col-md-10">
                                         <input type="password" required name="password" value=""
                                                class="form-control w3-margin w3-transparent"
-                                               id="signUp_email_auth_form_password_inp"
+                                               id="signUp-email-auth-form-password-inp"
+                                               pattern=".{5,}"
                                                accept="application/txt"/>
                                         <label>کلمه عبور</label>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <input id="cb" type="checkbox" style="float: right;margin-left:13px !important; margin-top:20px !important; margin-right:13px !important; width:15px;height:15px" >
+                                <div class="form-group w3-margin">
+                                    <input id="signUp-email-auth-form-condition-chbox" required type="checkbox"
+                                           style="float: right;margin-left:13px !important; margin-top:20px !important; margin-right:13px !important; width:15px;height:15px">
                                     <div style="margin-left:8px;" class="w3-margin">
                                         شرایط و قوانین استفاده را می پذیرم.
                                     </div>
-                                    <!--<div class="col-md-10 w3-margin" style="display: table; width: 100%">
-        <span style=" display: table-cell;">
-            <input type="checkbox" required name="checkbox" value=""
-                   class="form-control w3-margin"
-                   id="signUp_email_auth_form_checkbox_inp"
-                   accept="application/txt"
-                   style="width : 25px ; height:25px ;" />
-            شرایط و قوانین استفاده را می پذیرم.
-        </span>
-
-    </div>-->
                                 </div>
-                                <div class="w3-margin">تصویر امنیتی زیر را وارد کنید و به خاطر داشته باشید که کد به حروف بزرگ و کوچک حساس است.</div>
+
+                                <div class="w3-margin">تصویر امنیتی زیر را وارد کنید و به خاطر داشته باشید که کد به حروف
+                                    بزرگ و کوچک حساس است.
+                                </div>
                                 <div class="w3-center">
-                                    
+
                                     <div class="form-group w3-center">
                                         <div class="col-md-10 w3-margin">
-                                            <div class="captcha" id="signUp_email_auth_form_captcha_img"></div>
-                                            <br />
+                                            <div class="captcha" id="signUp-email-auth-form-captcha-img"></div>
+                                            <br/>
                                             <div style="display: table;width: 100%;margin-left:5px !important">
                                                 <div style="display:table-cell">
                                                     <input type="text" required placeholder="Captcha"
-                                                           id="signUp_email_auth_form_captcha_inp"
-                                                           accept="application/txt" style="width:300px ; height:40px" />
+                                                           id="signUp-email-auth-form-captcha-inp"
+                                                           accept="application/txt" style="width:300px ; height:40px"/>
                                                 </div>
-                                                <div  style="display:table-cell">
-                                                    <img src="icon/8338-200.png" class="fa-refresh" style="width:30px; height:30px;margin-right:5px !important" onclick="createCaptcha()">
+                                                <div style="display:table-cell">
+                                                    <img src="icon/8338-200.png" class="fa-refresh"
+                                                         id="signUp-email-auth-form-captchaRef-img"
+                                                         style="width:30px; height:30px;margin-right:5px !important">
                                                 </div>
                                             </div>
 
                                         </div>
                                     </div>
                                 </div>
-                                    <div class="form-group ">
-                                        <div class="col-md-offset-5 col-md-11">
-                                            <input type="submit" value="ثبت نام"
-                                                   class="btn btn-default btnColors"
-                                                   id="signUp_email_auth_form_submit_btn" />
-                                        </div>
+                                <div class="form-group ">
+                                    <div class="col-md-offset-5 col-md-11">
+                                        <input type="submit" value="ثبت نام"
+                                               class="btn btn-default btnColors"
+                                               id="signUp-email-auth-form-submit-btn"/>
                                     </div>
-                                
+                                </div>
+
                             </form>
                         </div>
                     </div>
@@ -276,31 +274,32 @@
             <div id="login" class="tabcontent">
                 <div class="col-lg-offset-2">
                     <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                        <form id="login_form" class="form-horizontal">
+                        <form id="login-form" class="form-horizontal">
 
                             <div class="form-group">
                                 <div class="col-md-10">
-                                     <input type="text" required autofocus name="username" value=""
-                                                        class="form-control w3-margin"
-                                                        id="login_form_username_inp"
-                                                        accept="application/txt" />
-                                    <label> نام کاربری </label>
+                                    <input type="text" required autofocus name="email" value=""
+                                           class="form-control w3-margin"
+                                           id="login-form-email-inp"
+                                           accept="application/txt"/>
+                                    <label> پست الکترونیکی </label>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-md-10">
                                     <input type="password" required autofocus name="password" value=""
-                                                       class="form-control w3-margin"
-                                                       id="login_form_password_inp"
-                                                       accept="application/txt" />
+                                           class="form-control w3-margin"
+                                           id="login-form-password-inp"
+                                           accept="application/txt"/>
                                     <label> کلمه عبور </label>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-md-offset-5 col-md-10">
-                                    <input type="submit" value="ورود " class="btn btn-default btnColors" id="login_form_submit_btn" />
+                                    <input type="submit" value="ورود " class="btn btn-default btnColors"
+                                           id="login-form-submit-btn"/>
                                 </div>
                             </div>
 
@@ -317,12 +316,12 @@
 <br/>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <!--Modal container-->
-<div class="modal fade" role="dialog" id="signUp_confirm_email_model">
+<div class="modal fade" role="dialog" id="signUp-confirm-email-model">
     <div class="modal-dialog ">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" id="signUp-confirm-email-model-close">&times;</button>
                 <h4 class="modal-title">کد ارسالی</h4>
             </div>
             <div class="modal-body">
@@ -336,9 +335,9 @@
                         <br/><br/>
                         <div class="form-group col-md-offset-2">
                             <div class="col-md-10">
-                                کد دریافتی:<input type="text" required autofocus name="code" value=""
+                                کد دریافتی:<input type="password" required autofocus name="code" value=""
                                                   class="form-control w3-margin"
-                                                  id="signUp_confirm_email_model_inp"
+                                                  id="signUp-confirm-email-model-inp"
                                                   accept="application/txt"/>
                             </div>
                         </div>
@@ -346,13 +345,14 @@
                             <div class="col-md-offset-2 col-md-10 w3-padding">
                                 <input data-toggle="modal" data-target="#1" type="submit" value="ثبت کد"
                                        class="btn btn-default btnColors"
-                                       id="signUp_confirm_email_model_btn"/>
+                                       id="signUp-confirm-email-model-btn"/>
                             </div>
                         </div>
                         <br/><br/>
                         <div class="form-group w3-center">
                             <div class="col-md-offset-2 col-md-10 w3-padding">
-                                <a style="text-decoration:none ; color:#d3df13" id="signUp_resend_code"> ارسال مجدد کد </a>
+                                <a style="text-decoration:none ; color:#d3df13" id="signUp-resend-code"> ارسال مجدد
+                                    کد </a>
                             </div>
                         </div>
                     </div>
@@ -368,6 +368,11 @@
 </div>
 
 <script>
+    //Scripts for design and it's actions
+
+    /* Function to open div for signUp and login form bu tabs
+       parameters are event and id of div
+     */
     function openDIV(evt, divName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -381,15 +386,18 @@
         document.getElementById(divName).style.display = "block";
         evt.currentTarget.className += " active";
     }
-</script>
-<script>
 
 
+    //Global variable for validating captcha
     var code;
 
+
+    /*Function to create captcha image randomly
+      return a captcha image in signUp-email-auth-form-captcha-img
+     */
     function createCaptcha() {
         //clear the contents of captcha div first
-        document.getElementById("signUp_email_auth_form_captcha_img").innerHTML = "";
+        document.getElementById("signUp-email-auth-form-captcha-img").innerHTML = "";
         var charsArray =
             "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var lengthOtp = 6;
@@ -411,35 +419,64 @@
         ctx.strokeText(captcha.join(""), 0, 30);
         //storing captcha so that can validate you can save it somewhere else according to your specific requirements
         code = captcha.join("");
-        document.getElementById("signUp_email_auth_form_captcha_img").appendChild(canv); // adds the canvas to the body element
+        document.getElementById("signUp-email-auth-form-captcha-img").appendChild(canv); // adds the canvas to the body element
     }
 
-    function validateCaptcha() {
-        event.preventDefault();
-        if (document.getElementById("signUp_email_auth_form_captcha_inp").value === code) {
-            alert("Valid Captcha")
-        } else {
-            alert("Invalid Captcha. try Again");
+    $(document).ready(function () {
+
+        //Refreshing a captcha image by clicking on captchaRef image
+        $("#signUp-email-auth-form-captchaRef-img").click(function () {
             createCaptcha();
-        }
-    }
+        });
+
+        //Refreshing a form by closing a confirm email modal (maybe dosn't needed)
+        $("#signUp-confirm-email-model-close").click(function () {
+            $("#signUp-email-auth-form")[0].reset();
+            // window.location.reload();
+        });
+
+    });
+
+    //Testing for validation function
+    // function validateCaptcha() {
+    //     event.preventDefault();
+    //     if (document.getElementById("signUp-email-auth-form-captcha-inp").value === code) {
+    //         alert("Valid Captcha")
+    //     } else {
+    //         alert("Invalid Captcha. try Again");
+    //         createCaptcha();
+    //     }
+    // }
 
 
 </script>
 <script>
+    //Scripts for connecting to the server
+
+
+    //for csrf testing
+    // function getCookie(cname) {
+    //     var name = cname + "=";
+    //     var decodedCookie = decodeURIComponent(document.cookie);
+    //     var ca = decodedCookie.split(';');
+    //     for(var i = 0; i <ca.length; i++) {
+    //         var c = ca[i];
+    //         while (c.charAt(0) == ' ') {
+    //             c = c.substring(1);
+    //         }
+    //         if (c.indexOf(name) == 0) {
+    //             return c.substring(name.length, c.length);
+    //         }
+    //     }
+    //     return "";
+    // }
 
     $(document).ready(function () {
-        //load captcha ro dorost kon
-        //jae onsubmit captcha ro bayad avaz knam
+
+        //loading captcha for first time page loaded
         createCaptcha();
-        // $("#signUp_email_auth_form_submit_btn").click(function () {
-        //     $("#signUp_confirm_email_model").modal({backdrop: "static"});
-        // });
-        ///debuger ra dorost lon
 
-    });
 
-    $(document).ready(function () {
         //session ro bayad dorost konam
         // if (typeof (Storage) !== "undefined") {
         //     // Store
@@ -451,53 +488,89 @@
         // }
 
 
-        $("#signUp_email_auth_form").submit(function (e) {
+
+        $("#signUp-email-auth-form").submit(function (e) {
             e.preventDefault();
 
-            //shart captcha ro dorost kon
-            //bad az zadan beravad modal
+            /*If-condition to validate captcha by global var code
+                      if it is invalid create another
+                       return an alert as result
+                     */
+            if (document.getElementById("signUp-email-auth-form-captcha-inp").value === code) {
+                event.preventDefault();
+                // alert("Valid Captcha")
+
+                const signUp_email_auth_form_var = document.getElementById("signUp-email-auth-form");
+                const email_var = signUp_email_auth_form_var.email.value;
+                const password_var = signUp_email_auth_form_var.password.value;
+
+                if (password_var.length >= 5) {
+                    const signUp_obj = {
+                        email: email_var,
+                        password: password_var
+                    };
+                    const signUp_json = JSON.stringify(signUp_obj);
+
+                    $.get("address.txt", function (data) {
+                        const my_address_signUp = data + "/signup-salesman/email-auth/";
+
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            contentType: 'application/json',
+                            url: my_address_signUp,
+                            data: signUp_json,
+                            success: function (resultData, status, xhr) {
+                                alert(resultData.message);
+                                if (resultData.result.toString() === "true") {
+
+                                    $("#signUp-confirm-email-model").modal({backdrop: "static"});
 
 
-            const signUp_email_auth_form_var = document.getElementById("signUp_email_auth_form");
-            const email_var = signUp_email_auth_form_var.email.value;
-            const password_var = signUp_email_auth_form_var.password.value;
+                                    $("#signUp-confirm-email-model-btn").click(function () {
+                                        const code_var = document.getElementById("signUp-confirm-email-model-inp").value;
 
-            if (password_var.length >= 5) {
-                const signUp_obj = {
-                    email: email_var,
-                    password: password_var
-                };
-                const signUp_json = JSON.stringify(signUp_obj);
-
-                $.get("address.txt", function (data) {
-                    const my_address = data + "signup-salesman/email-auth/";
-
-                    $.ajax({
-                        type: 'POST',
-                        dataType: 'json',
-                        contentType: 'application/json',
-                        url: my_address,
-                        data: signUp_json,
-                        success: function (resultData, status, xhr) {
-                            alert(resultData.message);
-                            if (resultData.result.toString() === "true") {
-
-                                if (document.getElementById("signUp_email_auth_form_captcha_inp").value === code) {
-                                    alert("Valid Captcha")
-
-                                    $("#signUp_confirm_email_model").modal({backdrop: "static"});
-
-                                    $("#signUp_resend_code").click(function () {
-                                        const signUp_resend_code_obj = {
+                                        const signUp_confirm_email_obj = {
                                             email: email_var,
+                                            code: code_var
                                         };
-                                        const signUp_resend_code_json = JSON.stringify(signUp_resend_code_obj);
-                                        const first_address = data + "signup-salesman/resend-code/";
+                                        const signUp_confirm_email_json = JSON.stringify(signUp_confirm_email_obj);
+                                        const my_address_signUp_confirm = data + "/signup-salesman/confirm-email/";
                                         $.ajax({
                                             type: 'POST',
                                             dataType: 'json',
                                             contentType: 'application/json',
-                                            url: first_address,
+                                            url: my_address_signUp_confirm,
+                                            data: signUp_confirm_email_json,
+                                            success: function (resultData, status, xhr) {
+                                                alert(resultData.message);
+                                                if (resultData.result.toString() === "true") {
+                                                    window.sessionStorage.setItem("email", email_var);
+                                                    alert(window.sessionStorage.email);
+                                                    window.sessionStorage.setItem("password", password_var);
+                                                    alert(window.sessionStorage.email);
+                                                    window.location.href = "completeInfo.html";
+                                                }
+                                            },
+                                            error: function () {
+                                                alert(" اتصال به اینترنت برقرار نیست. ");
+                                            }
+                                        })
+
+                                    });
+
+
+                                    $("#signUp-resend-code").click(function () {
+                                        const signUp_resend_code_obj = {
+                                            email: email_var,
+                                        };
+                                        const signUp_resend_code_json = JSON.stringify(signUp_resend_code_obj);
+                                        const my_address_signUp_resend = data + "/signup-salesman/resend-code/";
+                                        $.ajax({
+                                            type: 'POST',
+                                            dataType: 'json',
+                                            contentType: 'application/json',
+                                            url: my_address_signUp_resend,
                                             data: signUp_resend_code_json,
                                             success: function (resultData, status, xhr) {
                                                 alert(resultData.message);
@@ -511,84 +584,99 @@
                                         })
                                     });
 
-                                    $("#signUp_confirm_email_model_btn").click(function () {
-                                        const code_var = document.getElementById("signUp_confirm_email_model_inp").value;
 
-                                        const signUp_confirm_email_obj = {
-                                            email: email_var,
-                                            code: code_var
-                                        };
-                                        const signUp_confirm_email_json = JSON.stringify(signUp_confirm_email_obj);
-                                        const second_address = data + "signup-salesman/confirm-email/";
-                                        $.ajax({
-                                            type: 'POST',
-                                            dataType: 'json',
-                                            contentType: 'application/json',
-                                            url: second_address,
-                                            data: signUp_confirm_email_json,
-                                            success: function (resultData, status, xhr) {
-                                                alert(resultData.message);
-                                                if (resultData.result.toString() === "true") {
-                                                    window.sessionStorage.setItem("email", email_var);
-                                                    alert(window.sessionStorage.email);
-                                                    window.location.href="completeInfo.html";
-                                                }
-                                            },
-                                            error: function () {
-                                                alert(" اتصال به اینترنت برقرار نیست. ");
+                                }
+                            },
+                            error: function () {
+                                alert(" اتصال به اینترنت برقرار نیست. ");
+                                //If couldn't connecting to the server changing captcha
+                                createCaptcha();
+                            }
+                        })
+
+                    });
+                } else
+                    alert(" رمزعبور باید حداقل 5 کاراکتر باشد. ");
+
+            } else {
+
+                alert("تصویر امنیتی وارد شده صحیح نمی باشد." +
+                    "دوباره امتحان کنید.");
+                createCaptcha();
+            }
+
+        });
+
+
+
+        $("#login-form").submit(function (e) {
+            e.preventDefault();
+
+
+
+            const login_form_var = document.getElementById("login-form");
+            const email_var = login_form_var.email.value;
+            const password_var = login_form_var.password.value;
+
+
+            if (email_var.length >= 5 && password_var.length >= 5) {
+
+                var login_formData = new FormData();
+                login_formData.append("email", email_var);
+                login_formData.append("password", password_var);
+
+                $.get("address.txt", function (data) {
+                    const my_address = data + "/login-salesman/";
+
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        url: my_address,
+                        data: login_formData,
+                        crossDomain: true,
+                        xhrField: {withCredentials: true},
+                        success: function(resultData, status, xhr){
+                            alert(resultData.message);
+                            if (resultData.result.toString() === "true") {
+                                window.sessionStorage.setItem("avatar", data + resultData.salesman.avatar);
+                                window.sessionStorage.setItem("salesman", resultData.salesman.id);
+                                window.sessionStorage.setItem("firstName", resultData.salesman.first_name);
+                                window.sessionStorage.setItem("lastName", resultData.salesman.last_name);
+                                window.sessionStorage.setItem("shops", resultData.salesman.shops);
+                                //فروشگاه ها رو هم میخواهم
+                                window.location.href="AdminMainPage.html";
+
+
+                                function getCookie(name) {
+                                    var cookieValue = null;
+                                    if (document.cookie && document.cookie !== '') {
+                                        var cookies = document.cookie.split(';');
+                                        for (var i = 0; i < cookies.length; i++) {
+                                            var cookie = cookies[i].trim();
+                                            // Does this cookie string begin with the name we want?
+                                            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                                break;
                                             }
-                                        })
-
-                                    });
-
-                                } else {
-                                    alert("Invalid Captcha. try Again");
-                                    createCaptcha();
+                                        }
+                                    }
+                                    return cookieValue;
                                 }
 
+                                var sd=getCookie('csrftoken');
+                                console.log(sd)
+
+                                alert("wait");
+                                //
+                                // console.log(xhr)
+                                // console.dir(xhr)
                             }
                         },
                         error: function () {
                             alert(" اتصال به اینترنت برقرار نیست. ");
                         }
-                    })
-
-                });
-            } else
-                alert(" رمزعبور باید حداقل 5 کاراکتر باشد. ");
-        });
-
-
-        $("#login_form").submit(function (e) {
-            e.preventDefault();
-
-            const login_form_var = document.getElementById("login_form");
-            const username_var = login_form_var.username.value;
-            const password_var = login_form_var.password.value;
-
-
-            if (username_var.length >= 5 && password_var.length >= 5) {
-                const login_obj = {
-                    email: username_var,
-                    password: password_var
-                };
-                const login_json = JSON.stringify(login_obj);
-
-                $.get("address.txt", function (data) {
-                    const my_address = data + "login-salesman/";
-
-                    $.ajax({
-                        type: 'POST',
-                        dataType: 'json',
-                        contentType: 'application/json',
-                        url: my_address,
-                        data: login_json,
-                        success: function(result, status, xhr){
-                            alert(result.message);
-                            window.location.href="AdminMainPage.html";
-                            },
-                        error: function () {
-                            alert(" اتصال به اینترنت برقرار نیست. ");}
                     })
 
                 });

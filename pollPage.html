@@ -114,6 +114,7 @@
             border-color: #006DA0 !important;
         }
     </style>
+<!--    احتمالا باید حذف شود-->
     <nav class="w3-sidenav w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
         <div class="w3-margin ">
             <div class="w3-center " style="margin-top:8px !important">
@@ -152,45 +153,39 @@
             </div><br />
         </div>
     </nav>
+
     <header class="w3-container navigationBarColor ">
         <span class="w3-opennav w3-xlarge w3-right" id="rightMenu_open_btn">&#9776;</span>
         <div class="text-center">
             <h1> <span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text " style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important" href="HomePage.html">DisPoll</span></h1>
         </div>
     </header>
+
     <br />
+
     <div class="container">
         <div class=" w3-xlarge w3-center" style="color:#7B8084; margin-bottom:20px">
-            فرم ایجاد تبلیغ
+            فرم ارسال نظرسنجی
         </div>
         <div class="col-lg-offset-2">
             <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                <form class="form-horizontal" id="advertisement-form">
-
-<!--                    <div class="form-group">-->
-<!--                        <div class="col-md-11">-->
-<!--                            <input type="text" required name="code" value=""-->
-<!--                                   class="form-control w3-margin"-->
-<!--                                   id="advertisement-form-code-inp"-->
-<!--                                   accept="application/txt" />-->
-<!--                            <label> ? </label>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                <form class="form-horizontal" id="poll-form">
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="file" required name="image" value=""
+                            <input type="tel" required name="phoneNumber" value=""
                                    class="form-control w3-margin"
-                                   id="advertisement-form-image-inp"
-                                   accept="image/*" />
-                            <label class="pictureInput"> تصویر تبلیغ </label>
+                                   id="poll-form-phoneNumber-inp"
+                                   pattern="[0-9]{11}"
+                                   accept="application/txt" />
+                            <label> شماره تلفن </label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
-                            <input type="submit" value="ارسال تبلیغ" class="btn btn-default btnColors"
-                                   id="advertisement-form-submit-btn" />
+                            <input type="submit" value="ارسال نظرسنجی" class="btn btn-default btnColors"
+                                   id="poll-form-submit-btn" />
                         </div>
                     </div>
 
@@ -228,30 +223,27 @@
 
             //اوردن فروشگاه ها
 
-            $("#advertisement-form").submit(function (e) {
+            $("#poll-form").submit(function (e) {
                 e.preventDefault();
 
-                var advertisement_formData = new FormData();
-                advertisement_formData.append("picture", $("#advertisement-form-image-inp").get(0).files[0]);
-                advertisement_formData.append("shop", "?");
 
+                    $.get("address.txt", function (data) {
 
-
-                $.get("address.txt", function (data) {
-                        //آدرس؟
-                        const my_address = data + "/add-advertisement/";
+                        const my_address = data + "/poll-to-customer/";
+                        //فروشگاه را انتخاب کن
                         $.ajax({
                             type: 'POST',
-                            url: my_address,
                             dataType: 'json',
-                            contentType: false,
-                            processData: false,
-                            crossDomain: true,
-                            data: advertisement_formData,
+                            contentType: 'application/json',
+                            url: my_address,
+                            data: JSON.stringify({
+                                phone_number : $("#poll-form-phoneNumber-inp"),
+                                shop : "?"
+                            }),
                             success: function(resultData, status, xhr){
                                 alert(resultData.message);
                                 if (resultData.result.toString() === "true") {
-                                    // window.location.href="advertisementPage.html";
+                                    // window.location.href="pollPage.html";
                                     window.location.reload();
                                 }
                             },
