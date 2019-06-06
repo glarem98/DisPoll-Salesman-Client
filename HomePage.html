@@ -515,7 +515,7 @@
                     const signUp_json = JSON.stringify(signUp_obj);
 
                     $.get("address.txt", function (data) {
-                        const my_address_signUp = data + "/signup-salesman/email-auth/";
+                        const my_address_signUp = data + "/salesman/signup-salesman/email-auth/";
 
                         $.ajax({
                             type: 'POST',
@@ -538,7 +538,7 @@
                                             code: code_var
                                         };
                                         const signUp_confirm_email_json = JSON.stringify(signUp_confirm_email_obj);
-                                        const my_address_signUp_confirm = data + "/signup-salesman/confirm-email/";
+                                        const my_address_signUp_confirm = data + "/salesman/signup-salesman/confirm-email/";
                                         $.ajax({
                                             type: 'POST',
                                             dataType: 'json',
@@ -568,7 +568,7 @@
                                             email: email_var,
                                         };
                                         const signUp_resend_code_json = JSON.stringify(signUp_resend_code_obj);
-                                        const my_address_signUp_resend = data + "/signup-salesman/resend-code/";
+                                        const my_address_signUp_resend = data + "/salesman/signup-salesman/resend-code/";
                                         $.ajax({
                                             type: 'POST',
                                             dataType: 'json',
@@ -629,7 +629,7 @@
                 login_formData.append("password", password_var);
 
                 $.get("address.txt", function (data) {
-                    const my_address = data + "/login-salesman/";
+                    const my_address = data + "/salesman/login/";
 
                     $.ajax({
                         type: 'POST',
@@ -643,10 +643,12 @@
                         success: function(resultData, status, xhr){
                             alert(resultData.message);
                             if (resultData.result.toString() === "true") {
-                                window.sessionStorage.setItem("avatar", data + resultData.salesman.avatar);
+                                window.sessionStorage.setItem("token", "Token " + resultData.token);
                                 window.sessionStorage.setItem("salesman", resultData.salesman.id);
+                                window.sessionStorage.setItem("avatar", data + resultData.salesman.avatar);
                                 window.sessionStorage.setItem("firstName", resultData.salesman.first_name);
                                 window.sessionStorage.setItem("lastName", resultData.salesman.last_name);
+                                //چک شود
                                 window.sessionStorage.setItem("shops", resultData.salesman.shops);
                                 //فروشگاه ها رو هم میخواهم
                                 // window.location.href="AdminMainPage.html";

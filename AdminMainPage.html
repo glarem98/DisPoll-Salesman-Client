@@ -109,7 +109,7 @@
         </div>
         <br/>
         <div class="rightMenuColor">
-            <a href="#" class="rightMenuColor"><span class="glyphicon glyphicon-off"
+            <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
                                                                   style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
             </a>
         </div>
@@ -158,26 +158,33 @@
         $("#admin-name").text(window.sessionStorage.firstName+ " " + window.sessionStorage.lastName);
         //فروشگاه ها رو هم میخواهم
 
-        // function getCookie(name) {
-        //     var cookieValue = null;
-        //     console.log(document.cookie)
-        //     if (document.cookie && document.cookie !== '') {
-        //         console.log('SALAM')
-        //         var cookies = document.cookie.split(';');
-        //         console.log(cookies)
-        //         for (var i = 0; i < cookies.length; i++) {
-        //             var cookie = cookies[i].trim();
-        //             // Does this cookie string begin with the name we want?
-        //             if (cookie.substring(0, name.length + 1) === (name + '=')) {
-        //                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        //                 break;
-        //             }
-        //         }
-        //     }
-        //     return cookieValue;
-        // }
+        $("#logout").click(function () {
 
-        // console.log(getCookie('csrftoken'))
+            $.get("address.txt", function (data) {
+                const my_address = data + "/salesman/logout/";
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    url: my_address,
+                    headers:{
+                      'Authorization' : window.sessionStorage.token
+                    },
+                    data: JSON.stringify({}),
+                    success: function (resultData, status, xhr) {
+                        alert(resultData.message);
+                        if (resultData.result.toString() === "true") {
+                           window.location.href="HomePage.html";
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");
+                    }
+                })
+
+                });
+        });
+
     });
 
 
