@@ -318,34 +318,39 @@
                 }).change();
 
                 /*
-                             Request for logout
-                             send authorization in header
-                             */
+                 Request for logout
+                 send authorization in header
+                 */
                 $("#logout").click(function () {
-
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/logout/";
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',
-                            contentType: 'application/json',
-                            url: my_address,
-                            headers:{
-                                'Authorization' : window.sessionStorage.token
-                            },
-                            data: JSON.stringify({}),
-                            success: function (resultData, status, xhr) {
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    window.location.href="HomePage.html";
+                    var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
+                    if (logout_var ==true){
+                        $.get("address.txt", function (data) {
+                            const my_address = data + "/salesman/logout/";
+                            $.ajax({
+                                type: 'POST',
+                                dataType: 'json',
+                                contentType: 'application/json',
+                                url: my_address,
+                                headers:{
+                                    'Authorization' : window.sessionStorage.token
+                                },
+                                data: JSON.stringify({}),
+                                success: function (resultData, status, xhr) {
+                                    alert(resultData.message);
+                                    if (resultData.result.toString() === "true") {
+                                        window.location.href="HomePage.html";
+                                    }
+                                },
+                                error: function () {
+                                    alert(" اتصال به اینترنت برقرار نیست. ");
                                 }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");
-                            }
-                        })
+                            })
 
-                    });
+                        });
+
+                    }else{
+                        alert(" از این که همراه ما خواهید بود متشکریم. ");
+                    }
                 });
 
             });
