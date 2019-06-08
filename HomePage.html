@@ -17,6 +17,7 @@
     <script src="Scripts/bootstrap-rtl.js"></script>
     <script src="Scripts/jquery.validate.min.js"></script>
     <script src="Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="Scripts/sweetalert.min.js"></script>
     <meta name="viewport" content="width=device-width"/>
     <title>@ViewBag.Title</title>
 
@@ -24,6 +25,11 @@
 </head>
 <body style="background-color:#E5E5E5 !important">
 <style>
+
+    /*alert{*/
+    /*    color: rgba(0, 0, 0, 0.2) ;*/
+    /*}*/
+
     .fa-refresh {
         margin: 4px 0 0px 5px;
         padding: 5px;
@@ -475,6 +481,8 @@
     // }
 
     $(document).ready(function () {
+
+        // swal("heloo");
 
         //loading captcha for first time page loaded
         createCaptcha();
