@@ -32,6 +32,7 @@
             display: table-cell;
             padding: 16px;
         }
+
         .componentColor {
             background-color: #F2F2F2 !important;
         }
@@ -68,6 +69,7 @@
             border: none;
             cursor: pointer;
         }
+
         input[type=text] {
             padding: 12px 20px;
             display: inline-block;
@@ -119,11 +121,11 @@
             <div class="w3-center " style="margin-top:8px !important">
                 <img class="w3-center w3-closenav w3-xlarge w3-circle" src="avatar/man-with-tie.png"
                      id="admin-img"
-                     style="width:100px ; height:100px"/>
+                     style="width:100px ; height:100px" />
             </div>
-            <br/>
+            <br />
             <a href="editProfile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
-            <br/>
+            <br />
             <a class="rightMenuColor" onclick="myFunction('Demo1')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
                 &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
@@ -132,40 +134,49 @@
                 <a class="rightMenuColor" href="showShop.html"> &nbsp;فروشگاه اول</a>
                 <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
                 <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
-                <a class="w3-center rightMenuColor" href="addShop.html"> <span class="glyphicon glyphicon-plus"></span>
-                    &nbsp;جدید&nbsp;</a>
-            </div>
-            <br/>
-            <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
-                                                         style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
-                    من </a>
-            </div>
-            <br/>
-            <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
-                                                         style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
+                <a class="w3-center rightMenuColor" href="addShop.html">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    &nbsp;جدید&nbsp;
                 </a>
             </div>
-            <br/>
+            <br />
             <div class="rightMenuColor">
-                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
-                                                                              style="color:#7B8084"></span>&nbsp;&nbsp;
-                    تبلیغات </a>
-            </div>
-            <br/>
-            <div class="rightMenuColor">
-                <a href="supportPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
-                                                                        style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی
+                <a href="#" class="rightMenuColor">
+                    <span class="glyphicon glyphicon-signal"
+                          style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
+                    من
                 </a>
             </div>
-            <br/>
+            <br />
             <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
-                                                         style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+                <a href="#" class="rightMenuColor">
+                    <span class="glyphicon glyphicon-usd"
+                          style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
                 </a>
             </div>
-            <br/>
+            <br />
+            <div class="rightMenuColor">
+                <a href="advertisementPage.html" class="rightMenuColor">
+                    <span class="glyphicon glyphicon-earphone"
+                          style="color:#7B8084"></span>&nbsp;&nbsp;
+                    تبلیغات
+                </a>
+            </div>
+            <br />
+            <div class="rightMenuColor">
+                <a href="supportPage.html" class="rightMenuColor">
+                    <span class="glyphicon glyphicon-earphone"
+                          style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی
+                </a>
+            </div>
+            <br />
+            <div class="rightMenuColor">
+                <a href="#" class="rightMenuColor" id="logout">
+                    <span class="glyphicon glyphicon-off"
+                          style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+                </a>
+            </div>
+            <br />
         </div>
     </nav>
 
@@ -175,10 +186,10 @@
             <h1> <span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text " style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important" href="HomePage.html">DisPoll</span></h1>
         </div>
     </header>
-    <br /> 
+    <br />
     <div class="container">
         <div class=" w3-xlarge w3-center" style="color:#7B8084; margin-bottom:20px">
-           فرم ایجاد نظرسنجی
+            فرم ایجاد نظرسنجی
         </div>
         <div class="col-lg-offset-2">
             <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
@@ -220,9 +231,12 @@
                                        accept="application/txt" />
                                 <label> گزینه </label>
                             </span>
+                        </div>                 
+                        <div id="lastTxt">
+
                         </div>
                         <div class="col-md-2" style="margin-top:15px">
-                            <button style="margin:20px" class="btn btn-default btnColors" data-action="add"><i class="fa fa-plus"><strong style="text-align:center;font-style:normal!important">+</strong></i></button>
+                            <button style="margin:20px" class="btn btn-default btnColors" data-action="add" onclick="addChoice()"><i class="fa fa-plus"><strong style="text-align:center;font-style:normal!important">+</strong></i></button>
 
                         </div>
                     </div>
@@ -242,7 +256,7 @@
                             <div class="col-md-11">
                                 <input class="form-control question-format-max w3-margin" type="number" placeholder=" اندازه گام" value="">
                             </div>
-                        </div>                        
+                        </div>
                         <div class="form-group col">
                             <div class="col-md-11">
                                 <input class="form-control question-format-max w3-margin" type="number" placeholder=" تعداد گام ها " value="">
@@ -291,11 +305,11 @@
     <script>
         function show_value(x) {
             document.getElementById("slider_value").innerHTML = x + "%";
-        } 
+        }
 
         function myFunction(id) {
             var x = document.getElementById(id);
-            const y =document.getElementById("more");
+            const y = document.getElementById("more");
             y.style.transform = "rotate(180deg)";
             if (x.className.indexOf("w3-show") == -1) {
                 x.className += " w3-show";
@@ -305,57 +319,76 @@
             }
         }
 
-            $(document).ready(function () {
-                $("select").change(function () {
-                    $("select option:selected").each(function () {
-                        if (($(this).attr("value") == "MultiChoice") || ($(this).attr("value") == "CheckBox")) {
-                            $("choices").show();
-                        }
-                        if ($(this).attr("value") == "LinearScale") {
-                            $("LinearScale").show();
-                        }
-                    });
-                }).change();
-
-                /*
-                 Request for logout
-                 send authorization in header
-                 */
-                $("#logout").click(function () {
-                    var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
-                    if (logout_var ==true){
-                        $.get("address.txt", function (data) {
-                            const my_address = data + "/salesman/logout/";
-                            $.ajax({
-                                type: 'POST',
-                                dataType: 'json',
-                                contentType: 'application/json',
-                                url: my_address,
-                                headers:{
-                                    'Authorization' : window.sessionStorage.token
-                                },
-                                data: JSON.stringify({}),
-                                success: function (resultData, status, xhr) {
-                                    alert(resultData.message);
-                                    if (resultData.result.toString() === "true") {
-                                        window.location.href="HomePage.html";
-                                    }
-                                },
-                                error: function () {
-                                    alert(" اتصال به اینترنت برقرار نیست. ");
-                                }
-                            })
-
-                        });
-
-                    }else{
-                        alert(" از این که همراه ما خواهید بود متشکریم. ");
+        $(document).ready(function () {
+            $("select").change(function () {
+                $("select option:selected").each(function () {
+                    if (($(this).attr("value") == "MultiChoice") || ($(this).attr("value") == "CheckBox")) {
+                        $("choices").show();
+                    }
+                    if ($(this).attr("value") == "LinearScale") {
+                        $("LinearScale").show();
                     }
                 });
+            }).change();
 
+            /*
+             Request for logout
+             send authorization in header
+             */
+            $("#logout").click(function () {
+                var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
+                if (logout_var == true) {
+                    $.get("address.txt", function (data) {
+                        const my_address = data + "/salesman/logout/";
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            contentType: 'application/json',
+                            url: my_address,
+                            headers: {
+                                'Authorization': window.sessionStorage.token
+                            },
+                            data: JSON.stringify({}),
+                            success: function (resultData, status, xhr) {
+                                alert(resultData.message);
+                                if (resultData.result.toString() === "true") {
+                                    window.location.href = "HomePage.html";
+                                }
+                            },
+                            error: function () {
+                                alert(" اتصال به اینترنت برقرار نیست. ");
+                            }
+                        })
+
+                    });
+
+                } else {
+                    alert(" از این که همراه ما خواهید بود متشکریم. ");
+                }
             });
-       
 
+        });
+
+
+    </script>
+    <script>
+        var idTxt = 1;
+        function addChoice() {
+            if ($('#editProfile-form-first-name-inp').val() == "") {
+                return true;
+            }
+            var fileuploadpic = $('#cloneChoice').html();
+            $('#editProfile-form-first-name-inp').attr("id", "pp" + idTxt);
+
+            var itmimage = $('#pp' + idTxt);
+            var clnimage = itmimage.clone(true);
+            $('#lastTxt').append(clnimage);
+
+            $('#cloneChoice').html(fileuploadpic);
+            idTxt += 1;
+            alert("با موفقیت افزوده شد");
+            return false;
+        }
     </script>
 </body>
 </html>
