@@ -185,10 +185,10 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="email" required name="email" value=""
+                            <input type="email" name="email" value=""
                                    class="form-control w3-margin"
                                    id="editProfile-form-email-inp"
-                                   accept="application/txt" />
+                                   accept="application/txt" disabled />
 <!--                            <label> ایمیل</label>-->
                         </div>
                     </div>
@@ -248,7 +248,7 @@
 
                             <select class="form-control w3-margin w3-trasparent" name="gender"
                                     id="editProfile-form-gender-inp"
-                                    style="height:40px;background-color:#F2F2F2 !important" required>
+                                    style="height:40px;background-color:#F2F2F2 !important" >
                                 <option class="placeholder" selected disabled hidden value="" >جنسیت</option>
                                 <!--distance in another way-->
                                 <option value="" disabled ></option>
@@ -305,7 +305,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
                             <input type="submit" value="ذخیره"
-                                   class="btn btn-default btnColors"
+                                   class="btn btn-default btnColors" disabled="disabled"
                                    id="editProfile-form-submit-btn" />
                         </div>
                     </div>
@@ -346,6 +346,28 @@
         $(document).ready( function () {
             const editProfile_form_var = document.getElementById("editProfile-form");
 
+            /*
+            Function to disable button if form is not valid
+             */
+            var $requiredInputs = $("#editProfile-form").find("input:required");
+            $requiredInputs.keyup(function () {
+                var empty_test = false;
+                $requiredInputs.each(function () {
+                    if($(this).val()==='')
+                        empty_test = true;
+                });
+
+                if(empty_test === true)
+                    $("#editProfile-form-submit-btn").attr("disabled", "disabled");
+                else {
+                    $("#editProfile-form-submit-btn").removeAttr("disabled");
+                }
+            });
+
+
+            /*
+            Request for getting cities name and id from server
+            */
             $.get("address.txt", function (data) {
                 const my_address = data + "/cities/";
                 $.ajax({
@@ -378,55 +400,57 @@
             $("#editProfile-form").submit(function (e) {
                 e.preventDefault();
 
-                // const password_var = editProfile_form_var.password.value;
 
 
-                const username_var = editProfile_form_var.username.value;
+                const  username_var = editProfile_form_var.username.value;
                 const  firstName_var = editProfile_form_var.firstName.value;
                 const  lastName_var = editProfile_form_var.lastName.value;
                 const  phoneNumber_var = editProfile_form_var.phoneNumber.value;
-                const  email_var = editProfile_form_var.email.value;
                 const  address_var = editProfile_form_var.address.value;
                 const  city_var = editProfile_form_var.city.value;
                 const  gender_var = editProfile_form_var.gender.value;
-                //const  image_var = editProfile_form_var.image.value;
 
-                alert(city_var);
 
-                    const editProfile_obj = {
-                        username: username_var,
-                        first_name: firstName_var,
-                        last_name: lastName_var,
-                        phone_number: phoneNumber_var,
-                        email: email_var,
-                        address: address_var,
-                        city: city_var,
-                        gender: gender_var
-                        //image
-                    };
-                    const editProfile_json = JSON.stringify(editProfile_obj);
+                var avatar =$("#editProfile-form-image-inp").get(0).files[0];
 
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/edit-profile-salesman/";
+                var editProfile_formData = new FormData();
 
-                        $.ajax({
-                            type: 'POST',
-                            // dataType: 'json',
-                            // contentType: 'application/json',
-                            url: my_address,
-                            data: editProfile_json,
-                            success: function(resultData, status, xhr){
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    window.location.href="AdminMainPage.html";
-                                }
-                                },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");}
-                        })
+                editProfile_formData.append("email", window.sessionStorage.email);
+                editProfile_formData.append("password", window.sessionStorage.password);
+                editProfile_formData.append("username", username_var);
+                editProfile_formData.append("first_name", firstName_var);
+                editProfile_formData.append("last_name", lastName_var);
+                editProfile_formData.append("phone_number", phoneNumber_var);
+                editProfile_formData.append("city", city_var);
+                editProfile_formData.append("address", address_var);
+                editProfile_formData.append("gender", gender_var);
+                editProfile_formData.append("avatar", avatar);
 
-                    });
-               });
+
+                $.get("address.txt", function (data) {
+                    const my_address = data + "/salesman/edit-profile/";
+
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        url: my_address,
+                        data: editProfile_formData,
+                        contentType: false,
+                        processData: false,
+                        crossDomain: true,
+                        success: function (resultData, status, xhr) {
+                            alert(resultData.message);
+                            if (resultData.result.toString() === "true") {
+                                window.location.href = "AdminMainPage.html";
+                            }
+                        },
+                        error: function () {
+                            alert(" اتصال به اینترنت برقرار نیست. ");
+                        }
+                    })
+
+                });
+            });
 
             /*
              Request for logout

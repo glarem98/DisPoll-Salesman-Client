@@ -419,7 +419,7 @@
                 // alert(window.sessionStorage.csrfToken);
 
                 $.get("address.txt", function (data) {
-                        const my_address = data + "/add-shop/";
+                        const my_address = data + "/salesman/add-shop/";
                         $.ajax({
                             type: 'POST',
                             url: my_address,
