@@ -119,8 +119,8 @@
         <div class="w3-margin ">
             <div class="w3-center " style="margin-top:8px !important">
                 <img  class="w3-center w3-closenav w3-xlarge w3-circle" src="avatar/man-with-tie.png"
-                     id="admin-img"
-                     style="width:100px ; height:100px"/>
+                      id="admin-img"
+                      style="width:100px ; height:100px"/>
             </div>
             <br/>
             <a href="editProfile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
@@ -136,14 +136,14 @@
             </div>
             <br/>
             <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
-                                                         style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
+                <a href="showPoll.html" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
+                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
                     من </a>
             </div>
             <br/>
             <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
-                                                         style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
+                <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
+                                                                         style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
                 </a>
             </div>
             <br/>
@@ -160,8 +160,8 @@
             </div>
             <br/>
             <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
-                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+                <a class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
+                                                            style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
                 </a>
             </div>
             <br/>
@@ -219,7 +219,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
                             <input type="submit" value="ارسال تبلیغ" class="btn btn-default btnColors"
-                                   id="advertisement-form-submit-btn" />
+                                   id="advertisement-form-submit-btn" disabled="disabled" />
                         </div>
                     </div>
 
@@ -307,6 +307,24 @@
                     window.sessionStorage.setItem("selectShop", val.id);
                 })
             }
+
+            /*
+            Function to disable button if form is not valid
+             */
+            var $requiredInputs = $("#advertisement-form").find("input:required");
+            $requiredInputs.keyup(function () {
+                var empty_test = false;
+                $requiredInputs.each(function () {
+                    if($(this).val()==='')
+                        empty_test = true;
+                });
+
+                if(empty_test === true)
+                    $("#advertisement-form-submit-btn").attr("disabled", "disabled");
+                else {
+                    $("#advertisement-form-submit-btn").removeAttr("disabled");
+                }
+            });
 
             /*
             Request for logout
