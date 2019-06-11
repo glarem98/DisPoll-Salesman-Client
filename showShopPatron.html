@@ -7,7 +7,7 @@
     <meta name="language" content="fa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="Content/bootstrap.min.css" rel="stylesheet" />-->
     <link href="Content/css/bootstrap-rtl.css" rel="stylesheet" />
     <link href="Content/css/w3.css" rel="stylesheet" />
     <link href="ParsaFont/Style.css" rel="stylesheet" />
@@ -18,29 +18,28 @@
     <script src="Scripts/jquery.validate.unobtrusive.min.js"></script>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>-->
 
 </head>
 <body style="background-color:#E5E5E5">
     <style>
+            .col-container {
+        display: table;
+        width: 100%;
+    }
+
+    .col {
+        display: table-cell;
+        padding: 16px;
+    }
+
         .componentColor {
             background-color: #F2F2F2 !important;
         }
-        .pictureInput {
-            top: -1px;
-            font-size: 12px;
-            padding-left: 3px;
-            padding-right: 3px;
-            padding-bottom: 2px;
-            color: #7B8084 !important;
-            background: #F2F2F2 !important;
-            background-size: 50px 30px;
-        }
+
         .btnColors {
             background-color: #006DA0 !important;
             color: #ECEDEF !important;
-            width:auto!important;
-            height:30px
         }
 
         /*.btnHoverColor:hover {
@@ -67,51 +66,6 @@
             font-size: 16px;
             border: none;
             cursor: pointer;
-        }
-        input[type=text] {
-            padding: 12px 20px;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input {
-            font-size: 18px;
-            padding: 10px 10px 10px 5px;
-            display: block;
-            width: 300px;
-            border: 1px solid #212121;
-            background: transparent !important;
-            color: #212121;
-            /*border-radius: 10px;*/
-        }
-
-        label {
-            color: #7B8084 !important;
-            font-weight: normal !important;
-            position: absolute;
-            pointer-events: none;
-            right: 45px;
-            top: 20px;
-            
-        }
-
-        input:focus ~ label,
-        input:valid ~ label {
-            top: -1px;
-            font-size: 12px;
-            padding-left: 3px;
-            padding-right: 3px;
-            padding-bottom:3px;
-            color: #7B8084 !important;
-            background: #F2F2F2 !important;
-            background-size: 50px 30px;
-        }
-
-        input:focus,
-        input:valid {
-            border-color: #006DA0 !important;
         }
     </style>
 
@@ -164,63 +118,72 @@
             <h1> <span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text " style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important" href="HomePage.html">DisPoll</span></h1>
         </div>
     </header>
-
-    <br />
-
-    <div class="container">
-        <div class=" w3-xlarge w3-center" style="color:#7B8084; margin-bottom:20px">
-            فرم وارد کردن کد تخفیف
-        </div>
+    <br /><br />
+    <div class="container" style="background-color:none !important">
         <div class="col-lg-offset-2">
-            <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                <form class="form-horizontal" id="sale-form">
+            <div class="col-container">
+                <div class="col componentColor" align="center">
+                    <h2 class="w3-margin-right" id="showShop-name" >  نام فروشگاه </h2>
+                    <br />
+                    <img src="avatar/shop.jpg" id="showShop-img" style=" width:400px;height:400px" />
+                    <br />
+                </div>
+                <div class="col componentColor" align="right">
 
-<!--                    <div class="form-group">-->
-<!--                        <div class="col-md-11">-->
-<!--                            <select class="form-control w3-margin" required name="shops"-->
-<!--                                    id="sale-form-shopKinds-inp"-->
-<!--                                    style="height:40px; background-color:#F2F2F2">-->
-<!--                                <option class="placeholder" selected disabled hidden value="" >فروشگاه</option>-->
-<!--                                <option value="" disabled ></option>-->
-<!--                                &lt;!&ndash;need a for to read shop types from db&ndash;&gt;-->
-<!--                                <option value="" id="sale-form-shopKinds-lastOp-op" disabled ></option>-->
-<!--                            </select>-->
+                    <div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <div id="showShop-shopKind">
+                            <span>نوع فروشگاه: </span>
+                        </div>
+                        <br />
+                        <div id="showShop-city">
+                            <span>شهر: </span>
+                        </div>
+                        <br />
+                        <div id="showShop-address">
+                            <span>آدرس: </span>
+                        </div>
+                        <br />
+                        <div id="showShop-phoneNumber">
+                            <span>شماره تماس: </span>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+
+<!--                    <button class="btn btn-default btnColors" onclick="goToEdit()">-->
+<!--                        ویرایش اطلاعات-->
+<!--                    </button>-->
+
+
+<!--                    <div class="form-group" >-->
+<!--                        <div class="col-md-offset-7 col-md-11">-->
+<!--                            <input type="button" value=" ویرایش اطلاعات " class="btn btn-default btnColors" id="showShop-btn" />-->
 <!--                        </div>-->
 <!--                    </div>-->
-
-                    <div class="form-group">
-                        <div class="col-md-11">
-                            <input type="text" required name="discountCode" value=""
-                                   class="form-control w3-margin"
-                                   id="sale-form-discountCode-inp"
-                                   accept="application/txt" />
-                            <label> کد تخفیف </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-5 col-md-11">
-                            <input type="submit" value="ثبت کد" class="btn btn-default btnColors"
-                                   id="sale-form-submit-btn" disabled="disabled" />
-                        </div>
-                    </div>
-
-                </form>
+                </div>
+            </div>
             </div>
         </div>
-    </div>
-    <br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-    <footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
-        تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
-        <br />
-        طراحی و پیاده سازی توسط Group G
-    </footer>
+        <br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+        <footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
+            تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
+            <br />
+            طراحی و پیاده سازی توسط Group G
+        </footer>
 
     <script>
         //Scripts for design and it's actions
+        const data = 'http://185.88.179.80:800';
+        var my_address;
 
         /*
         Function opening and closing subset of an tag
@@ -238,12 +201,17 @@
             }
         }
 
+        // //Going to editShop by clicking on showShop button
+        // function goToEdit() {
+        //     window.location.href = "editShop.html";
+        // }
+        //
 
         $(document).ready(function () {
 
-            //Go to PatronMainPage by clicking on picture
+            //Go to AdminMainPage by clicking on picture
             $("#admin-img").click(function () {
-                window.location.href = "PatronMainPage.html"
+                window.location.href = "AdminMainPage.html"
             });
 
 
@@ -273,8 +241,9 @@
                     a.setAttributeNode(attrHref);
                     a.setAttributeNode(attrId);
                     a.appendChild(aTextName);
+                    const addA = document.getElementById("add");
                     const myShops = document.getElementById("shops");
-                    myShops.append(a);
+                    myShops.insertBefore(a, addA);
 
                 }
             }
@@ -290,73 +259,51 @@
                 })
             }
 
-            /*
-            Function to disable button if form is not valid
-             */
-            var $requiredInputs = $("#sale-form").find("input:required");
-            $requiredInputs.keyup(function () {
-                var empty_test = false;
-                $requiredInputs.each(function () {
-                    if($(this).val()==='')
-                        empty_test = true;
-                });
-
-                if(empty_test === true)
-                    $("#sale-form-submit-btn").attr("disabled", "disabled");
-                else {
-                    $("#sale-form-submit-btn").removeAttr("disabled");
-                }
-            });
-
         });
 
 
     </script>
 
+
     <script>
 
-        $(document).ready( function () {
+        $(document).ready(function () {
 
-            const sale_form_var = document.getElementById("sale-form");
+            var showShop_formData = new FormData();
+            if (typeof (window.sessionStorage.selectShop) !== "undefined")
+                showShop_formData.append("shop", window.sessionStorage.selectShop);
 
-            $("#sale-form").submit(function (e) {
-                e.preventDefault();
 
-                var advertisement_formData = new FormData();
-                advertisement_formData.append("discount_code", sale_form_var.discounyCode.value);
-
-                $.get("address.txt", function (data) {
-                    const my_address = data + "/salesman/apply-discount/";
-                    $.ajax({
-                        type: 'POST',
-                        url: my_address,
-                        dataType: 'json',
-                        contentType: false,
-                        processData: false,
-                        crossDomain: true,
-                        headers: {
-                            'Authorization': window.sessionStorage.token
-                        },
-                        data: advertisement_formData,
-                        success: function(resultData, status, xhr){
-                            alert(resultData.message);
-                            if (resultData.result.toString() === "true") {
-                                // window.location.href="advertisementPage.html";
-                                // window.location.reload();
-                            }
-                        },
-                        error: function () {
-                            alert(" اتصال به اینترنت برقرار نیست. ");}
-                    })
-
-                });
-
-                  });
+                my_address = data + "/salesman/get-shop/";
+                $.ajax({
+                    type: 'POST',
+                    url: my_address,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    crossDomain: true,
+                    headers: {
+                        'Authorization': window.sessionStorage.token
+                    },
+                    data: showShop_formData,
+                    success: function(resultData, status, xhr){
+                        if (resultData.result.toString() === "true") {
+                            $("#showShop-name").text(resultData.message.name);
+                            $("#showShop-img").attr("src", data + resultData.message.picture);
+                            $("#showShop-shopKind").append(resultData.message.shop_kind.name);
+                            $("#showShop-city").append(resultData.message.city.name );
+                            $("#showShop-address").append(resultData.message.address );
+                            $("#showShop-phoneNumber").append(resultData.message.phone_number);
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");}
+                })
 
             /*
-          Request for logout
-          send authorization in header
-          */
+               Request for logout
+               send authorization in header
+               */
             $("#logout").click(function () {
                 var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
                 if (logout_var ==true){

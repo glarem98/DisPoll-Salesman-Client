@@ -72,7 +72,7 @@
         <br/>
         <a href="editProfile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
         <br/>
-        <a class="rightMenuColor" onclick="myFunction('shops')">
+        <a href="#" class="rightMenuColor" onclick="myFunction('shops')">
             <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
             &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
         </a>
@@ -107,8 +107,8 @@
         </div>
         <br/>
         <div class="rightMenuColor">
-            <a class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
-                                                        style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+            <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
+                                                                 style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
             </a>
         </div>
         <br/>
@@ -210,11 +210,15 @@
             })
         }
 
+    });
+
+
+    $(document).ready(function () {
 
         /*
-         Request for logout
-         send authorization in header
-         */
+          Request for logout
+          send authorization in header
+          */
         $("#logout").click(function () {
             var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
             if (logout_var ==true){

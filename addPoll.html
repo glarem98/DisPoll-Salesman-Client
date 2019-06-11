@@ -123,10 +123,10 @@
                       id="admin-img"
                       style="width:100px ; height:100px"/>
             </div>
-            <br />
+            <br/>
             <a href="editProfile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
             <br/>
-            <a class="rightMenuColor" onclick="myFunction('shops')">
+            <a href="#" class="rightMenuColor" onclick="myFunction('shops')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
                 &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
             </a>
@@ -135,40 +135,37 @@
                 <a class="w3-center rightMenuColor" href="addShop.html" id="add"> <span class="glyphicon glyphicon-plus"></span>
                     &nbsp;جدید&nbsp;</a>
             </div>
-            <br />
+            <br/>
             <div class="rightMenuColor">
                 <a href="showPoll.html" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
                                                                      style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
                     من </a>
             </div>
-            <br />
+            <br/>
             <div class="rightMenuColor">
                 <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
                                                                          style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
-             </a>
-            </div>
-            <br />
-            <div class="rightMenuColor">
-                <a href="advertisementPage.html" class="rightMenuColor">
-                    <span class="glyphicon glyphicon-earphone"
-                          style="color:#7B8084"></span>&nbsp;&nbsp;
-                    تبلیغات
                 </a>
             </div>
-            <br />
+            <br/>
             <div class="rightMenuColor">
-                <a href="supportPage.html" class="rightMenuColor">
-                    <span class="glyphicon glyphicon-earphone"
-                          style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی
+                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                                                                              style="color:#7B8084"></span>&nbsp;&nbsp;
+                    تبلیغات </a>
+            </div>
+            <br/>
+            <div class="rightMenuColor">
+                <a href="supportPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                                                                        style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی
                 </a>
             </div>
-            <br />
+            <br/>
             <div class="rightMenuColor">
-                <a class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
-                                                            style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+                <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
+                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
                 </a>
             </div>
-            <br />
+            <br/>
         </div>
     </nav>
 
@@ -386,42 +383,6 @@
             }
 
 
-            /*
-             Request for logout
-             send authorization in header
-             */
-            $("#logout").click(function () {
-                var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
-                if (logout_var ==true){
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/logout/";
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',
-                            contentType: 'application/json',
-                            url: my_address,
-                            headers:{
-                                'Authorization' : window.sessionStorage.token
-                            },
-                            data: JSON.stringify({}),
-                            success: function (resultData, status, xhr) {
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    window.location.href="HomePage.html";
-                                }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");
-                            }
-                        })
-
-                    });
-
-                }else{
-                    alert(" از این که همراه ما خواهید بود متشکریم. ");
-                }
-            });
-
         });
 
 
@@ -532,6 +493,42 @@
 
                 });
 
+            });
+
+            /*
+           Request for logout
+           send authorization in header
+           */
+            $("#logout").click(function () {
+                var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
+                if (logout_var ==true){
+                    $.get("address.txt", function (data) {
+                        const my_address = data + "/salesman/logout/";
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            contentType: 'application/json',
+                            url: my_address,
+                            headers:{
+                                'Authorization' : window.sessionStorage.token
+                            },
+                            data: JSON.stringify({}),
+                            success: function (resultData, status, xhr) {
+                                alert(resultData.message);
+                                if (resultData.result.toString() === "true") {
+                                    window.location.href="HomePage.html";
+                                }
+                            },
+                            error: function () {
+                                alert(" اتصال به اینترنت برقرار نیست. ");
+                            }
+                        })
+
+                    });
+
+                }else{
+                    alert(" از این که همراه ما خواهید بود متشکریم. ");
+                }
             });
 
 
