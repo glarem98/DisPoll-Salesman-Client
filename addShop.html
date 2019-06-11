@@ -302,25 +302,10 @@
             }
         }
 
-
-        $(document).ready(function () {
-
-            //Go to AdminMainPage by clicking on picture
-            $("#admin-img").click(function () {
-                window.location.href = "AdminMainPage.html"
-            });
-
-
-            //Fill in admin avatar and fullName
-            if ((typeof (window.sessionStorage.avatar) !== "undefined") && (typeof (window.sessionStorage.firstName) !== "undefined")
-                && (typeof (window.sessionStorage.lastName) !== "undefined")) {
-                $("#admin-img").attr("src", window.sessionStorage.avatar);
-                $("#admin-name").text(window.sessionStorage.firstName + " " + window.sessionStorage.lastName);
-            }
-
-            /*
-             Reading from session "shops" and filled the rightMenu sub myShops
-             */
+        /*
+         Function reading from session "shops" and filled the rightMenu sub myShops
+         */
+        function setShopsRightMenu() {
             if (typeof (window.sessionStorage.shops) !== "undefined") {
 
                 var shop_var = JSON.parse(window.sessionStorage.shops);
@@ -343,6 +328,28 @@
 
                 }
             }
+        }
+
+        $(document).ready(function () {
+
+            //Go to AdminMainPage by clicking on picture
+            $("#admin-img").click(function () {
+                window.location.href = "AdminMainPage.html"
+            });
+
+
+            //Fill in admin avatar and fullName
+            if ((typeof (window.sessionStorage.avatar) !== "undefined") && (typeof (window.sessionStorage.firstName) !== "undefined")
+                && (typeof (window.sessionStorage.lastName) !== "undefined")) {
+                $("#admin-img").attr("src", window.sessionStorage.avatar);
+                $("#admin-name").text(window.sessionStorage.firstName + " " + window.sessionStorage.lastName);
+            }
+
+            /*
+             Reading from session "shops" and filled the rightMenu sub myShops for first time
+             */
+            setShopsRightMenu()
+
 
             //Go to AdminMainPage by clicking on picture
             $("#admin-img").click(function () {
@@ -452,7 +459,7 @@
                 },
                 error: function () {
                     alert(" اتصال به اینترنت برقرار نیست. ");}
-            })
+            });
         
 
 
@@ -478,7 +485,7 @@
                 },
                 error: function () {
                     alert(" اتصال به اینترنت برقرار نیست. ");}
-            })
+            });
 
 
 
@@ -523,6 +530,30 @@
                     success: function (resultData, status, xhr) {
                         alert(resultData.message);
                         if (resultData.result.toString() === "true") {
+
+                            my_address = data + "/salesman/shops/";
+                            $.ajax({
+                                type: 'GET',
+                                // dataType: 'json',
+                                // contentType: 'application/json',
+                                url: my_address,
+                                headers: {
+                                    'Authorization': window.sessionStorage.token
+                                },
+                                // data: signUp_complete_info_json,
+                                success: function(resultData, status, xhr){
+                                    // alert(resultData.message);
+                                    if (resultData.result.toString() === "true") {
+                                        window.sessionStorage.setItem("shops", JSON.stringify(resultData.shops));
+                                        setShopsRightMenu();
+                                    }
+                                },
+                                error: function () {
+                                    alert(" اتصال به اینترنت برقرار نیست. ");}
+                            })
+
+
+
                             // window.location.href="AdminMainPage.html";
                         }
                     },
