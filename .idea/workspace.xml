@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d10e1cb-5767-43e3-b348-44c2480bd13d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/AdminMainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminMainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addDiscount.html" beforeDir="false" afterPath="$PROJECT_DIR$/addDiscount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addPoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/addPoll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/addShop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/editProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showDiscount.html" beforeDir="false" afterPath="$PROJECT_DIR$/showDiscount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showPoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/showPoll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/showShop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PatronMainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/PatronMainPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pollPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pollPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/salePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/showProfile.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +24,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HomePage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
+            <state relative-caret-position="-2659">
               <caret line="457" column="42" lean-forward="true" selection-start-line="457" selection-start-column="4" selection-end-line="457" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -109,10 +105,6 @@
         <option value="$PROJECT_DIR$/testcsrf.html" />
         <option value="$PROJECT_DIR$/supportPage.html" />
         <option value="$PROJECT_DIR$/PatronMainPage .html" />
-        <option value="$PROJECT_DIR$/PatronMainPage.html" />
-        <option value="$PROJECT_DIR$/pollPage.html" />
-        <option value="$PROJECT_DIR$/salePage.html" />
-        <option value="$PROJECT_DIR$/showProfile.html" />
         <option value="$PROJECT_DIR$/completeInfo.html" />
         <option value="$PROJECT_DIR$/HomePage.html" />
         <option value="$PROJECT_DIR$/advertisementPage.html" />
@@ -124,6 +116,10 @@
         <option value="$PROJECT_DIR$/showDiscount.html" />
         <option value="$PROJECT_DIR$/showPoll.html" />
         <option value="$PROJECT_DIR$/showShop.html" />
+        <option value="$PROJECT_DIR$/PatronMainPage.html" />
+        <option value="$PROJECT_DIR$/pollPage.html" />
+        <option value="$PROJECT_DIR$/salePage.html" />
+        <option value="$PROJECT_DIR$/showProfile.html" />
       </list>
     </option>
   </component>
@@ -219,12 +215,12 @@
       <workItem from="1559558061997" duration="9811000" />
       <workItem from="1559802571292" duration="8713000" />
       <workItem from="1560026054693" duration="9038000" />
-      <workItem from="1560174920768" duration="16654000" />
+      <workItem from="1560174920768" duration="17330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155891000" />
+    <option name="totallyTimeSpent" value="156567000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,29 +349,6 @@
     <entry file="file://$PROJECT_DIR$/address.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pollPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="267" column="15" selection-start-line="267" selection-start-column="15" selection-end-line="267" selection-end-column="15" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#10234#11478#0" />
-            <element signature="e#10395#11365#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/salePage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="296" column="15" lean-forward="true" selection-start-line="262" selection-start-column="9" selection-end-line="296" selection-end-column="15" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#10135#11491#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
       <provider selected="true" editor-type-id="httpFileEditor" />
     </entry>
@@ -383,20 +356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
           <caret line="397" column="57" selection-start-line="397" selection-start-column="57" selection-end-line="397" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/showProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="446" column="15" selection-start-line="446" selection-start-column="15" selection-end-line="446" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PatronMainPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
         </state>
       </provider>
     </entry>
@@ -536,9 +495,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/showProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="425" selection-start-line="425" selection-end-line="425" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#14588#14777#0" />
+            <element signature="e#14943#15824#0" />
+            <element signature="e#15976#16185#0" />
+            <element signature="e#16316#17560#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="320" selection-start-line="320" selection-end-line="320" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#8912#9101#0" />
+            <element signature="e#9267#10148#0" />
+            <element signature="e#10300#10509#0" />
+            <element signature="e#10640#11884#0" />
+            <element signature="e#10135#11491#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pollPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="322" selection-start-line="322" selection-end-line="322" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#8992#9181#0" />
+            <element signature="e#9347#10228#0" />
+            <element signature="e#10380#10589#0" />
+            <element signature="e#10720#11964#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PatronMainPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="236" column="9" lean-forward="true" selection-start-line="125" selection-end-line="237" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#5740#5929#0" />
+            <element signature="e#6095#7049#0" />
+            <element signature="e#7367#7576#0" />
+            <element signature="e#7707#8951#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HomePage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
+        <state relative-caret-position="-2659">
           <caret line="457" column="42" lean-forward="true" selection-start-line="457" selection-start-column="4" selection-end-line="457" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
