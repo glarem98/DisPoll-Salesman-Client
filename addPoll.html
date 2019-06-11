@@ -119,19 +119,12 @@
     <nav class="w3-sidenav w3-mobile w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
         <div class="w3-margin ">
             <div class="w3-center " style="margin-top:8px !important">
-<<<<<<< HEAD
                 <img  class="w3-center w3-closenav w3-xlarge w3-circle" src="avatar/man-with-tie.png"
                       id="admin-img"
                       style="width:100px ; height:100px"/>
-=======
-                <img class="w3-center w3-closenav w3-xlarge w3-circle" src="avatar/man-with-tie.png"
-                     id="admin-img"
-                     style="width:100px ; height:100px" />
->>>>>>> e70cc18087f38060136be2006232f99511d9d640
             </div>
             <br />
             <a href="editProfile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
-<<<<<<< HEAD
             <br/>
             <a class="rightMenuColor" onclick="myFunction('shops')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
@@ -141,47 +134,18 @@
 
                 <a class="w3-center rightMenuColor" href="addShop.html" id="add"> <span class="glyphicon glyphicon-plus"></span>
                     &nbsp;جدید&nbsp;</a>
-=======
-            <br />
-            <a class="rightMenuColor" onclick="myFunction('Demo1')">
-                <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
-                &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
-            </a>
-            <div id="Demo1" class="w3-container w3-hide ">
-                <a class="rightMenuColor" href="showShop.html"> &nbsp;فروشگاه اول</a>
-                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
-                <a class="w3-center rightMenuColor" href="addShop.html">
-                    <span class="glyphicon glyphicon-plus"></span>
-                    &nbsp;جدید&nbsp;
-                </a>
->>>>>>> e70cc18087f38060136be2006232f99511d9d640
             </div>
             <br />
             <div class="rightMenuColor">
-<<<<<<< HEAD
                 <a href="showPoll.html" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
                                                                      style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
                     من </a>
-=======
-                <a href="#" class="rightMenuColor">
-                    <span class="glyphicon glyphicon-signal"
-                          style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
-                    من
-                </a>
->>>>>>> e70cc18087f38060136be2006232f99511d9d640
             </div>
             <br />
             <div class="rightMenuColor">
-<<<<<<< HEAD
                 <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
                                                                          style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
-=======
-                <a href="#" class="rightMenuColor">
-                    <span class="glyphicon glyphicon-usd"
-                          style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
->>>>>>> e70cc18087f38060136be2006232f99511d9d640
-                </a>
+             </a>
             </div>
             <br />
             <div class="rightMenuColor">
@@ -200,14 +164,8 @@
             </div>
             <br />
             <div class="rightMenuColor">
-<<<<<<< HEAD
                 <a class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
                                                             style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
-=======
-                <a href="#" class="rightMenuColor" id="logout">
-                    <span class="glyphicon glyphicon-off"
-                          style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
->>>>>>> e70cc18087f38060136be2006232f99511d9d640
                 </a>
             </div>
             <br />
@@ -227,10 +185,24 @@
         </div>
         <div class="col-lg-offset-2">
             <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                <div class="form-horizontal">
+                <div class="form-horizontal" id="poll-form">
+
+                    <div class="form-group">
+                            <div class="col-md-11">
+                                <select class="form-control w3-margin" required name="shops"
+                                        id="poll-form-shopKinds-inp"
+                                        style="height:40px; background-color:#F2F2F2">
+                                    <option class="placeholder" selected disabled hidden value="" >فروشگاه</option>
+                                    <option value="" disabled ></option>
+                                    <!--need a for to read shop types from db-->
+                                    <option value="" id="poll-form-shopKinds-lastOp-op" disabled ></option>
+                                </select>
+                            </div>
+                    </div>
+
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required autofocus name="username" value="" class=" form-control  w3-margin" id="editProfile-form-first-name-inp"
+                            <input type="text" required autofocus name="question" value="" class=" form-control  w3-margin" id="Poll-form-question-inp"
                                    accept="application/txt" />
                             <label> سوال </label>
                         </div>
@@ -239,20 +211,21 @@
                     <div class="form-group">
                         <div class="col-md-11">
 
-                            <select class="form-control w3-margin" name="Type" style="height:40px;background-color:#F2F2F2" required>
-                                <option value=""> نوع نظر سنجی انتخاب کنید</option>
+                            <select id="poll-form-kind-inp" class="form-control w3-margin" name="kind" style="height:40px;background-color:#F2F2F2" required>
+                                <option value=""> نوع نظرسنجی </option>
                                 <!--need a for to read shop types from db-->
 
-                                <option value="MultiChoice"> چند گزینه ای</option>
-                                <option value="CheckBox"> تک گزینه ای </option>
-                                <option value="Paragragh">پاسخ چند خطی </option>
-                                <option value="ShortAnswer">پاسخ کوتاه </option>
-                                <option value="LinearScale">نوار شناور</option>
+                                <option value="MultiChoicePoll"> چند گزینه ای</option>
+                                <option value="CheckBoxPoll"> تک گزینه ای </option>
+                                <option value="ParagraghPoll">پاسخ چند خطی </option>
+                                <option value="ShortAnswerPoll">پاسخ کوتاه </option>
+                                <option value="LinearScalePoll">نوار شناور</option>
+
                             </select>
                         </div>
                     </div>
                     <!-- this one need a style="display:none;"-->
-                    <div class="form-group" id="choices">
+                    <div class="form-group" id="choices" style="display: none">
 
                         <div class="w3-center">
                             گزینه ها
@@ -261,7 +234,7 @@
                         <!--this htlm should be copy in next div when the + bottom is clicked-->
                         <div class="col-md-11" id="cloneChoice">
                             <span style="margin-top:20px ; direction:rtl">
-                                <input type="text" required autofocus name="username" value="" class="form-control w3-center w3-margin" id="editProfile-form-first-name-inp"
+                                <input type="text" required autofocus name="choice" value="" class="form-control w3-center w3-margin" id="poll-form-choice-name-inp"
                                        accept="application/txt" />
                                 <label> گزینه </label>
                             </span>
@@ -275,7 +248,8 @@
                         </div>
                     </div>
                     <!-- for next div we should add  style="display:none;"  -->
-                    <div id="LinearScale">
+                    <div id="LinearScale" style="display: none">            const poll_form_var = document.getElementById("poll-form");
+
                         <div class="w3-center">
                             محدودیت ها
                         </div>
@@ -283,17 +257,17 @@
                         <div class="col-container"></div>
                         <div class="form-group col">
                             <div class="col-md-11">
-                                <input class="form-control question-format-max w3-margin" type="number" placeholder="شروع بازه" value="">
+                                <input class="form-control question-format-max w3-margin" name="start" type="number" placeholder="شروع بازه" value="">
                             </div>
                         </div>
                         <div class="form-group col">
                             <div class="col-md-11">
-                                <input class="form-control question-format-max w3-margin" type="number" placeholder=" اندازه گام" value="">
+                                <input class="form-control question-format-max w3-margin" name="step" type="number" placeholder=" اندازه گام" value="">
                             </div>
                         </div>
                         <div class="form-group col">
                             <div class="col-md-11">
-                                <input class="form-control question-format-max w3-margin" type="number" placeholder=" تعداد گام ها " value="">
+                                <input class="form-control question-format-max w3-margin" name="choicesCount" type="number" placeholder=" تعداد گام ها " value="">
                             </div>
                         </div>
                     </div>
@@ -302,7 +276,7 @@
 
                             <input type="range" required name="percent" min="0" max="100" step="10" value="10"
                                    class="form-control w3-margin"
-                                   id="addDiscount-form-percent-inp" accept="application/txt" onchange="show_value(this.value);" />
+                                   id="poll-form-importance-inp" accept="application/txt" onchange="show_value(this.value);" />
                             <label> درصد اهمیت    </label>
                             <div class="col" style="color:#7B8084"> درصد انتخابی :  </div>
                             <div class="col" id="slider_value" style="color:#7B8084;padding-right:5px !important"> 10% </div>
@@ -313,13 +287,13 @@
                             <!--                                  تعویض تاریخ-->
                             <input type="date" required autofocus value="" name="timeout"
                                    class="form-control w3-margin pictureInput"
-                                   id="addDiscount-form-timeout-inp" accept="application/txt">
+                                   id="poll-form-timeout-inp" accept="application/txt">
                             <label class="pictureInput"> مهلت </label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
-                            <input type="submit" value="ذخیره" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
+                            <input type="submit" value="ذخیره" class="btn btn-default btnColors" id="poll-form-submit-btn" />
                         </div>
                     </div>
                 </div>
@@ -461,82 +435,30 @@
             document.getElementById("slider_value").innerHTML = x + "%";
         }
 
-        function myFunction(id) {
-            var x = document.getElementById(id);
-            const y = document.getElementById("more");
-            y.style.transform = "rotate(180deg)";
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-                y.style.transform = "rotate(0deg)";
-            }
-        }
+    
 
-<<<<<<< HEAD
-            $(document).ready(function () {
-                $("select").change(function () {
-                    $("select option:selected").each(function () {
-                        if (($(this).attr("value") == "MultiChoice") || ($(this).attr("value") == "CheckBox")) {
-                            $("choices").show();
-                        }
-                        if ($(this).attr("value") == "LinearScale") {
-                            $("LinearScale").show();
-                        }
-                    });
-                }).change();
-
-=======
         $(document).ready(function () {
-            $("select").change(function () {
-                $("select option:selected").each(function () {
-                    if (($(this).attr("value") == "MultiChoice") || ($(this).attr("value") == "CheckBox")) {
-                        $("choices").show();
-                    }
-                    if ($(this).attr("value") == "LinearScale") {
-                        $("LinearScale").show();
-                    }
-                });
-            }).change();
-
-            /*
-             Request for logout
-             send authorization in header
-             */
-            $("#logout").click(function () {
-                var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
-                if (logout_var == true) {
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/logout/";
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',
-                            contentType: 'application/json',
-                            url: my_address,
-                            headers: {
-                                'Authorization': window.sessionStorage.token
-                            },
-                            data: JSON.stringify({}),
-                            success: function (resultData, status, xhr) {
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    window.location.href = "HomePage.html";
-                                }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");
-                            }
-                        })
-
-                    });
-
-                } else {
-                    alert(" از این که همراه ما خواهید بود متشکریم. ");
+            const poll_form_var = document.getElementById("poll-form");
+            $("#poll-form-kind-inp").change(function () {
+                if(poll_form_var.kind.value == "LinearScalePoll"){
+                    document.getElementById("LinearScale").style.display="block";}
+                else if((poll_form_var.kind.value == "MultiChoicePoll")||(poll_form_var.kind.value == "CheckBoxPoll"))
+                {
+                    document.getElementById("choices").style.display="block";
                 }
->>>>>>> e70cc18087f38060136be2006232f99511d9d640
             });
 
-        });
+            // $("select").change(function () {
+            //     $("select option:selected").each(function () {
+            //         if (($(this).attr("value") == "MultiChoice") || ($(this).attr("value") == "CheckBox")) {
+            //             $("choices").show();
+            //         }
+            //         if ($(this).attr("value") == "LinearScale") {
+            //             $("LinearScale").show();
+            //         }
+            //     });
+            // }).change();
+        });      
 
 
     </script>
@@ -559,5 +481,74 @@
             return false;
         }
     </script>
+
+<script>
+
+        $(document).ready( function () {
+
+            const poll_form_var = document.getElementById("poll-form");
+
+            /*
+            Reading from session "shops" and filled the shopKind selector sub myShops
+            */
+            if (typeof (window.sessionStorage.shops) !== "undefined") {
+
+                var shop_var = JSON.parse(window.sessionStorage.shops);
+                for (let val of shop_var) {
+                    const op = document.createElement("option");
+                    const opText = document.createTextNode(val.name);
+                    const myShops = document.getElementById("poll-form-shopKinds-inp");
+                    const lastOp = document.getElementById("poll-form-shopKinds-lastOp-op");
+                    op.value = val.id;
+                    op.appendChild(opText);
+                    myShops.insertBefore(op,lastOp);
+                }
+            }
+
+
+            $("#poll-form").submit(function (e) {
+                e.preventDefault();
+
+                var poll_formData = new FormData();
+                poll_formData.append("phone_number", poll_form_var.phoneNumber.value);
+                poll_formData.append("shop", poll_form_var.shops.value);
+
+                $.get("address.txt", function (data) {
+
+                    const my_address = data + "/salesman/add-poll/";
+
+                    $.ajax({
+                        type: 'POST',
+                        url: my_address,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        crossDomain: true,
+                        headers: {
+                            'Authorization': window.sessionStorage.token
+                        },
+                        data: poll_formData,
+                        success: function(resultData, status, xhr){
+                            alert(resultData.message);
+                            if (resultData.result.toString() === "true") {
+                                // window.location.href="advertisementPage.html";
+                                // window.location.reload();
+                            }
+                        },
+                        error: function () {
+                            alert(" اتصال به اینترنت برقرار نیست. ");}
+                    })
+
+                });
+
+            });
+
+
+        });
+
+
+    </script>
+
+
 </body>
 </html>

@@ -193,6 +193,8 @@
 
     <script>
         //Scripts for design and it's actions
+        const data = 'http://185.88.179.80:800';
+        var my_address;
 
         /*
         Function opening and closing subset of an tag
@@ -281,8 +283,8 @@
             $("#logout").click(function () {
                 var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
                 if (logout_var ==true){
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/logout/";
+                        
+                        my_address = data + "/salesman/logout/";
                         $.ajax({
                             type: 'POST',
                             dataType: 'json',
@@ -302,8 +304,6 @@
                                 alert(" اتصال به اینترنت برقرار نیست. ");
                             }
                         })
-
-                    });
 
                 }else{
                     alert(" از این که همراه ما خواهید بود متشکریم. ");
@@ -325,8 +325,7 @@
                 showShop_formData.append("shop", window.sessionStorage.selectShop);
 
 
-            $.get("address.txt", function (data) {
-                const my_address = data + "/salesman/get-shop/";
+                my_address = data + "/salesman/get-shop/";
                 $.ajax({
                     type: 'POST',
                     url: my_address,
@@ -352,7 +351,6 @@
                         alert(" اتصال به اینترنت برقرار نیست. ");}
                 })
 
-            });
 
 
         });

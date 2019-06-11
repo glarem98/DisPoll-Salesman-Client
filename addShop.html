@@ -262,7 +262,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
                             <input type="submit" value="ذخیره" class="btn btn-default btnColors"
-                                   id="addShop-form-submit-btn" disabled="disabled"/>
+                                   id="addShop-form-submit-btn"/>
                         </div>
                     </div>
 
@@ -282,6 +282,9 @@
 
     <script>
         //Scripts for design and it's actions
+
+        const data = 'http://185.88.179.80:8000';
+        var my_address;
 
         /*
         Function opening and closing subset of an tag
@@ -383,29 +386,29 @@
             $("#logout").click(function () {
                 var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
                 if (logout_var ==true){
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/logout/";
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',
-                            contentType: 'application/json',
-                            url: my_address,
-                            headers:{
-                                'Authorization' : window.sessionStorage.token
-                            },
-                            data: JSON.stringify({}),
-                            success: function (resultData, status, xhr) {
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    window.location.href="HomePage.html";
-                                }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");
+                   
+                    my_address = data + "/salesman/logout/";
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        url: my_address,
+                        headers:{
+                            'Authorization' : window.sessionStorage.token
+                        },
+                        data: JSON.stringify({}),
+                        success: function (resultData, status, xhr) {
+                            alert(resultData.message);
+                            if (resultData.result.toString() === "true") {
+                                window.location.href="HomePage.html";
                             }
-                        })
+                        },
+                        error: function () {
+                            alert(" اتصال به اینترنت برقرار نیست. ");
+                        }
+                    })
 
-                    });
+                   
 
                 }else{
                     alert(" از این که همراه ما خواهید بود متشکریم. ");
@@ -426,58 +429,57 @@
             const addShop_form_var = document.getElementById("addShop-form");
 
 
-            $.get("address.txt", function (data) {
-                const my_address = data + "/shop-kinds/";
-                $.ajax({
-                    type: 'GET',
-                    // dataType: 'json',
-                    // contentType: 'application/json',
-                    url: my_address,
-                    // data: signUp_complete_info_json,
-                    success: function(resultData, status, xhr){
-                        alert(resultData.message);
-                        if (resultData.result.toString() === "true") {
-                            for (let val of (resultData.shop_kinds)) {
-                                const op = document.createElement("option");
-                                const opText = document.createTextNode(val.name);
-                                const lastOp = document.getElementById("addShop-form-shopKinds-lastOp-op");
-                                op.value = val.id;
-                                op.appendChild(opText);
-                                addShop_form_var.shopKinds.insertBefore(op,lastOp);
-                            }
+        
+            my_address = data + "/shop-kinds/";
+            $.ajax({
+                type: 'GET',
+                // dataType: 'json',
+                // contentType: 'application/json',
+                url: my_address,
+                // data: signUp_complete_info_json,
+                success: function(resultData, status, xhr){
+                    // alert(resultData.message);
+                    if (resultData.result.toString() === "true") {
+                        for (let val of (resultData.shop_kinds)) {
+                            const op = document.createElement("option");
+                            const opText = document.createTextNode(val.name);
+                            const lastOp = document.getElementById("addShop-form-shopKinds-lastOp-op");
+                            op.value = val.id;
+                            op.appendChild(opText);
+                            addShop_form_var.shopKinds.insertBefore(op,lastOp);
                         }
-                    },
-                    error: function () {
-                        alert(" اتصال به اینترنت برقرار نیست. ");}
-                })
-            });
+                    }
+                },
+                error: function () {
+                    alert(" اتصال به اینترنت برقرار نیست. ");}
+            })
+        
 
 
-            $.get("address.txt", function (data) {
-                const my_address = data + "/cities/";
-                $.ajax({
-                    type: 'GET',
-                    // dataType: 'json',
-                    // contentType: 'application/json',
-                    url: my_address,
-                    // data: signUp_complete_info_json,
-                    success: function(resultData, status, xhr){
-                        alert(resultData.message);
-                        if (resultData.result.toString() === "true") {
-                            for (let val of (resultData.cities)) {
-                                const op = document.createElement("option");
-                                const opText = document.createTextNode(val.name);
-                                const lastOp = document.getElementById("addShop-form-city-lastOp-op");
-                                op.value = val.id;
-                                op.appendChild(opText);
-                                addShop_form_var.city.insertBefore(op,lastOp);
-                            }
+            my_address = data + "/cities/";
+            $.ajax({
+                type: 'GET',
+                // dataType: 'json',
+                // contentType: 'application/json',
+                url: my_address,
+                // data: signUp_complete_info_json,
+                success: function(resultData, status, xhr){
+                    // alert(resultData.message);
+                    if (resultData.result.toString() === "true") {
+                        for (let val of (resultData.cities)) {
+                            const op = document.createElement("option");
+                            const opText = document.createTextNode(val.name);
+                            const lastOp = document.getElementById("addShop-form-city-lastOp-op");
+                            op.value = val.id;
+                            op.appendChild(opText);
+                            addShop_form_var.city.insertBefore(op,lastOp);
                         }
-                    },
-                    error: function () {
-                        alert(" اتصال به اینترنت برقرار نیست. ");}
-                })
-            });
+                    }
+                },
+                error: function () {
+                    alert(" اتصال به اینترنت برقرار نیست. ");}
+            })
+
 
 
             $("#addShop-form").submit(function (e) {
@@ -504,32 +506,32 @@
                 formData.append("picture", picture);
 
 
-                $.get("address.txt", function (data) {
-                    const my_address = data + "/salesman/add-shop/";
-                    $.ajax({
-                        type: 'POST',
-                        url: my_address,
-                        dataType: 'json',
-                        contentType: false,
-                        processData: false,
-                        data: formData,
-                        headers: {
-                            'Authorization': window.sessionStorage.token
-                        },
-                        crossDomain: true,
-                        xhrField: {withCredentials: true},
-                        success: function (resultData, status, xhr) {
-                            alert(resultData.message);
-                            if (resultData.result.toString() === "true") {
-                                // window.location.href="AdminMainPage.html";
-                            }
-                        },
-                        error: function () {
-                            alert(" اتصال به اینترنت برقرار نیست. ");
+                
+                my_address = data + "/salesman/add-shop/";
+                $.ajax({
+                    type: 'POST',
+                    url: my_address,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    headers: {
+                        'Authorization': window.sessionStorage.token
+                    },
+                    crossDomain: true,
+                    xhrField: {withCredentials: true},
+                    success: function (resultData, status, xhr) {
+                        alert(resultData.message);
+                        if (resultData.result.toString() === "true") {
+                            // window.location.href="AdminMainPage.html";
                         }
-                    })
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");
+                    }
+                })
 
-                });
+                
             });
 
         });

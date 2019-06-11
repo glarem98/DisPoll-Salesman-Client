@@ -79,6 +79,7 @@
     .col-container {
         display: table;
         width: 100%;
+        height: 100%;
     }
 
     .col {
@@ -169,9 +170,9 @@
     }
 </style>
 <br/><br/>
-<div class="container" style="background-color:none !important">
-    <div class="col-container">
-        <div class="col componentColor">
+<div class="container">
+    <div class="col-container right">
+        <!-- <div class="col componentColor">
             <br/>
             <br/>
             <h1><span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text "
@@ -179,14 +180,19 @@
                       href="HomePage.html">DisPoll</span></h1>
             <br/>
             <br/>
-            توضیحات سایت ما
+            <div class="col-container">
+                با انجام هر نظرسنجی از تخفیفات ویژه فروشگاه خود برخوردار شوید!
+            </div>            
             <br/>
             <br/>
             <br/>
-            <!-- <img  style="width:300px;height:200px" src="avatar/shop.jpg"  />-->
-        </div>
-        <div class="col componentColor ">
-            <div class="col-lg-offset-4">
+        </div> -->
+        
+        <!-- <div class="col-container componentColor " style="width:1000px; height:500px">
+            
+        </div> -->
+
+        <div>
                 <div class="componentColor">
                     <div class="tab btn-group">
                         <button class="tablinks active" onclick="openDIV(event, 'signUp-email-auth')"
@@ -197,8 +203,8 @@
                     </div>
                 </div>
             </div>
-            <div id="signUp-email-auth" class="tabcontent" style="display: block">
-                    <div class="col-lg-offset-4">
+            <div id="signUp-email-auth" class="tabcontent" style="display: block;">
+                    <div>
                         <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
                             <form id="signUp-email-auth-form" class="form-horizontal">
 
@@ -270,7 +276,7 @@
                     </div>
             </div>
             <div id="login" class="tabcontent">
-                <div class="col-lg-offset-4">
+                <div>
                     <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
                         <form id="login-form" class="form-horizontal">
 
@@ -312,7 +318,6 @@
                 </div>
 
             </div>
-        </div>
     </div>
 </div>
 
@@ -456,7 +461,7 @@
 </script>
 <script>
     //Scripts for connecting to the server
-
+    const data = 'http://185.88.179.80:8000';
     $(document).ready(function () {
 
         createCaptcha();
@@ -483,91 +488,89 @@
                     };
                     const signUp_json = JSON.stringify(signUp_obj);
 
-                    $.get("address.txt", function (data) {
-                        const my_address_signUp = data + "/salesman/signup/email-auth/";
 
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',
-                            contentType: 'application/json',
-                            url: my_address_signUp,
-                            data: signUp_json,
-                            success: function (resultData, status, xhr) {
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
+                    const my_address_signUp = data + "/salesman/signup/email-auth/";
 
-                                    $("#signUp-confirm-email-model").modal({backdrop: "static"});
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        url: my_address_signUp,
+                        data: signUp_json,
+                        success: function (resultData, status, xhr) {
+                            alert(resultData.message);
+                            if (resultData.result.toString() === "true") {
+
+                                $("#signUp-confirm-email-model").modal({backdrop: "static"});
 
 
-                                    $("#signUp-confirm-email-model-btn").click(function () {
-                                        const code_var = document.getElementById("signUp-confirm-email-model-inp").value;
+                                $("#signUp-confirm-email-model-btn").click(function () {
+                                    const code_var = document.getElementById("signUp-confirm-email-model-inp").value;
 
-                                        const signUp_confirm_email_obj = {
-                                            email: email_var,
-                                            code: code_var
-                                        };
-                                        const signUp_confirm_email_json = JSON.stringify(signUp_confirm_email_obj);
-                                        const my_address_signUp_confirm = data + "/salesman/signup/confirm-email/";
-                                        $.ajax({
-                                            type: 'POST',
-                                            dataType: 'json',
-                                            contentType: 'application/json',
-                                            url: my_address_signUp_confirm,
-                                            data: signUp_confirm_email_json,
-                                            success: function (resultData, status, xhr) {
-                                                alert(resultData.message);
-                                                if (resultData.result.toString() === "true") {
-                                                    window.sessionStorage.setItem("email", email_var);
-                                                    alert(window.sessionStorage.email);
-                                                    window.sessionStorage.setItem("password", password_var);
-                                                    alert(window.sessionStorage.email);
-                                                    window.location.href = "completeInfo.html";
-                                                }
-                                            },
-                                            error: function () {
-                                                alert(" اتصال به اینترنت برقرار نیست. ");
+                                    const signUp_confirm_email_obj = {
+                                        email: email_var,
+                                        code: code_var
+                                    };
+                                    const signUp_confirm_email_json = JSON.stringify(signUp_confirm_email_obj);
+                                    const my_address_signUp_confirm = data + "/salesman/signup/confirm-email/";
+                                    $.ajax({
+                                        type: 'POST',
+                                        dataType: 'json',
+                                        contentType: 'application/json',
+                                        url: my_address_signUp_confirm,
+                                        data: signUp_confirm_email_json,
+                                        success: function (resultData, status, xhr) {
+                                            alert(resultData.message);
+                                            if (resultData.result.toString() === "true") {
+                                                window.sessionStorage.setItem("email", email_var);
+                                                // alert(window.sessionStorage.email);
+                                                window.sessionStorage.setItem("password", password_var);
+                                                // alert(window.sessionStorage.email);
+                                                window.location.href = "completeInfo.html";
                                             }
-                                        })
+                                        },
+                                        error: function () {
+                                            alert(" اتصال به اینترنت برقرار نیست. ");
+                                        }
+                                    })
 
-                                    });
+                                });
 
 
-                                    $("#signUp-resend-code").click(function () {
-                                        const signUp_resend_code_obj = {
-                                            email: email_var,
-                                        };
-                                        const signUp_resend_code_json = JSON.stringify(signUp_resend_code_obj);
-                                        const my_address_signUp_resend = data + "/salesman/signup/resend-code/";
-                                        $.ajax({
-                                            type: 'POST',
-                                            dataType: 'json',
-                                            contentType: 'application/json',
-                                            url: my_address_signUp_resend,
-                                            data: signUp_resend_code_json,
-                                            success: function (resultData, status, xhr) {
-                                                alert(resultData.message);
-                                                if (resultData.result.toString() === "true") {
-                                                    alert("change");
-                                                }
-                                            },
-                                            error: function () {
-                                                alert(" اتصال به اینترنت برقرار نیست. ");
+                                $("#signUp-resend-code").click(function () {
+                                    const signUp_resend_code_obj = {
+                                        email: email_var,
+                                    };
+                                    const signUp_resend_code_json = JSON.stringify(signUp_resend_code_obj);
+                                    const my_address_signUp_resend = data + "/salesman/signup/resend-code/";
+                                    $.ajax({
+                                        type: 'POST',
+                                        dataType: 'json',
+                                        contentType: 'application/json',
+                                        url: my_address_signUp_resend,
+                                        data: signUp_resend_code_json,
+                                        success: function (resultData, status, xhr) {
+                                            alert(resultData.message);
+                                            if (resultData.result.toString() === "true") {
+                                                // alert("change");
                                             }
-                                        })
-                                    });
+                                        },
+                                        error: function () {
+                                            alert(" اتصال به اینترنت برقرار نیست. ");
+                                        }
+                                    })
+                                });
 
 
-                                }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");
-                                //If couldn't connecting to the server changing captcha
-                                createCaptcha();
                             }
-                        })
-
-                    });
-                } else
+                        },
+                        error: function () {
+                            alert(" اتصال به اینترنت برقرار نیست. ");
+                            //If couldn't connecting to the server changing captcha
+                            createCaptcha();
+                        }
+                    })
+                }  else
                     alert(" رمزعبور باید حداقل 5 کاراکتر باشد. ");
 
             } else {
@@ -597,43 +600,41 @@
                 login_formData.append("email", email_var);
                 login_formData.append("password", password_var);
 
-                $.get("address.txt", function (data) {
-                    const my_address = data + "/salesman/login/";
+                const my_address = data + "/salesman/login/";
 
-                    $.ajax({
-                        type: 'POST',
-                        dataType: 'json',
-                        contentType: false,
-                        processData: false,
-                        url: my_address,
-                        data: login_formData,
-                        crossDomain: true,
-                        xhrField: {withCredentials: true},
-                        success: function(resultData, status, xhr){
-                            alert(resultData.message);
-                            if (resultData.result.toString() === "true") {
-                                window.sessionStorage.setItem("token", "Token " + resultData.token);
-                                window.sessionStorage.setItem("salesman", resultData.salesman.id);
-                                window.sessionStorage.setItem("avatar", data + resultData.salesman.avatar);
-                                window.sessionStorage.setItem("firstName", resultData.salesman.first_name);
-                                window.sessionStorage.setItem("lastName", resultData.salesman.last_name);
-                                window.sessionStorage.setItem("shops", JSON.stringify(resultData.salesman.shops));
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    url: my_address,
+                    data: login_formData,
+                    crossDomain: true,
+                    xhrField: {withCredentials: true},
+                    success: function(resultData, status, xhr){
+                        alert(resultData.message);
+                        if (resultData.result.toString() === "true") {
+                            window.sessionStorage.setItem("token", "Token " + resultData.token);
+                            window.sessionStorage.setItem("salesman", resultData.salesman.id);
+                            window.sessionStorage.setItem("avatar", data + resultData.salesman.avatar);
+                            window.sessionStorage.setItem("firstName", resultData.salesman.first_name);
+                            window.sessionStorage.setItem("lastName", resultData.salesman.last_name);
+                            window.sessionStorage.setItem("shops", JSON.stringify(resultData.salesman.shops));
 
-                                //condition to specify login az salesman or patron
-                                if(document.getElementById("login-form-condition-chbox").checked){
-                                    window.location.href="AdminMainPage.html";
-                                }else{
-                                    window.location.href="PatronMainPage.html";
-                                }
-
+                            //condition to specify login az salesman or patron
+                            if(document.getElementById("login-form-condition-chbox").checked){
+                                window.location.href="AdminMainPage.html";
+                            }else{
+                                window.location.href="PatronMainPage.html";
                             }
-                        },
-                        error: function () {
-                            alert(" اتصال به اینترنت برقرار نیست. ");
-                        }
-                    })
 
-                });
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");
+                    }
+                })
+
             } else
                 alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
         });
