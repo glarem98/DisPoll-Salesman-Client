@@ -138,13 +138,13 @@
         </div>
         <br/>
         <div class="rightMenuColor">
-            <a href="#" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
+            <a href="showPoll.html" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
                                                      style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
                 من </a>
         </div>
         <br/>
         <div class="rightMenuColor">
-            <a href="#" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
+            <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
                                                      style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
             </a>
         </div>
@@ -162,7 +162,7 @@
         </div>
         <br/>
         <div class="rightMenuColor">
-            <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
+            <a class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
                                                                  style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
             </a>
         </div>
@@ -190,36 +190,49 @@
 
                 <div class="form-group">
                     <div class="col-md-11">
-                        <input type="text" required name="productName" value=""
+                        <select class="form-control w3-margin" required name="shops"
+                                id="addDiscount-form-shopKinds-inp"
+                                style="height:40px; background-color:#F2F2F2">
+                            <option class="placeholder" selected disabled hidden value="" >فروشگاه</option>
+                            <option value="" disabled ></option>
+                            <!--need a for to read shop types from db-->
+                            <option value="" id="addDiscount-form-shopKinds-lastOp-op" disabled ></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <input type="text" name="productName" value=""
                                class="form-control w3-margin"
                                id="addDiscount-form-productName-inp" accept="application/txt"/>
-                        <label> نام محصول * </label>
+                        <label> نام محصول  </label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-11">
-                        <input type="file" required name="productBarcodeImage" value=""
+                        <input type="file" name="productBarcodeImage" value=""
                                class="form-control w3-margin pictureInput"
                                id="addDiscount-form-productBarcodeImage-file" accept="image/*"/>
-                        <label class="pictureInput"> تصویر بارکد * </label>
+                        <label class="pictureInput"> تصویر بارکد  </label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-11">
-                        <input type="text" required name="productCode" value=""
+                        <input type="text" name="productCode" value=""
                                class="form-control w3-margin"
                                id="addDiscount-form-productCode-inp" accept="application/txt"/>
-                        <label> شناسه محصول * </label>
+                        <label> شناسه محصول  </label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-11">
-                        <input type="text" required name="productBrand" value=""
+                        <input type="text" name="productBrand" value=""
                                class="form-control w3-margin pictureInput"
                                id="addDiscount-form-productBrand-inp" accept="application/txt"/>
-                        <label> برند محصول * </label>
+                        <label> برند محصول </label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -228,15 +241,6 @@
                                class="form-control w3-margin"
                                id="addDiscount-form-percent-inp" accept="application/txt"/>
                         <label> درصد تخفیف </label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-11">
-                        <input type="text" required name="percentCode" value=""
-                               class="form-control w3-margin"
-                               id="addDiscount-form-percentCode-inp" accept="application/txt"/>
-                        <label> کد تخفیف </label>
                     </div>
                 </div>
 
@@ -270,21 +274,21 @@
 
                 <div class="form-group">
                     <div class="col-md-11">
-                        <input type="text" required name="description" value=""
+                        <input type="text" name="description" value=""
                                class="form-control w3-margin"
                                id="addDiscount-form-description-inp" accept="application/txt"/>
                         <label> توضیحات </label>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-md-11">
-                        <input type="file" required name="productImage" value=""
-                               class="form-control w3-margin"
-                               id="addDiscount-form-productImage-inp" accept="image/*"/>
-                        <label class="pictureInput"> تصویر محصول </label>
-                    </div>
-                </div>
+<!--                <div class="form-group">-->
+<!--                    <div class="col-md-11">-->
+<!--                        <input type="file" name="productImage" value=""-->
+<!--                               class="form-control w3-margin"-->
+<!--                               id="addDiscount-form-productImage-inp" accept="image/*"/>-->
+<!--                        <label class="pictureInput"> تصویر محصول </label>-->
+<!--                    </div>-->
+<!--                </div>-->
 
                 <div class="form-group">
                     <div class="col-md-offset-5 col-md-11">
@@ -391,6 +395,23 @@
             })
         }
 
+        /*
+            Function to disable button if form is not valid
+             */
+        var $requiredInputs = $("#addDiscount-form").find("input:required");
+        $requiredInputs.keyup(function () {
+            var empty_test = false;
+            $requiredInputs.each(function () {
+                if($(this).val()==='')
+                    empty_test = true;
+            });
+
+            if(empty_test === true)
+                $("#addDiscount-form-submit-btn").attr("disabled", "disabled");
+            else {
+                $("#addDiscount-form-submit-btn").removeAttr("disabled");
+            }
+        });
 
         /*
          Request for logout
@@ -438,50 +459,55 @@
 
 
     $(document).ready(function () {
+
+        const addDiscount_form_var = document.getElementById("addDiscount_form");
+
+
         $("#addDiscount-form").submit(function (e) {
             e.preventDefault();
 
-            const addDiscount_form_var = document.getElementById("addDiscount_form");
-            // const productName_var = addDiscount_form_var.productName.value;
-            // const productBarcodeImage_var = addDiscount_form_var.productBarcodeImage.value;
-            // const productCode_var = addDiscount_form_var.productCode.value;
-            // const productBrand_var = addDiscount_form_var.productBrand.value;
-            // const percent_var = addDiscount_form_var.percent.value;
-            // const percentCode_var = addDiscount_form_var.percentCode.value;
-            // const count_var = addDiscount_form_var.countNumber.value;
-            // const expireDate_var = addDiscount_form_var.expireDate.value;
-            // const timeout_var = addDiscount_form_var.timeout.value;
-            // const description_var = addDiscount_form_var.description.value;
-            // const productImage_var = addDiscount_form_var.productImage.value;
-
-            //درست شود همه ای دی های ذخیره شده در سشن
-            alert(window.sessionStorage.shop_id);
+            const shop_var = addDiscount_form_var.shops.value;
+            const productName_var = addDiscount_form_var.productName.value;
+            const productCode_var = addDiscount_form_var.productCode.value;
+            const productBrand_var = addDiscount_form_var.productBrand.value;
+            const percent_var = addDiscount_form_var.percent.value;
+            const count_var = addDiscount_form_var.countNumber.value;
+            const expireDate_var = addDiscount_form_var.expireDate.value.getY;
+            const timeout_var = addDiscount_form_var.timeout.value;
+            const description_var = addDiscount_form_var.description.value;
 
 
-            // if (productName_var.length >= 5 && productBarcodeImage_var.length >= 5) {
-            const addDiscount_obj = {
-                product_name: "کیف",
-                product_id: "123456789",
-                percent: "30",
-                count: "12",
-                shop: "1",
-                expire_date: "2019-12-21",
-                days: "17"
-                //اشتباه در نام گذاری و فیلد ها
-            };
-            const addDiscount_json = JSON.stringify(addDiscount_obj);
+            var productBarcodeImage_var =$("#addDiscount-form-productBarcodeImage-file").get(0).files[0];
+            // var productImage_var =$("#addDiscount-form-productImage-inp").get(0).files[0];
+
+            var formData = new FormData();
+            formData.append("shop", shop_var);
+            formData.append("product_name", productName_var);
+            formData.append("product_id", productCode_var);
+            formData.append("product_brand", productBrand_var);
+            formData.append("percent", percent_var);
+            formData.append("count", count_var);
+            formData.append("expire_date", expireDate_var);
+            formData.append("days", timeout_var);
+            formData.append("product_barcode", productBarcodeImage_var);
+            // formData.append("picture", productImage_var);
+            formData.append("description", description_var);
 
 
-            $.post("address.txt", function (data) {
-                const my_address = data + "add-discount/";
-
+            $.get("address.txt", function (data) {
+                const my_address = data + "/salesman/add-discount/";
                 $.ajax({
                     type: 'POST',
-                    ///شاید باید کامنت کنم تست شود
-                    dataType: 'json',
-                    contentType: 'application/json',
                     url: my_address,
-                    data: addDiscount_json,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    headers: {
+                        'Authorization': window.sessionStorage.token
+                    },
+                    crossDomain: true,
+                    xhrField: {withCredentials: true},
                     success: function (resultData, status, xhr) {
                         alert(resultData.message);
                         if (resultData.result.toString() === "true") {
@@ -494,8 +520,6 @@
                 })
 
             });
-            // } else
-            //     alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
 
 
         });
