@@ -175,6 +175,19 @@
             <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
                 <form class="form-horizontal" id="sale-form">
 
+<!--                    <div class="form-group">-->
+<!--                        <div class="col-md-11">-->
+<!--                            <select class="form-control w3-margin" required name="shops"-->
+<!--                                    id="sale-form-shopKinds-inp"-->
+<!--                                    style="height:40px; background-color:#F2F2F2">-->
+<!--                                <option class="placeholder" selected disabled hidden value="" >فروشگاه</option>-->
+<!--                                <option value="" disabled ></option>-->
+<!--                                &lt;!&ndash;need a for to read shop types from db&ndash;&gt;-->
+<!--                                <option value="" id="sale-form-shopKinds-lastOp-op" disabled ></option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
                     <div class="form-group">
                         <div class="col-md-11">
                             <input type="text" required name="discountCode" value=""
@@ -188,7 +201,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
                             <input type="submit" value="ثبت کد" class="btn btn-default btnColors"
-                                   id="sale-form-submit-btn" />
+                                   id="sale-form-submit-btn" disabled="disabled" />
                         </div>
                     </div>
 
@@ -277,6 +290,24 @@
                 })
             }
 
+            /*
+            Function to disable button if form is not valid
+             */
+            var $requiredInputs = $("#sale-form").find("input:required");
+            $requiredInputs.keyup(function () {
+                var empty_test = false;
+                $requiredInputs.each(function () {
+                    if($(this).val()==='')
+                        empty_test = true;
+                });
+
+                if(empty_test === true)
+                    $("#sale-form-submit-btn").attr("disabled", "disabled");
+                else {
+                    $("#sale-form-submit-btn").removeAttr("disabled");
+                }
+            });
+
 
             /*
              Request for logout
@@ -323,75 +354,41 @@
 
         $(document).ready( function () {
 
-            //اوردن فروشگاه ها
+            const sale_form_var = document.getElementById("sale-form");
 
             $("#sale-form").submit(function (e) {
                 e.preventDefault();
 
+                var advertisement_formData = new FormData();
+                advertisement_formData.append("discount_code", sale_form_var.discounyCode.value);
 
-                    $.get("address.txt", function (data) {
-                        //ادرس را وارد کن
-                        const my_address = data + "/?/";
+                $.get("address.txt", function (data) {
+                    const my_address = data + "/salesman/apply-discount/";
+                    $.ajax({
+                        type: 'POST',
+                        url: my_address,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        crossDomain: true,
+                        headers: {
+                            'Authorization': window.sessionStorage.token
+                        },
+                        data: advertisement_formData,
+                        success: function(resultData, status, xhr){
+                            alert(resultData.message);
+                            if (resultData.result.toString() === "true") {
+                                // window.location.href="advertisementPage.html";
+                                // window.location.reload();
+                            }
+                        },
+                        error: function () {
+                            alert(" اتصال به اینترنت برقرار نیست. ");}
+                    })
 
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',
-                            contentType: 'application/json',
-                            url: my_address,
-                            data: JSON.stringify({
-                                code : $("#sale-form-discountCode-inp"),
-                                shop : "?"
-                            }),
-                            success: function(resultData, status, xhr){
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    // window.location.href="salePage.html";
-                                    window.location.reload();
-                                }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");}
-                        })
-
-                    });
+                });
 
                   });
-
-            /*
-             Request for logout
-             send authorization in header
-             */
-            $("#logout").click(function () {
-                var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
-                if (logout_var ==true){
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/logout/";
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',
-                            contentType: 'application/json',
-                            url: my_address,
-                            headers:{
-                                'Authorization' : window.sessionStorage.token
-                            },
-                            data: JSON.stringify({}),
-                            success: function (resultData, status, xhr) {
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    window.location.href="HomePage.html";
-                                }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");
-                            }
-                        })
-
-                    });
-
-                }else{
-                    alert(" از این که همراه ما خواهید بود متشکریم. ");
-                }
-            });
 
         });
 

@@ -208,7 +208,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="file" name="shopImage" value=""
+                             <input type="file" required name="shopImage" value=""
                                     class="form-control w3-margin"
                                     id="addShop-form-shopImage-inp"
                                     accept="image/*" />
@@ -251,7 +251,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="file" name="codeImage" value=""
+                            <input type="file" required name="codeImage" value=""
                                    class="form-control w3-margin"
                                    id="addShop-form-codeImage-inp"
                                    accept="image/*" />
@@ -262,7 +262,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
                             <input type="submit" value="ذخیره" class="btn btn-default btnColors"
-                                   id="addShop-form-submit-btn" disabled="disabled"/>
+                                   id="addShop-form-submit-btn" />
                         </div>
                     </div>
 
@@ -357,24 +357,6 @@
                 })
             }
 
-            /*
-            Function to disable button if form is not valid
-             */
-            var $requiredInputs = $("#addShop-form").find("input:required");
-            $requiredInputs.keyup(function () {
-                var empty_test = false;
-                $requiredInputs.each(function () {
-                    if($(this).val()==='')
-                        empty_test = true;
-                });
-
-                if(empty_test === true)
-                    $("#addShop-form-submit-btn").attr("disabled", "disabled");
-                else {
-                    $("#addShop-form-submit-btn").removeAttr("disabled");
-                }
-            });
-
 
             /*
              Request for logout
@@ -420,6 +402,32 @@
     <script>
 
         $(document).ready( function () {
+
+            /*
+            Reading from session "shops" and filled the rightMenu sub myShops
+            */
+            if (typeof (window.sessionStorage.shops) !== "undefined") {
+
+                var shop_var = JSON.parse(window.sessionStorage.shops);
+                for (let val of shop_var) {
+                    const a = document.createElement("a");
+                    const aTextName = document.createTextNode( val.name );
+                    const attrClass = document.createAttribute("class");
+                    attrClass.value = "rightMenuColor";
+                    const attrHref = document.createAttribute("href");
+                    attrHref.value = "showShop.html";
+                    const attrId = document.createAttribute("id");
+                    attrId.value = val.id;
+                    a.setAttributeNode(attrClass);
+                    a.setAttributeNode(attrHref);
+                    a.setAttributeNode(attrId);
+                    a.appendChild(aTextName);
+                    const addA = document.getElementById("add");
+                    const myShops = document.getElementById("shops");
+                    myShops.insertBefore(a, addA);
+
+                }
+            }
 
 
 

@@ -90,14 +90,14 @@
             </div>
             <br/>
             <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
-                                                         style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
+                <a href="showPoll.html" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
+                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
                     من </a>
             </div>
             <br/>
             <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
-                                                         style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
+                <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
+                                                                         style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
                 </a>
             </div>
             <br/>
@@ -114,8 +114,8 @@
             </div>
             <br/>
             <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
-                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+                <a class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
+                                                            style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
                 </a>
             </div>
             <br/>
@@ -132,44 +132,48 @@
     <div class="container" style="background-color:none !important">
         <div class="col-lg-offset-2">
             <div class="col-container">
-                <div class="col componentColor" >
+                <div class="col componentColor" align="center">
                     <h2 class="w3-margin-right" id="showShop-name" >  نام فروشگاه </h2>
                     <br />
-                    <img src="avatar/shop.jpg" style=" width:400px;height:400px" />
+                    <img src="avatar/shop.jpg" id="showShop-img" style=" width:400px;height:400px" />
                     <br />
                 </div>
-                <div class="col componentColor">
-                    <br />
-                    <br />
-                    <div id="showShop-shopKind">
-                         این فروشگاه در دسته ی @shopType قرار دارد .
-                    </div>
+                <div class="col componentColor" align="right">
+
                     <div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <div id="showShop-shopKind">
+                            <span>نوع فروشگاه: </span>
+                        </div>
+                        <br />
                         <div id="showShop-city">
-                            <br />
-                            واقع در شهر @City
+                            <span>شهر: </span>
                         </div>
+                        <br />
                         <div id="showShop-address">
-                            <br />
-                            با آدرس  @address .
+                            <span>آدرس: </span>
                         </div>
+                        <br />
                         <div id="showShop-phoneNumber">
-                            <br />
-                            شماره تماس : @phone
+                            <span>شماره تماس: </span>
                         </div>
-
                     </div>
                     <br />
                     <br />
 
 
-                    <button class="btn btn-default btnColors" id="showShop-btn">
-                        ویرایش اطلاعات
-                    </button>
+<!--                    <button class="btn btn-default btnColors" id="showShop-btn">-->
+<!--                        ویرایش اطلاعات-->
+<!--                    </button>-->
 
-<!--                    <div class="form-group">-->
+                    <button id="btn"> سلام</button>
+
+<!--                    <div class="form-group" >-->
 <!--                        <div class="col-md-offset-7 col-md-11">-->
-<!--                            <input type="submit" value=" ویرایش اطلاعات " class="btn btn-default btnColors" id="editProfile-form-submit-btn" />-->
+<!--                            <input type="button" value=" ویرایش اطلاعات " class="btn btn-default btnColors" id="showShop-btn" />-->
 <!--                        </div>-->
 <!--                    </div>-->
                 </div>
@@ -248,11 +252,6 @@
                 }
             }
 
-            //Go to AdminMainPage by clicking on picture
-            $("#admin-img").click(function () {
-                window.location.href = "AdminMainPage.html"
-            });
-
 
             //Getting id of selected subset shop
             const my_shop = document.getElementById("shops");
@@ -263,6 +262,16 @@
                     window.sessionStorage.setItem("selectShop", val.id);
                 })
             }
+
+            //Going to editShop by clicking on showShop button
+            var my_btn = document.getElementById("#btn");
+            my_btn.addEventListener("click", function () {
+                window.location.href = "editShop.html";
+            });
+            // $("#showShop-btn").on("click",function () {
+            //     alert("helooooooooooooooooooooooooooo");
+            //     window.location.href = "editShop.html";
+            // });
 
 
             /*
@@ -310,6 +319,40 @@
     <script>
 
         $(document).ready(function () {
+
+            var showShop_formData = new FormData();
+            if (typeof (window.sessionStorage.selectShop) !== "undefined")
+                showShop_formData.append("shop", window.sessionStorage.selectShop);
+
+
+            $.get("address.txt", function (data) {
+                const my_address = data + "/salesman/get-shop/";
+                $.ajax({
+                    type: 'POST',
+                    url: my_address,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    crossDomain: true,
+                    headers: {
+                        'Authorization': window.sessionStorage.token
+                    },
+                    data: showShop_formData,
+                    success: function(resultData, status, xhr){
+                        if (resultData.result.toString() === "true") {
+                            $("#showShop-name").text(resultData.message.name);
+                            $("#showShop-img").attr("src", data + resultData.message.picture);
+                            $("#showShop-shopKind").append(resultData.message.shop_kind.name);
+                            $("#showShop-city").append(resultData.message.city.name );
+                            $("#showShop-address").append(resultData.message.address );
+                            $("#showShop-phoneNumber").append(resultData.message.phone_number);
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");}
+                })
+
+            });
 
 
         });
