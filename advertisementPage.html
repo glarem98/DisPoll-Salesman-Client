@@ -118,22 +118,20 @@
     <nav class="w3-sidenav w3-mobile w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
         <div class="w3-margin ">
             <div class="w3-center " style="margin-top:8px !important">
-                <img class="w3-center w3-closenav w3-xlarge w3-circle" src="avatar/man-with-tie.png"
+                <img  class="w3-center w3-closenav w3-xlarge w3-circle" src="avatar/man-with-tie.png"
                      id="admin-img"
                      style="width:100px ; height:100px"/>
             </div>
             <br/>
             <a href="editProfile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
             <br/>
-            <a class="rightMenuColor" onclick="myFunction('Demo1')">
+            <a class="rightMenuColor" onclick="myFunction('shops')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
                 &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
             </a>
-            <div id="Demo1" class="w3-container w3-hide ">
-                <a class="rightMenuColor" href="showShop.html"> &nbsp;فروشگاه اول</a>
-                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
-                <a class="w3-center rightMenuColor" href="addShop.html"> <span class="glyphicon glyphicon-plus"></span>
+            <div id="shops" class="w3-container w3-hide ">
+
+                <a class="w3-center rightMenuColor" href="addShop.html" id="add"> <span class="glyphicon glyphicon-plus"></span>
                     &nbsp;جدید&nbsp;</a>
             </div>
             <br/>
@@ -163,7 +161,7 @@
             <br/>
             <div class="rightMenuColor">
                 <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
-                                                         style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
                 </a>
             </div>
             <br/>
@@ -197,6 +195,19 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
+                            <select class="form-control w3-margin" required name="shops"
+                                    id="advertisement-form-shopKinds-inp"
+                                    style="height:40px; background-color:#F2F2F2">
+                                <option class="placeholder" selected disabled hidden value="" >فروشگاه</option>
+                                <option value="" disabled ></option>
+                                <!--need a for to read shop types from db-->
+                                <option value="" id="advertisement-form-shopKinds-lastOp-op" disabled ></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-11">
                             <input type="file" required name="image" value=""
                                    class="form-control w3-margin"
                                    id="advertisement-form-image-inp"
@@ -227,6 +238,12 @@
     </footer>
 
     <script>
+        //Scripts for design and it's actions
+
+        /*
+        Function opening and closing subset of an tag
+        parameter is id
+         */
         function myFunction(id) {
             var x = document.getElementById(id);
             const y =document.getElementById("more");
@@ -238,53 +255,63 @@
                 y.style.transform = "rotate(0deg)";
             }
         }
-    </script>
-
-    <script>
 
         $(document).ready( function () {
 
-            //اوردن فروشگاه ها
-
-            $("#advertisement-form").submit(function (e) {
-                e.preventDefault();
-
-                var advertisement_formData = new FormData();
-                advertisement_formData.append("picture", $("#advertisement-form-image-inp").get(0).files[0]);
-                advertisement_formData.append("shop", "?");
-
-
-
-                $.get("address.txt", function (data) {
-                        //آدرس؟
-                        const my_address = data + "/add-advertisement/";
-                        $.ajax({
-                            type: 'POST',
-                            url: my_address,
-                            dataType: 'json',
-                            contentType: false,
-                            processData: false,
-                            crossDomain: true,
-                            data: advertisement_formData,
-                            success: function(resultData, status, xhr){
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    // window.location.href="advertisementPage.html";
-                                    window.location.reload();
-                                }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");}
-                        })
-
-                    });
-
+            //Go to AdminMainPage by clicking on picture
+            $("#admin-img").click(function () {
+                window.location.href = "AdminMainPage.html"
             });
 
+
+            //Fill in admin avatar and fullName
+            if ((typeof (window.sessionStorage.avatar) !== "undefined") && (typeof (window.sessionStorage.firstName) !== "undefined")
+                && (typeof (window.sessionStorage.lastName) !== "undefined")) {
+                $("#admin-img").attr("src", window.sessionStorage.avatar);
+                $("#admin-name").text(window.sessionStorage.firstName + " " + window.sessionStorage.lastName);
+            }
+
+
             /*
-             Request for logout
-             send authorization in header
-             */
+              Reading from session "shops" and filled the rightMenu sub myShops
+            */
+            if (typeof (window.sessionStorage.shops) !== "undefined") {
+
+                var shop_var = JSON.parse(window.sessionStorage.shops);
+                for (let val of shop_var) {
+                    const a = document.createElement("a");
+                    const aTextName = document.createTextNode( val.name );
+                    const attrClass = document.createAttribute("class");
+                    attrClass.value = "rightMenuColor";
+                    const attrHref = document.createAttribute("href");
+                    attrHref.value = "showShop.html";
+                    const attrId = document.createAttribute("id");
+                    attrId.value = val.id;
+                    a.setAttributeNode(attrClass);
+                    a.setAttributeNode(attrHref);
+                    a.setAttributeNode(attrId);
+                    a.appendChild(aTextName);
+                    const addA = document.getElementById("add");
+                    const myShops = document.getElementById("shops");
+                    myShops.insertBefore(a, addA);
+
+                }
+            }
+
+            //Getting id of selected subset shop
+            const my_shop = document.getElementById("shops");
+            for (let val of (my_shop.childNodes)) {
+                if (val.id == "add")
+                    return ;
+                val.addEventListener("click", function () {
+                    window.sessionStorage.setItem("selectShop", val.id);
+                })
+            }
+
+            /*
+            Request for logout
+            send authorization in header
+            */
             $("#logout").click(function () {
                 var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
                 if (logout_var ==true){
@@ -315,6 +342,74 @@
                 }else{
                     alert(" از این که همراه ما خواهید بود متشکریم. ");
                 }
+            });
+
+
+        });
+
+    </script>
+
+    <script>
+        //Scripts for connecting to the server
+
+        $(document).ready( function () {
+
+            const advertisement_form_var = document.getElementById("advertisement-form");
+
+
+            /*
+             Reading from session "shops" and filled the shopKind selector sub myShops
+             */
+            if (typeof (window.sessionStorage.shops) !== "undefined") {
+
+                var shop_var = JSON.parse(window.sessionStorage.shops);
+                for (let val of shop_var) {
+                    const op = document.createElement("option");
+                    const opText = document.createTextNode(val.name);
+                    const myShops = document.getElementById("advertisement-form-shopKinds-inp");
+                    const lastOp = document.getElementById("advertisement-form-shopKinds-lastOp-op");
+                    op.value = val.id;
+                    op.appendChild(opText);
+                    myShops.insertBefore(op,lastOp);
+                }
+            }
+
+
+            $("#advertisement-form").submit(function (e) {
+                e.preventDefault();
+
+                var advertisement_formData = new FormData();
+                advertisement_formData.append("picture", $("#advertisement-form-image-inp").get(0).files[0]);
+                advertisement_formData.append("shop", advertisement_form_var.shops.value);
+
+
+
+                $.get("address.txt", function (data) {
+                        const my_address = data + "/salesman/add-advertisement/";
+                        $.ajax({
+                            type: 'POST',
+                            url: my_address,
+                            dataType: 'json',
+                            contentType: false,
+                            processData: false,
+                            crossDomain: true,
+                            headers: {
+                                'Authorization': window.sessionStorage.token
+                            },
+                            data: advertisement_formData,
+                            success: function(resultData, status, xhr){
+                                alert(resultData.message);
+                                if (resultData.result.toString() === "true") {
+                                    // window.location.href="advertisementPage.html";
+                                    // window.location.reload();
+                                }
+                            },
+                            error: function () {
+                                alert(" اتصال به اینترنت برقرار نیست. ");}
+                        })
+
+                    });
+
             });
 
         });
