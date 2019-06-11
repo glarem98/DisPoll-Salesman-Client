@@ -165,11 +165,10 @@
                     <br />
 
 
-<!--                    <button class="btn btn-default btnColors" id="showShop-btn">-->
-<!--                        ویرایش اطلاعات-->
-<!--                    </button>-->
+                    <button class="btn btn-default btnColors" onclick="goToEdit()">
+                        ویرایش اطلاعات
+                    </button>
 
-                    <button id="btn"> سلام</button>
 
 <!--                    <div class="form-group" >-->
 <!--                        <div class="col-md-offset-7 col-md-11">-->
@@ -211,6 +210,14 @@
                 y.style.transform = "rotate(0deg)";
             }
         }
+
+        //Going to editShop by clicking on showShop button
+        function goToEdit() {
+            window.location.href = "editShop.html";
+        }
+
+
+
 
 
         $(document).ready(function () {
@@ -264,16 +271,6 @@
                     window.sessionStorage.setItem("selectShop", val.id);
                 })
             }
-
-            //Going to editShop by clicking on showShop button
-            var my_btn = document.getElementById("#btn");
-            my_btn.addEventListener("click", function () {
-                window.location.href = "editShop.html";
-            });
-            // $("#showShop-btn").on("click",function () {
-            //     alert("helooooooooooooooooooooooooooo");
-            //     window.location.href = "editShop.html";
-            // });
 
 
             /*

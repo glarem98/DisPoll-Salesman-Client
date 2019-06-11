@@ -11,8 +11,6 @@
     <link href="Content/css/w3.css" rel="stylesheet" />
     <link href="ParsaFont/Style.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/ckeditor/ckeditor.js"></script>
     <script src="Scripts/bootstrap-rtl.js"></script>
@@ -24,56 +22,32 @@
 <body>
 
 
-<form method="post" id="login-form">
+<form id="login-form">
     <div>
-        <div >
+        <div id="container" >
             <img class="w3-circle" src="" id="login-form-img-inp" >
             <input type="submit" value="ذخیره"
                    id="login-form-submit-btn" />
         </div>
     </div>
 </form>
+<button id="btn" onclick="my_function()" > salam </button>
+
 
 <script>
-
-    var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-
+    function my_function (){
+        window.location.href = "HomePage.html";
+    }
     $(document).ready( function () {
 
-        $("#login-form").submit(function (e) {
-
-            var formData = new FormData();
-            formData.append("email", "sabaarab4@gmail.com");
-            formData.append("password", "123456");
-
-            e.preventDefault();
-                alert("1");
-                $.get("address.txt", function (data) {
-                    const my_address = data + "/login-salesman/";
-                    alert("2");
-                    $.ajax({
-                        type: 'POST',
-                        url: my_address,
-                        dataType: 'json',
-                        contentType: false,
-                        processData: false,
-                        data: formData,
-                        crossDomain: true,
-                        xhrField: {withCredentials: true},
-                        success: function(resultData, status, xhr){
-                            alert(resultData.message);
-                            if (resultData.result.toString() === "true") {
-                                window.sessionStorage.setItem("avatar", data + resultData.salesman.avatar);
-                                $("#login-form-img-inp").attr("src", window.sessionStorage.avatar);
-                                // window.location.href="AdminMainPage.html";
-                            }
-                        },
-                        error: function () {
-                            alert(" اتصال به اینترنت برقرار نیست. ");}
-                    })
-
-                });
-        });
+        // $("#btn").click(function () {
+        //         window.location.href = "HomePage";
+        //     });
+        // $("#login-form").submit(function (e) {
+        //     // $("#btn").click(function () {
+        //     //     alert("hello");
+        //     // });
+        // });
 
 
     });

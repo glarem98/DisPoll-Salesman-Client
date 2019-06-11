@@ -185,7 +185,7 @@
         </div>
         <div class="col-lg-offset-2">
             <div class="w3-border w3-border-light-gray w3-card-12 w3-padding componentColor">
-                <div class="form-horizontal" id="poll-form">
+                <form class="form-horizontal" id="poll-form">
 
                     <div class="form-group">
                             <div class="col-md-11">
@@ -202,6 +202,28 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
+
+                            <input type="range" required name="percent" min="0" max="100" step="10" value="10"
+                                   class="form-control w3-margin"
+                                   id="poll-form-importance-inp" accept="application/txt" onchange="show_value(this.value);" />
+                            <label> درصد اهمیت    </label>
+                            <div class="col" style="color:#7B8084"> درصد انتخابی :  </div>
+                            <div class="col" id="slider_value" style="color:#7B8084;padding-right:5px !important"> 10% </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <!--                                  تعویض تاریخ-->
+                            <input type="date" required autofocus value="" name="timeout"
+                                   class="form-control w3-margin pictureInput"
+                                   id="poll-form-timeout-inp" accept="application/txt">
+                            <label class="pictureInput"> مهلت </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-11">
                             <input type="text" required autofocus name="question" value="" class=" form-control  w3-margin" id="Poll-form-question-inp"
                                    accept="application/txt" />
                             <label> سوال </label>
@@ -212,12 +234,11 @@
                         <div class="col-md-11">
 
                             <select id="poll-form-kind-inp" class="form-control w3-margin" name="kind" style="height:40px;background-color:#F2F2F2" required>
-                                <option value=""> نوع نظرسنجی </option>
-                                <!--need a for to read shop types from db-->
-
-                                <option value="MultiChoicePoll"> چند گزینه ای</option>
+                                <option class="placeholder" selected disabled hidden value="" > نوع نظرسنجی </option>
+                                <option value="" disabled ></option>
+                                <option value="MultipleChoicePoll"> چند گزینه ای</option>
                                 <option value="CheckBoxPoll"> تک گزینه ای </option>
-                                <option value="ParagraghPoll">پاسخ چند خطی </option>
+                                <option value="ParagraphPoll">پاسخ چند خطی </option>
                                 <option value="ShortAnswerPoll">پاسخ کوتاه </option>
                                 <option value="LinearScalePoll">نوار شناور</option>
 
@@ -234,21 +255,17 @@
                         <!--this htlm should be copy in next div when the + bottom is clicked-->
                         <div class="col-md-11" id="cloneChoice">
                             <span style="margin-top:20px ; direction:rtl">
-                                <input type="text" required autofocus name="choice" value="" class="form-control w3-center w3-margin" id="poll-form-choice-name-inp"
+                                <input type="text" required autofocus name="choice0" value="" class="form-control w3-center w3-margin" id="poll-form-choice0-inp"
                                        accept="application/txt" />
                                 <label> گزینه </label>
                             </span>
-                        </div>                 
-                        <div id="lastTxt">
-
                         </div>
-                        <div class="col-md-2" style="margin-top:15px">
+                        <div class="col-md-2" id="addChoice">
                             <button style="margin:20px" class="btn btn-default btnColors" data-action="add" onclick="addChoice()"><i class="fa fa-plus"><strong style="text-align:center;font-style:normal!important">+</strong></i></button>
-
                         </div>
                     </div>
                     <!-- for next div we should add  style="display:none;"  -->
-                    <div id="LinearScale" style="display: none">            const poll_form_var = document.getElementById("poll-form");
+                    <div id="LinearScale" style="display: none">
 
                         <div class="w3-center">
                             محدودیت ها
@@ -271,32 +288,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-11">
 
-                            <input type="range" required name="percent" min="0" max="100" step="10" value="10"
-                                   class="form-control w3-margin"
-                                   id="poll-form-importance-inp" accept="application/txt" onchange="show_value(this.value);" />
-                            <label> درصد اهمیت    </label>
-                            <div class="col" style="color:#7B8084"> درصد انتخابی :  </div>
-                            <div class="col" id="slider_value" style="color:#7B8084;padding-right:5px !important"> 10% </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-11">
-                            <!--                                  تعویض تاریخ-->
-                            <input type="date" required autofocus value="" name="timeout"
-                                   class="form-control w3-margin pictureInput"
-                                   id="poll-form-timeout-inp" accept="application/txt">
-                            <label class="pictureInput"> مهلت </label>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
                             <input type="submit" value="ذخیره" class="btn btn-default btnColors" id="poll-form-submit-btn" />
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -431,54 +429,47 @@
 
 
     <script>
+
+
         function show_value(x) {
             document.getElementById("slider_value").innerHTML = x + "%";
         }
 
-    
 
         $(document).ready(function () {
             const poll_form_var = document.getElementById("poll-form");
             $("#poll-form-kind-inp").change(function () {
                 if(poll_form_var.kind.value == "LinearScalePoll"){
-                    document.getElementById("LinearScale").style.display="block";}
-                else if((poll_form_var.kind.value == "MultiChoicePoll")||(poll_form_var.kind.value == "CheckBoxPoll"))
-                {
+                    document.getElementById("LinearScale").style.display="block";
+                    document.getElementById("choices").style.display="none";
+                }
+                else if((poll_form_var.kind.value == "MultipleChoicePoll")||(poll_form_var.kind.value == "CheckBoxPoll")) {
+                    document.getElementById("LinearScale").style.display="none";
                     document.getElementById("choices").style.display="block";
                 }
             });
 
-            // $("select").change(function () {
-            //     $("select option:selected").each(function () {
-            //         if (($(this).attr("value") == "MultiChoice") || ($(this).attr("value") == "CheckBox")) {
-            //             $("choices").show();
-            //         }
-            //         if ($(this).attr("value") == "LinearScale") {
-            //             $("LinearScale").show();
-            //         }
-            //     });
-            // }).change();
-        });      
+        });
 
-
-    </script>
-    <script>
         var idTxt = 1;
         function addChoice() {
-            if ($('#editProfile-form-first-name-inp').val() == "") {
-                return true;
+
+
+            if (!($('#poll-form-choice-inp').textContent.empty())) {
+                $("#cloneChoice").clone().prependTo("#addChoice");
+
             }
-            var fileuploadpic = $('#cloneChoice').html();
-            $('#editProfile-form-first-name-inp').attr("id", "pp" + idTxt);
-
-            var itmimage = $('#pp' + idTxt);
-            var clnimage = itmimage.clone(true);
-            $('#lastTxt').append(clnimage);
-
-            $('#cloneChoice').html(fileuploadpic);
-            idTxt += 1;
-            alert("با موفقیت افزوده شد");
-            return false;
+            // var newChoice = $('#cloneChoice').html();
+            // var newDiv = $("<div>");
+            // newDiv.html(newChoice);
+            // const addChoice = document.getElementById("addChoice");
+            // addChoice.insertBefore(newDiv);
+            // var newChild = document.querySelector('#poll-form-choice0-inp');
+            // newChild.removeAttribute("name");
+            // newChild.removeAttribute("id");
+            // newChild.setAttribute("name", "choice" + idTxt);
+            // newChild.setAttribute("id", "poll-form-choice" + idTxt + "-inp");
+            // idTxt += 1;
         }
     </script>
 
