@@ -3,152 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d10e1cb-5767-43e3-b348-44c2480bd13d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/assets/logotype.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/assets/swal.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/css/app.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/css/guide.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/css/header.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/css/highlight.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/css/index.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/css/normalize.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/css/table.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/css/variables.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/github.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/heart-icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/logo-small.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/modal-examples.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/modal-examples@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/modal-fb-example@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/mood-happy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/mood-neutral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/mood-sad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/pattern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/pattern@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/transition-top.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/images/vs.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/js/add-preview-buttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/js/landing-text-rotater.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/assets/sweetalert" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/docs/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/guides/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/index.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/layout-docs.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/layout-guides.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs-src/layout.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/CNAME" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/css/guide.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/css/header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/css/highlight.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/css/normalize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/css/table.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/css/variables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/github.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/heart-icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/logo-small.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/modal-examples.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/modal-examples@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/modal-fb-example@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/mood-happy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/mood-neutral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/mood-sad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/pattern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/pattern@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/transition-top.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/images/vs.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/js/add-preview-buttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/js/landing-text-rotater.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/sweetalert/sweetalert.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/assets/sweetalert/sweetalert.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/guides/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/postcss.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/core.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/css/button-loader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/css/buttons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/css/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/css/icons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/css/icons/error.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/css/icons/info.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/css/icons/success.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/css/icons/warning.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/css/text.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/actions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/class-list/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/event-listeners.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/init/buttons.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/init/content.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/init/icon.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/init/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/init/modal.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/init/overlay.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/init/text.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/markup/buttons.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/markup/content.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/markup/icons.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/markup/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/markup/modal.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/markup/overlay.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/options/buttons.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/options/content.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/options/deprecations.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/options/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/state.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/modules/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/sweetalert.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/sweetalert.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/src/sweetalert.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/test/actions.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/test/button-options.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/test/buttons.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/test/content.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/test/icons.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/test/index.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/test/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/core.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/actions.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/class-list/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/event-listeners.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/init/buttons.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/init/content.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/init/icon.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/init/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/init/modal.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/init/overlay.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/init/text.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/markup/buttons.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/markup/content.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/markup/icons.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/markup/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/markup/modal.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/markup/overlay.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/options/buttons.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/options/content.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/options/deprecations.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/options/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/state.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/modules/utils.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/typings/sweetalert.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/sweetalert-master/sweetalert-master/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/completeInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/completeInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/addShop.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/editProfile.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -168,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HomePage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="360">
+              <caret line="473" lean-forward="true" selection-start-line="465" selection-start-column="8" selection-end-line="473" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -186,11 +42,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/completeInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="334" column="40" selection-start-line="334" selection-start-column="40" selection-end-line="334" selection-end-column="40" />
+            <state relative-caret-position="6749">
+              <caret line="397" column="57" selection-start-line="397" selection-start-column="57" selection-end-line="397" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addShop.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="306" selection-start-line="306" selection-end-line="306" />
               <folding>
-                <element signature="e#17856#18825#0" />
+                <element signature="e#16748#17916#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/advertisementPage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="133" column="38" selection-start-line="133" selection-end-line="134" />
             </state>
           </provider>
         </entry>
@@ -198,23 +72,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editProfile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="356" column="27" lean-forward="true" selection-start-line="356" selection-start-column="27" selection-end-line="356" selection-end-column="27" />
+            <state relative-caret-position="261">
+              <caret line="133" column="55" lean-forward="true" selection-start-line="133" selection-start-column="55" selection-end-line="133" selection-end-column="55" />
               <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/addShop.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="369" lean-forward="true" selection-start-line="369" selection-end-line="369" />
-              <folding>
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#14732#15956#0" />
+                <element signature="e#4547#4553#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -240,6 +101,7 @@
       <find>HomePage</find>
       <find>import</find>
       <find>address</find>
+      <find>Demo1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -264,9 +126,9 @@
         <option value="$PROJECT_DIR$/showPoll.html" />
         <option value="$PROJECT_DIR$/showProfile.html" />
         <option value="$PROJECT_DIR$/showShop.html" />
+        <option value="$PROJECT_DIR$/completeInfo.html" />
         <option value="$PROJECT_DIR$/HomePage.html" />
         <option value="$PROJECT_DIR$/editProfile.html" />
-        <option value="$PROJECT_DIR$/completeInfo.html" />
         <option value="$PROJECT_DIR$/addShop.html" />
       </list>
     </option>
@@ -322,7 +184,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.testcsrf.html">
+  <component name="RunManager" selected="JavaScript Debug.HomePage.html">
     <configuration name="HomePage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/DisPoll-Salesman-Client/HomePage.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -340,9 +202,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.testcsrf.html" />
         <item itemvalue="JavaScript Debug.HomePage.html" />
         <item itemvalue="JavaScript Debug.addShop.html" />
+        <item itemvalue="JavaScript Debug.testcsrf.html" />
         <item itemvalue="JavaScript Debug.editProfile.html" />
         <item itemvalue="JavaScript Debug.completeInfo.html" />
       </list>
@@ -362,12 +224,13 @@
       <workItem from="1559394765075" duration="54006000" />
       <workItem from="1559558061997" duration="9811000" />
       <workItem from="1559802571292" duration="8713000" />
-      <workItem from="1560026054693" duration="5127000" />
+      <workItem from="1560026054693" duration="9038000" />
+      <workItem from="1560174920768" duration="10780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135326000" />
+    <option name="totallyTimeSpent" value="150017000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,7 +242,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49820143" visible="true" weight="0.2470238" />
@@ -387,7 +250,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.2990196" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.297546" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -450,9 +313,6 @@
     <SUITE FILE_PATH="coverage/DisPoll_Salesman_Client$testfor_html.dat" NAME="testfor.html Coverage Results" MODIFIED="1559306878402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
-      <provider selected="true" editor-type-id="httpFileEditor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/bootstrap-rtl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -615,20 +475,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/advertisementPage.html">
+    <entry file="file://$PROJECT_DIR$/completeInfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="287" selection-start-line="287" selection-end-line="287" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="6749">
+          <caret line="397" column="57" selection-start-line="397" selection-start-column="57" selection-end-line="397" selection-end-column="57" />
         </state>
       </provider>
     </entry>
+    <entry file="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/HomePage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="360">
+          <caret line="473" lean-forward="true" selection-start-line="465" selection-start-column="8" selection-end-line="473" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -641,34 +501,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/completeInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="334" column="40" selection-start-line="334" selection-start-column="40" selection-end-line="334" selection-end-column="40" />
-          <folding>
-            <element signature="e#17856#18825#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editProfile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="356" column="27" lean-forward="true" selection-start-line="356" selection-start-column="27" selection-end-line="356" selection-end-column="27" />
+        <state relative-caret-position="261">
+          <caret line="133" column="55" lean-forward="true" selection-start-line="133" selection-start-column="55" selection-end-line="133" selection-end-column="55" />
           <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#4547#4553#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addShop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="369" lean-forward="true" selection-start-line="369" selection-end-line="369" />
+        <state relative-caret-position="640">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
           <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#14732#15956#0" />
+            <element signature="e#16748#17916#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/advertisementPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="133" column="38" selection-start-line="133" selection-end-line="134" />
         </state>
       </provider>
     </entry>

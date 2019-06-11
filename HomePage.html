@@ -17,7 +17,6 @@
     <script src="Scripts/bootstrap-rtl.js"></script>
     <script src="Scripts/jquery.validate.min.js"></script>
     <script src="Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <script src="Scripts/sweetalert.min.js"></script>
     <meta name="viewport" content="width=device-width"/>
     <title>@ViewBag.Title</title>
 
@@ -25,10 +24,6 @@
 </head>
 <body style="background-color:#E5E5E5 !important">
 <style>
-
-    /*alert{*/
-    /*    color: rgba(0, 0, 0, 0.2) ;*/
-    /*}*/
 
     .fa-refresh {
         margin: 4px 0 0px 5px;
@@ -462,29 +457,8 @@
 <script>
     //Scripts for connecting to the server
 
-
-    //for csrf testing
-    // function getCookie(cname) {
-    //     var name = cname + "=";
-    //     var decodedCookie = decodeURIComponent(document.cookie);
-    //     var ca = decodedCookie.split(';');
-    //     for(var i = 0; i <ca.length; i++) {
-    //         var c = ca[i];
-    //         while (c.charAt(0) == ' ') {
-    //             c = c.substring(1);
-    //         }
-    //         if (c.indexOf(name) == 0) {
-    //             return c.substring(name.length, c.length);
-    //         }
-    //     }
-    //     return "";
-    // }
-
     $(document).ready(function () {
 
-        // swal("heloo");
-
-        //loading captcha for first time page loaded
         createCaptcha();
 
 
@@ -523,7 +497,7 @@
                     const signUp_json = JSON.stringify(signUp_obj);
 
                     $.get("address.txt", function (data) {
-                        const my_address_signUp = data + "/salesman/signup-salesman/email-auth/";
+                        const my_address_signUp = data + "/salesman/signup/email-auth/";
 
                         $.ajax({
                             type: 'POST',
@@ -546,7 +520,7 @@
                                             code: code_var
                                         };
                                         const signUp_confirm_email_json = JSON.stringify(signUp_confirm_email_obj);
-                                        const my_address_signUp_confirm = data + "/salesman/signup-salesman/confirm-email/";
+                                        const my_address_signUp_confirm = data + "/salesman/signup/confirm-email/";
                                         $.ajax({
                                             type: 'POST',
                                             dataType: 'json',
@@ -576,7 +550,7 @@
                                             email: email_var,
                                         };
                                         const signUp_resend_code_json = JSON.stringify(signUp_resend_code_obj);
-                                        const my_address_signUp_resend = data + "/salesman/signup-salesman/resend-code/";
+                                        const my_address_signUp_resend = data + "/salesman/signup/resend-code/";
                                         $.ajax({
                                             type: 'POST',
                                             dataType: 'json',
@@ -657,17 +631,15 @@
                                 window.sessionStorage.setItem("firstName", resultData.salesman.first_name);
                                 window.sessionStorage.setItem("lastName", resultData.salesman.last_name);
                                 //چک شود
-                                window.sessionStorage.setItem("shops", resultData.salesman.shops);
-                                //فروشگاه ها رو هم میخواهم
-                                // window.location.href="AdminMainPage.html";
+                                window.sessionStorage.setItem("shops", JSON.stringify(resultData.salesman.shops));
+
+                                //condition to specify login az salesman or patron
                                 if(document.getElementById("login-form-condition-chbox").checked){
                                     window.location.href="AdminMainPage.html";
                                 }else{
                                     window.location.href="PatronMainPage.html";
                                 }
-                                //
-                                // console.log(xhr)
-                                // console.dir(xhr)
+
                             }
                         },
                         error: function () {

@@ -125,15 +125,12 @@
             <br/>
             <a href="editProfile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
             <br/>
-            <a class="rightMenuColor" onclick="myFunction('Demo1')">
+            <a class="rightMenuColor" onclick="myFunction('shops')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
                 &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
             </a>
-            <div id="Demo1" class="w3-container w3-hide ">
-                <a class="rightMenuColor" href="showShop.html"> &nbsp;فروشگاه اول</a>
-                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
-                <a class="w3-center rightMenuColor" href="addShop.html"> <span class="glyphicon glyphicon-plus"></span>
+            <div  class="w3-container w3-hide" id="shops">
+                <a class="w3-center rightMenuColor" href="addShop.html" id="add"> <span class="glyphicon glyphicon-plus"></span>
                     &nbsp;جدید&nbsp;</a>
             </div>
             <br/>
@@ -253,16 +250,6 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="text" required name="code" value=""
-                                   class="form-control w3-margin"
-                                   id="addShop-form-code-inp"
-                                   accept="application/txt" />
-                            <label> کد جواز کسب </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-11">
                             <input type="file" required name="codeImage" value=""
                                    class="form-control w3-margin"
                                    id="addShop-form-codeImage-inp"
@@ -310,8 +297,35 @@
 
         $(document).ready( function () {
 
+            /*
+            Reading from session "shops" and filled the rightMenu sub myShops
+            */
+            if (typeof (window.sessionStorage.shops) !== "undefined") {
+
+                var shop_var = JSON.parse(window.sessionStorage.shops);
+                for (let val of shop_var) {
+                    const a = document.createElement("a");
+                    const aTextName = document.createTextNode( val.name );
+                    const attrClass = document.createAttribute("class");
+                    attrClass.value = "rightMenuColor";
+                    const attrHref = document.createAttribute("href");
+                    attrHref.value = "showShop.html";
+                    const attrId = document.createAttribute("id");
+                    attrId.value = val.id;
+                    a.setAttributeNode(attrClass);
+                    a.setAttributeNode(attrHref);
+                    a.setAttributeNode(attrId);
+                    a.appendChild(aTextName);
+                    const addA = document.getElementById("add");
+                    const  saba= document.getElementById("shops");
+                    saba.insertBefore(a, addA);
+
+                }
+            }
+
+
+
             const addShop_form_var = document.getElementById("addShop-form");
-            // addShop_form_var.email.value=window.sessionStorage.email;
 
 
             $.get("address.txt", function (data) {
@@ -373,79 +387,51 @@
 
                 const shopKind_var = addShop_form_var.shopKinds.value;
                 const shopName_var = addShop_form_var.shopName.value;
-                const shopImage_var = addShop_form_var.shopImage.value;
                 const phoneNumber_var = addShop_form_var.phoneNumber.value;
                 const city_var = addShop_form_var.city.value;
                 const address_var = addShop_form_var.address.value;
-                // const code_var = addShop_form_var.code.value;
-                // const codeImage_var = addShop_form_var.codeImage.src;
 
-                alert(window.sessionStorage.id);
-                //dorost shavad
 
-                // if (username_var.length >= 5 ) {
-                //     const addShop_obj = {
-                //
-                //         salesman : '1',
-                //         shop_kind : shopKind_var,
-                //         name : shopName_var,
-                //         // picture : shopImage_var,
-                //         phone_number : phoneNumber_var,
-                //         city : city_var,
-                //         address : address_var,
-                //         // code : code_var,
-                //         // business_license :
-                //
-                //     };
-
-                var codeImg =$("#addShop-form-codeImage-inp").get(0).files[0];
+                var businessLicense =$("#addShop-form-codeImage-inp").get(0).files[0];
+                var picture =$("#addShop-form-shopImage-inp").get(0).files[0];
 
                 var formData = new FormData();
-                formData.append("business_license", codeImg);
-                formData.append("salesman", "1");
+                formData.append("business_license", businessLicense);
+                formData.append("salesman", window.sessionStorage.salesman);
                 formData.append("shop_kind", shopKind_var);
                 formData.append("name", shopName_var);
                 formData.append("phone_number", phoneNumber_var);
                 formData.append("city", city_var);
                 formData.append("address", address_var);
+                formData.append("picture", picture);
 
-
-
-                // const addShop_json = JSON.stringify(addShop_obj);
-
-
-                // alert(formData.toString());
-                //
-                // alert(window.sessionStorage.csrfToken);
 
                 $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/add-shop/";
-                        $.ajax({
-                            type: 'POST',
-                            url: my_address,
-                            dataType: 'json',
-                            contentType: false,
-                            processData: false,
-                            data: formData,
-                            // headers:{
-                            //     "X-CSRFToken" : window.sessionStorage.csrfToken.toString()
-                            // },
-                            crossDomain: true,
-                            xhrField: {withCredentials: true},
-                            success: function(resultData, status, xhr){
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    // window.location.href="AdminMainPage.html";
-                                }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");}
-                        })
+                    const my_address = data + "/salesman/add-shop/";
+                    $.ajax({
+                        type: 'POST',
+                        url: my_address,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        data: formData,
+                        headers: {
+                            'Authorization': window.sessionStorage.token
+                        },
+                        crossDomain: true,
+                        xhrField: {withCredentials: true},
+                        success: function (resultData, status, xhr) {
+                            alert(resultData.message);
+                            if (resultData.result.toString() === "true") {
+                                // window.location.href="AdminMainPage.html";
+                            }
+                        },
+                        error: function () {
+                            alert(" اتصال به اینترنت برقرار نیست. ");
+                        }
+                    })
 
-                    });
-                // } else
-                //     alert("طول نام کاربری و رمزعبور باید حداقل 5 کاراکتر باشد.");
-
+                });
             });
 
 
@@ -469,6 +455,7 @@
                         success: function (resultData, status, xhr) {
                             alert(resultData.message);
                             if (resultData.result.toString() === "true") {
+
                                 window.location.href="HomePage.html";
                             }
                         },
