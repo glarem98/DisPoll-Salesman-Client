@@ -315,9 +315,12 @@
 </footer>
 
 <script>
-    //script for design website
+    //Scripts for design and it's actions
 
-
+    /*
+    Function opening and closing subset of an tag
+    parameter is id
+     */
     function myFunction(id) {
         var x = document.getElementById(id);
         const y = document.getElementById("more");
@@ -329,6 +332,105 @@
             y.style.transform = "rotate(0deg)";
         }
     }
+
+
+    $(document).ready(function () {
+
+        //Go to AdminMainPage by clicking on picture
+        $("#admin-img").click(function () {
+            window.location.href = "AdminMainPage.html"
+        });
+
+
+        //Fill in admin avatar and fullName
+        if ((typeof (window.sessionStorage.avatar) !== "undefined") && (typeof (window.sessionStorage.firstName) !== "undefined")
+            && (typeof (window.sessionStorage.lastName) !== "undefined")) {
+            $("#admin-img").attr("src", window.sessionStorage.avatar);
+            $("#admin-name").text(window.sessionStorage.firstName + " " + window.sessionStorage.lastName);
+        }
+
+        /*
+         Reading from session "shops" and filled the rightMenu sub myShops
+         */
+        if (typeof (window.sessionStorage.shops) !== "undefined") {
+
+            var shop_var = JSON.parse(window.sessionStorage.shops);
+            for (let val of shop_var) {
+                const a = document.createElement("a");
+                const aTextName = document.createTextNode( val.name );
+                const attrClass = document.createAttribute("class");
+                attrClass.value = "rightMenuColor";
+                const attrHref = document.createAttribute("href");
+                attrHref.value = "showShop.html";
+                const attrId = document.createAttribute("id");
+                attrId.value = val.id;
+                a.setAttributeNode(attrClass);
+                a.setAttributeNode(attrHref);
+                a.setAttributeNode(attrId);
+                a.appendChild(aTextName);
+                const addA = document.getElementById("add");
+                const myShops = document.getElementById("shops");
+                myShops.insertBefore(a, addA);
+
+            }
+        }
+
+        //Go to AdminMainPage by clicking on picture
+        $("#admin-img").click(function () {
+            window.location.href = "AdminMainPage.html"
+        });
+
+
+        //Getting id of selected subset shop
+        const my_shop = document.getElementById("shops");
+        for (let val of (my_shop.childNodes)) {
+            if (val.id == "add")
+                return ;
+            val.addEventListener("click", function () {
+                window.sessionStorage.setItem("selectShop", val.id);
+            })
+        }
+
+
+        /*
+         Request for logout
+         send authorization in header
+         */
+        $("#logout").click(function () {
+            var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
+            if (logout_var ==true){
+                $.get("address.txt", function (data) {
+                    const my_address = data + "/salesman/logout/";
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        url: my_address,
+                        headers:{
+                            'Authorization' : window.sessionStorage.token
+                        },
+                        data: JSON.stringify({}),
+                        success: function (resultData, status, xhr) {
+                            alert(resultData.message);
+                            if (resultData.result.toString() === "true") {
+                                window.location.href="HomePage.html";
+                            }
+                        },
+                        error: function () {
+                            alert(" اتصال به اینترنت برقرار نیست. ");
+                        }
+                    })
+
+                });
+
+            }else{
+                alert(" از این که همراه ما خواهید بود متشکریم. ");
+            }
+        });
+
+    });
+
+
 </script>
 
 <script>
@@ -397,44 +499,6 @@
 
 
         });
-
-        /*
-             Request for logout
-             send authorization in header
-             */
-
-        $("#logout").click(function () {
-            var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
-            if (logout_var ==true){
-                $.get("address.txt", function (data) {
-                    const my_address = data + "/salesman/logout/";
-                    $.ajax({
-                        type: 'POST',
-                        dataType: 'json',
-                        contentType: 'application/json',
-                        url: my_address,
-                        headers:{
-                            'Authorization' : window.sessionStorage.token
-                        },
-                        data: JSON.stringify({}),
-                        success: function (resultData, status, xhr) {
-                            alert(resultData.message);
-                            if (resultData.result.toString() === "true") {
-                                window.location.href="HomePage.html";
-                            }
-                        },
-                        error: function () {
-                            alert(" اتصال به اینترنت برقرار نیست. ");
-                        }
-                    })
-
-                });
-
-            }else{
-                alert(" از این که همراه ما خواهید بود متشکریم. ");
-            }
-        });
-
 
     });
 

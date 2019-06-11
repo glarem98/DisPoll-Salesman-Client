@@ -155,6 +155,12 @@
 
     $(document).ready(function () {
 
+        //Go to AdminMainPage by clicking on picture
+        $("#admin-img").click(function () {
+            window.location.href = "AdminMainPage.html"
+        });
+
+
         //Fill in admin avatar and fullName
         if ((typeof (window.sessionStorage.avatar) !== "undefined") && (typeof (window.sessionStorage.firstName) !== "undefined")
             && (typeof (window.sessionStorage.lastName) !== "undefined")) {
