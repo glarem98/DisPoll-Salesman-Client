@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d10e1cb-5767-43e3-b348-44c2480bd13d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminMainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminMainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PatronMainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/PatronMainPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addDiscount.html" beforeDir="false" afterPath="$PROJECT_DIR$/addDiscount.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addPoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/addPoll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/addShop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advertisementPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/advertisementPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/editProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/editShop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pollPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pollPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/salePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showDiscount.html" beforeDir="false" afterPath="$PROJECT_DIR$/showDiscount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showPoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/showPoll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showProfile.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/showShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/showShop.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,13 +21,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AdminMainPage.html">
+        <entry file="file://$PROJECT_DIR$/addPoll.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="255" lean-forward="true" selection-start-line="255" selection-end-line="255" />
+            <state relative-caret-position="387">
+              <caret line="260" column="108" selection-start-line="260" selection-start-column="108" selection-end-line="260" selection-end-column="108" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#11930#13174#0" />
+                <element signature="n#style#0;n#span#0;n#div#2;n#div#5;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#3;n#div#5;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/showShop.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="169" column="29" lean-forward="true" selection-start-line="167" selection-start-column="19" selection-end-line="169" selection-end-column="29" />
+              <folding>
+                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addShop.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="385" column="15" lean-forward="true" selection-start-line="372" selection-start-column="12" selection-end-line="385" selection-end-column="15" />
+              <folding>
+                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addDiscount.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="454" column="48" lean-forward="true" selection-start-line="454" selection-start-column="48" selection-end-line="454" selection-end-column="48" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,6 +96,10 @@
       <find>import</find>
       <find>address</find>
       <find>Demo1</find>
+      <find>get</find>
+      <find>show_value</find>
+      <find>choice</find>
+      <find>form</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -82,20 +116,20 @@
         <option value="$PROJECT_DIR$/HomePage.html" />
         <option value="$PROJECT_DIR$/testcsrf.html" />
         <option value="$PROJECT_DIR$/supportPage.html" />
-        <option value="$PROJECT_DIR$/addPoll.html" />
         <option value="$PROJECT_DIR$/addShop.html" />
-        <option value="$PROJECT_DIR$/addDiscount.html" />
         <option value="$PROJECT_DIR$/advertisementPage.html" />
         <option value="$PROJECT_DIR$/editProfile.html" />
         <option value="$PROJECT_DIR$/editShop.html" />
         <option value="$PROJECT_DIR$/showDiscount.html" />
         <option value="$PROJECT_DIR$/showPoll.html" />
-        <option value="$PROJECT_DIR$/showShop.html" />
         <option value="$PROJECT_DIR$/showShopPatron.html" />
         <option value="$PROJECT_DIR$/PatronMainPage.html" />
         <option value="$PROJECT_DIR$/pollPage.html" />
         <option value="$PROJECT_DIR$/salePage.html" />
         <option value="$PROJECT_DIR$/AdminMainPage.html" />
+        <option value="$PROJECT_DIR$/addDiscount.html" />
+        <option value="$PROJECT_DIR$/showShop.html" />
+        <option value="$PROJECT_DIR$/addPoll.html" />
       </list>
     </option>
   </component>
@@ -196,12 +230,12 @@
       <workItem from="1560231292752" duration="9070000" />
       <workItem from="1560257583258" duration="37000" />
       <workItem from="1560257823344" duration="11866000" />
-      <workItem from="1560279671111" duration="6569000" />
+      <workItem from="1560279671111" duration="16483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191445000" />
+    <option name="totallyTimeSpent" value="201359000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -220,7 +254,7 @@
       <window_info id="Structure" order="1" sideWeight="0.50179857" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.29738563" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -357,46 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addShop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="565" selection-start-line="565" selection-end-line="565" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#19938#23251#0" />
-            <element signature="e#22078#23305#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addDiscount.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="117" column="2" selection-start-line="117" selection-start-column="2" selection-end-line="117" selection-end-column="2" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addPoll.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="532" selection-start-line="532" selection-end-line="532" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#21266#22677#0" />
-            <element signature="e#21398#22754#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/advertisementPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -459,18 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showShop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="318" column="17" lean-forward="true" selection-start-line="318" selection-start-column="17" selection-end-line="318" selection-end-column="17" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#12777#14021#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/showShopPatron.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -514,11 +496,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AdminMainPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="255" lean-forward="true" selection-start-line="255" selection-end-line="255" />
+        <state relative-caret-position="142">
+          <caret line="253" column="7" lean-forward="true" selection-start-line="253" selection-start-column="7" selection-end-line="253" selection-end-column="7" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
             <element signature="e#11930#13174#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showShop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="169" column="29" lean-forward="true" selection-start-line="167" selection-start-column="19" selection-end-line="169" selection-end-column="29" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addShop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="385" column="15" lean-forward="true" selection-start-line="372" selection-start-column="12" selection-end-line="385" selection-end-column="15" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addDiscount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="454" column="48" lean-forward="true" selection-start-line="454" selection-start-column="48" selection-end-line="454" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addPoll.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="260" column="108" selection-start-line="260" selection-start-column="108" selection-end-line="260" selection-end-column="108" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#5;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#3;n#div#5;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

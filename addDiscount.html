@@ -239,8 +239,10 @@
                     <div class="col-md-11">
                         <input type="range" required name="percent" min="0" max="100" step="5" value="10"
                                class="form-control w3-margin"
-                               id="addDiscount-form-percent-inp" accept="application/txt"/>
+                               id="addDiscount-form-percent-inp" accept="application/txt" onchange="show_value(this.value);"/>
                         <label> درصد تخفیف </label>
+                        <div class="col w3-margin" style="color:#7B8084"> درصد انتخابی :  </div>
+                        <div class="col w3-margin" id="slider_value" style="color:#7B8084;padding-right:5px !important"> 10% </div>
                     </div>
                 </div>
 
@@ -329,6 +331,11 @@
             x.className = x.className.replace(" w3-show", "");
             y.style.transform = "rotate(0deg)";
         }
+    }
+
+    //Out put of linearScale
+    function show_value(x) {
+        document.getElementById("slider_value").innerHTML = x + "%";
     }
 
 
