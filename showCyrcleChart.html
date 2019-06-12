@@ -71,64 +71,53 @@
     <nav class="w3-sidenav w3-mobile w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
         <div class="w3-margin ">
             <div class="w3-center " style="margin-top:8px !important">
-                <img class="w3-center w3-closenav w3-xlarge w3-circle" src="avatar/man-with-tie.png"
-                     id="admin-img"
-                     style="width:100px ; height:100px" />
+                <img  class="w3-center w3-closenav w3-xlarge w3-circle" src="avatar/man-with-tie.png"
+                      id="admin-img"
+                      style="width:100px ; height:100px"/>
             </div>
-            <br />
+            <br/>
             <a href="editProfile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
-            <br />
-            <a class="rightMenuColor" onclick="myFunction('Demo1')">
+            <br/>
+            <a href="#" class="rightMenuColor" onclick="myFunction('shops')">
                 <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
                 &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
             </a>
-            <div id="Demo1" class="w3-container w3-hide ">
-                <a class="rightMenuColor" href="showShop.html"> &nbsp;فروشگاه اول</a>
-                <a class="rightMenuColor" href="#">&nbsp; فروشگاه دوم</a>
-                <a class="rightMenuColor" href="#"> &nbsp;فروشگاه سوم </a>
-                <a class="w3-center rightMenuColor" href="addShop.html">
-                    <span class="glyphicon glyphicon-plus"></span>
-                    &nbsp;جدید&nbsp;
-                </a>
+            <div id="shops" class="w3-container w3-hide ">
+
+                <a class="w3-center rightMenuColor" href="addShop.html" id="add"> <span class="glyphicon glyphicon-plus"></span>
+                    &nbsp;جدید&nbsp;</a>
             </div>
-            <br />
+            <br/>
             <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor">
-                    <span class="glyphicon glyphicon-signal"
-                          style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
-                    من
-                </a>
+                <a href="showPoll.html" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
+                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
+                    من </a>
             </div>
-            <br />
+            <br/>
+            <!--        <div class="rightMenuColor">-->
+            <!--            <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"-->
+            <!--                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من-->
+            <!--            </a>-->
+            <!--        </div>-->
+            <!--        <br/>-->
             <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor">
-                    <span class="glyphicon glyphicon-usd"
-                          style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
-                </a>
+                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-bullhorn"
+                                                                              style="color:#7B8084"></span>&nbsp;&nbsp;
+                    تبلیغات </a>
             </div>
-            <br />
+            <br/>
             <div class="rightMenuColor">
-                <a href="advertisementPage.html" class="rightMenuColor">
-                    <span class="glyphicon glyphicon-earphone"
-                          style="color:#7B8084"></span>&nbsp;&nbsp;
-                    تبلیغات
+                <a href="supportPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                                                                        style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی
                 </a>
             </div>
-            <br />
+            <br/>
             <div class="rightMenuColor">
-                <a href="supportPage.html" class="rightMenuColor">
-                    <span class="glyphicon glyphicon-earphone"
-                          style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی
+                <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
+                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
                 </a>
             </div>
-            <br />
-            <div class="rightMenuColor">
-                <a href="#" class="rightMenuColor" id="logout">
-                    <span class="glyphicon glyphicon-off"
-                          style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
-                </a>
-            </div>
-            <br />
+            <br/>
         </div>
     </nav>
 
@@ -156,10 +145,10 @@
 Morris.Donut({
   element: 'graph',
   data: [
-    {value: 70, label: 'گزینه اول', formatted: 'حداقل 70%' },
-    {value: 15, label: 'گزینه دوم', formatted: 'تقریبا 15%' },
-    {value: 10, label: 'گزینه سوم', formatted: 'تقریبا 10%' },
-    {value: 5, label: 'گزینه چهارم', formatted: 'حداکثر 5%' }
+    {value: 70, label: 'گزینه اول', formatted: ' 70%' },
+    {value: 15, label: 'گزینه دوم', formatted: ' 15%' },
+    {value: 10, label: 'گزینه سوم', formatted: ' 10%' },
+    {value: 5, label: 'گزینه چهارم', formatted: ' 5%' }
   ],
   formatter: function (x, data) { return data.formatted; }
 });

@@ -142,14 +142,14 @@
                     من </a>
             </div>
             <br/>
+            <!--        <div class="rightMenuColor">-->
+            <!--            <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"-->
+            <!--                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من-->
+            <!--            </a>-->
+            <!--        </div>-->
+            <!--        <br/>-->
             <div class="rightMenuColor">
-                <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
-                                                                         style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
-                </a>
-            </div>
-            <br/>
-            <div class="rightMenuColor">
-                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-bullhorn"
                                                                               style="color:#7B8084"></span>&nbsp;&nbsp;
                     تبلیغات </a>
             </div>
@@ -251,21 +251,24 @@
                         <div style="border : solid 1px gray" class="w3-margin"></div>
                         <!--this htlm should be copy in next div when the + bottom is clicked-->
                         <div class="col-md-11" id="cloneChoice">
-                            <span style="margin-top:20px ; direction:rtl">
+                            <span style="margin-top:20px ; direction:rtl !important;">
                                 <input type="text" required autofocus name="choice" value="" class="form-control w3-center w3-margin" id="poll-form-choice-inp"
                                        accept="application/txt" />
                                 <label> گزینه </label>
                             </span>
                         </div>
+                        <div  id="addChoice">
+
+                        </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-5 col-md-11">
-                                <input type="button" value="+" class="btn btn-default btnColors" id="poll-form-submit-btn" />
+                            <div class="col-md-offset-5 col-md-11" onclick="addChoice()">
+                                <input type="button" value="+" class="btn btn-default btnColors"  />
                             </div>
                         </div>
-                        <div class="col-md-2" id="addChoice" >
-                            <button style="margin:20px" class="btn btn-default btnColors" ><i class="fa fa-plus"><strong style="text-align:center;font-style:normal!important">+</strong></i></button>
-                        </div>
+<!--                        <div class="col-md-2" id="addChoice" >-->
+<!--                            <button style="margin:20px" class="btn btn-default btnColors" ><i class="fa fa-plus"><strong style="text-align:center;font-style:normal!important">+</strong></i></button>-->
+<!--                        </div>-->
                     </div>
                     <!-- for next div we should add  style="display:none;"  -->
                     <div id="LinearScale" style="display: none">
@@ -436,6 +439,8 @@
                 var $poll_form_choices1 = $("input[name ='choice']");
                 // $poll_form_choices1[($poll_form_choices1.length)-1].removeAttribute("value");
                 $poll_form_choices1[($poll_form_choices1.length) - 1].value = "";
+            }else {
+                alert("لطفا همه گزینه های قبلی را کامل کنید.");
             }
 
         }

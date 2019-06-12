@@ -1,10 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="keywords" content="@ViewBag.KeyWord">
+    <meta charset="utf-8">
+    <meta name="language" content="fa">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Content/bootstrap.min.css" rel="stylesheet"/>
+    <link href="Content/css/bootstrap-rtl.css" rel="stylesheet"/>
+    <link href="Content/css/w3.css" rel="stylesheet"/>
+    <link href="ParsaFont/Style.css" rel="stylesheet"/>
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/ckeditor/ckeditor.js"></script>
+    <script src="Scripts/bootstrap-rtl.js"></script>
+    <script src="Scripts/jquery.validate.min.js"></script>
+    <script src="Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <meta name="viewport" content="width=device-width"/>
+    <title>@ViewBag.Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
 </head>
-<body>
+<body style="background-color:#E5E5E5">
+<style>
+
+    .componentColor {
+        background-color: #F2F2F2 !important;
+    }
+
+    .btnColors {
+        background-color: #006DA0 !important;
+        color: #ECEDEF !important;
+    }
+
+    /*.btnHoverColor:hover {
+        background-color: #d3df13 !important;
+        color: #212121 !important;
+    }*/
+    .navigationBarColor {
+        background-color: #21262A !important;
+        color: #7B8084;
+    }
+
+    .rightMenuColor {
+        background-color: #2F3438 !important;
+        color: #EFF0F4;
+    }
+
+    .rightMenuColor:hover {
+        background-color: #181B20 !important;
+        color: #02B2E1;
+    }
+
+    .dropbtn {
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+
+</style>
+
+<nav class="w3-sidenav w3-mobile w3-card-16 w3-animate-right " style="display:block;background-color:#2F3438" id="rightMenu">
+    <div class="w3-margin ">
+        <div class="w3-center " style="margin-top:8px !important">
+            <img  class="w3-center w3-closenav w3-xlarge w3-circle" src="avatar/man-with-tie.png"
+                  id="admin-img"
+                  style="width:100px ; height:100px"/>
+        </div>
+        <br/>
+        <a href="editProfile.html" class="rightMenuColor w3-center" id="admin-name"> &nbsp;نام کاربر</a>
+        <br/>
+        <a href="#" class="rightMenuColor" onclick="myFunction('shops')">
+            <span class="glyphicon glyphicon-home" style="color:#7B8084"></span>&nbsp;&nbsp;فروشگاه های من
+            &nbsp;<span class="glyphicon glyphicon-chevron-down" id="more" style="color:#7B8084;margin-top:2px"></span>
+        </a>
+        <div id="shops" class="w3-container w3-hide ">
+
+            <a class="w3-center rightMenuColor" href="addShop.html" id="add"> <span class="glyphicon glyphicon-plus"></span>
+                &nbsp;جدید&nbsp;</a>
+        </div>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="showPoll.html" class="rightMenuColor"><span class="glyphicon glyphicon-signal"
+                                                                 style="color:#7B8084"></span>&nbsp;&nbsp; نظرسنجی های
+                من </a>
+        </div>
+        <br/>
+        <!--        <div class="rightMenuColor">-->
+        <!--            <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"-->
+        <!--                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من-->
+        <!--            </a>-->
+        <!--        </div>-->
+        <!--        <br/>-->
+        <div class="rightMenuColor">
+            <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-bullhorn"
+                                                                          style="color:#7B8084"></span>&nbsp;&nbsp;
+                تبلیغات </a>
+        </div>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="supportPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                                                                    style="color:#7B8084"></span>&nbsp;&nbsp; پشنیبانی
+            </a>
+        </div>
+        <br/>
+        <div class="rightMenuColor">
+            <a href="#" class="rightMenuColor" id="logout"><span class="glyphicon glyphicon-off"
+                                                                 style="color:#7B8084"></span>&nbsp;&nbsp; خروج از پنل
+            </a>
+        </div>
+        <br/>
+    </div>
+</nav>
+
+<header class="w3-container navigationBarColor ">
+    <span class="w3-opennav w3-xlarge w3-right" id="rightMenu_open_btn">&#9776;</span>
+    <div class="text-center">
+        <h1><span class="w3-margin-right ;navbar-brand  w3-xxlarge w3-text "
+                  style="font-family: 'Baloo Bhai', cursive; color:#7B8084!important"
+                  href="HomePage.html">DisPoll</span></h1>
+    </div>
+</header>
+
+<br/><br/><br/>
+<br/>
+<br/><br/><br/>
+
+<div class="container w3-center">
+        <div >
+
+            <br/>
+            شرکت DisPoll با هدف ارائه خدمات در حوزه ارزیابی رضایت مندی مشتریان و ارسال بازخورد آن ها برای شما فروشندگان عزیز در حال کار است.
+            <br/>
+            <br/>
+
+            از طریق یکی از راه های ارتباطی زیر می توانید با ما در ارتباط باشید:
+            <br/>
+            <br/>
+            آدرس :اصفهان، خیابان هزار جریب، درب جنگلبانی، دانشکده مهندسی کامپیوتر دانشگاه اصفهان
+            <br/>
+            <br/>
+            تماس با ما: 09103426675
+            <br/>
+            <br/>
+
+            ایمیل: mohsen.dehbashi@gmail.com
+            <br/>
+            <!-- <img  style="width:300px;height:200px" src="avatar/shop.jpg"  />-->
+        </div>
+    </div>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<script>
+    //Scripts for design and it's actions
+    const data = 'http://185.88.179.80:8000';
+    var my_address;
+
+    /*
+    Function opening and closing subset of an tag
+    parameter is id
+     */
+    function myFunction(id) {
+        var x = document.getElementById(id);
+        const y = document.getElementById("more");
+        y.style.transform = "rotate(180deg)";
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+            y.style.transform = "rotate(0deg)";
+        }
+    }
+
+
+    $(document).ready(function () {
+
+        //Go to AdminMainPage by clicking on picture
+        $("#admin-img").click(function () {
+            window.location.href = "AdminMainPage.html"
+        });
+
+
+        //Fill in admin avatar and fullName
+        if ((typeof (window.sessionStorage.avatar) !== "undefined") && (typeof (window.sessionStorage.firstName) !== "undefined")
+            && (typeof (window.sessionStorage.lastName) !== "undefined")) {
+            $("#admin-img").attr("src", window.sessionStorage.avatar);
+            $("#admin-name").text(window.sessionStorage.firstName + " " + window.sessionStorage.lastName);
+        }
+
+        /*
+         Reading from session "shops" and filled the rightMenu sub myShops
+         */
+        if (typeof (window.sessionStorage.shops) !== "undefined") {
+
+            var shop_var = JSON.parse(window.sessionStorage.shops);
+            for (let val of shop_var) {
+                const a = document.createElement("a");
+                const aTextName = document.createTextNode( val.name );
+                const attrClass = document.createAttribute("class");
+                attrClass.value = "rightMenuColor";
+                const attrHref = document.createAttribute("href");
+                attrHref.value = "showShop.html";
+                const attrId = document.createAttribute("id");
+                attrId.value = val.id;
+                a.setAttributeNode(attrClass);
+                a.setAttributeNode(attrHref);
+                a.setAttributeNode(attrId);
+                a.appendChild(aTextName);
+                const addA = document.getElementById("add");
+                const myShops = document.getElementById("shops");
+                myShops.insertBefore(a, addA);
+
+            }
+        }
+
+        //Go to AdminMainPage by clicking on picture
+        $("#admin-img").click(function () {
+            window.location.href = "AdminMainPage.html"
+        });
+
+
+        //Getting id of selected subset shop
+        const my_shop = document.getElementById("shops");
+        for (let val of (my_shop.childNodes)) {
+            if (val.id == "add")
+                return ;
+            val.addEventListener("click", function () {
+                window.sessionStorage.setItem("selectShop", val.id);
+            })
+        }
+
+    });
+
+
+    $(document).ready(function () {
+
+        /*
+          Request for logout
+          send authorization in header
+          */
+        $("#logout").click(function () {
+            var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
+            if (logout_var ==true){
+
+                const my_address = data + "/salesman/logout/";
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    url: my_address,
+                    headers:{
+                        'Authorization' : window.sessionStorage.token
+                    },
+                    data: JSON.stringify({}),
+                    success: function (resultData, status, xhr) {
+                        alert(resultData.message);
+                        if (resultData.result.toString() === "true") {
+                            window.location.href="HomePage.html";
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");
+                    }
+                })
+
+
+            }else{
+                alert(" از این که همراه ما خواهید بود متشکریم. ");
+            }
+        });
+
+    });
+
+
+</script>
+
 
 </body>
 </html>

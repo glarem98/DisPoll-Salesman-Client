@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d10e1cb-5767-43e3-b348-44c2480bd13d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminMainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminMainPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomePage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addDiscount.html" beforeDir="false" afterPath="$PROJECT_DIR$/addDiscount.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addPoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/addPoll.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/addShop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/advertisementPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/advertisementPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/editProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/editShop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showBarChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/showBarChart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showCyrcleChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/showCyrcleChart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showDiscount.html" beforeDir="false" afterPath="$PROJECT_DIR$/showDiscount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showPoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/showPoll.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/showShop.html" beforeDir="false" afterPath="$PROJECT_DIR$/showShop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supportPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/supportPage.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,28 +32,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addPoll.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="260" column="108" selection-start-line="260" selection-start-column="108" selection-end-line="260" selection-end-column="108" />
+            <state relative-caret-position="331">
+              <caret line="419" column="17" lean-forward="true" selection-start-line="407" selection-start-column="16" selection-end-line="419" selection-end-column="17" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#span#0;n#div#2;n#div#5;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#3;n#div#5;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/showShop.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/showPoll.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="169" column="29" lean-forward="true" selection-start-line="167" selection-start-column="19" selection-end-line="169" selection-end-column="29" />
+            <state relative-caret-position="310">
+              <caret line="396" column="56" lean-forward="true" selection-start-line="396" selection-start-column="56" selection-end-line="396" selection-end-column="56" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,26 +60,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addShop.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="385" column="15" lean-forward="true" selection-start-line="372" selection-start-column="12" selection-end-line="385" selection-end-column="15" />
+            <state relative-caret-position="289">
+              <caret line="500" column="75" lean-forward="true" selection-start-line="500" selection-start-column="75" selection-end-line="500" selection-end-column="75" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addDiscount.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="454" column="48" lean-forward="true" selection-start-line="454" selection-start-column="48" selection-end-line="454" selection-end-column="48" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,6 +94,8 @@
       <find>show_value</find>
       <find>choice</find>
       <find>form</find>
+      <find>/salesman/</find>
+      <find>ajax</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,23 +109,25 @@
         <option value="$PROJECT_DIR$/PatronMainPage .html" />
         <option value="$PROJECT_DIR$/completeInfo.html" />
         <option value="$PROJECT_DIR$/showProfile.html" />
-        <option value="$PROJECT_DIR$/HomePage.html" />
         <option value="$PROJECT_DIR$/testcsrf.html" />
-        <option value="$PROJECT_DIR$/supportPage.html" />
-        <option value="$PROJECT_DIR$/addShop.html" />
-        <option value="$PROJECT_DIR$/advertisementPage.html" />
-        <option value="$PROJECT_DIR$/editProfile.html" />
-        <option value="$PROJECT_DIR$/editShop.html" />
-        <option value="$PROJECT_DIR$/showDiscount.html" />
-        <option value="$PROJECT_DIR$/showPoll.html" />
         <option value="$PROJECT_DIR$/showShopPatron.html" />
         <option value="$PROJECT_DIR$/PatronMainPage.html" />
         <option value="$PROJECT_DIR$/pollPage.html" />
         <option value="$PROJECT_DIR$/salePage.html" />
+        <option value="$PROJECT_DIR$/HomePage.html" />
         <option value="$PROJECT_DIR$/AdminMainPage.html" />
         <option value="$PROJECT_DIR$/addDiscount.html" />
-        <option value="$PROJECT_DIR$/showShop.html" />
         <option value="$PROJECT_DIR$/addPoll.html" />
+        <option value="$PROJECT_DIR$/addShop.html" />
+        <option value="$PROJECT_DIR$/advertisementPage.html" />
+        <option value="$PROJECT_DIR$/editProfile.html" />
+        <option value="$PROJECT_DIR$/editShop.html" />
+        <option value="$PROJECT_DIR$/showBarChart.html" />
+        <option value="$PROJECT_DIR$/showCyrcleChart.html" />
+        <option value="$PROJECT_DIR$/showDiscount.html" />
+        <option value="$PROJECT_DIR$/showShop.html" />
+        <option value="$PROJECT_DIR$/supportPage.html" />
+        <option value="$PROJECT_DIR$/showPoll.html" />
       </list>
     </option>
   </component>
@@ -144,7 +142,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,6 +153,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,12 +228,13 @@
       <workItem from="1560231292752" duration="9070000" />
       <workItem from="1560257583258" duration="37000" />
       <workItem from="1560257823344" duration="11866000" />
-      <workItem from="1560279671111" duration="16483000" />
+      <workItem from="1560279671111" duration="17176000" />
+      <workItem from="1560330363512" duration="8910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201359000" />
+    <option name="totallyTimeSpent" value="210962000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,115 +350,12 @@
     <entry file="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
       <provider selected="true" editor-type-id="httpFileEditor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/showProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="425" selection-start-line="425" selection-end-line="425" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/completeInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="331" column="15" selection-start-line="315" selection-start-column="12" selection-end-line="331" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/showProfile.html" />
     <entry file="file://$PROJECT_DIR$/input patterns.txt" />
     <entry file="file://$PROJECT_DIR$/testcsrf.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supportPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" lean-forward="true" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HomePage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="629" selection-start-line="629" selection-end-line="629" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/advertisementPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="398" column="17" selection-start-line="396" selection-start-column="15" selection-end-line="398" selection-end-column="17" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#16001#17486#0" />
-            <element signature="e#16255#17499#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#14799#18757#0" />
-            <element signature="e#21107#23533#0" />
-            <element signature="e#22214#23458#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editShop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="504" column="17" selection-start-line="502" selection-start-column="5" selection-end-line="504" selection-end-column="17" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#20654#22919#0" />
-            <element signature="e#21430#22674#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/showDiscount.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="290" column="17" selection-start-line="288" selection-start-column="6" selection-end-line="290" selection-end-column="17" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#11779#13023#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/showPoll.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="386" column="17" selection-start-line="384" selection-start-column="6" selection-end-line="386" selection-end-column="17" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#16243#17487#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/showShopPatron.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="236" column="57" lean-forward="true" selection-start-line="236" selection-start-column="38" selection-end-line="236" selection-end-column="57" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -474,16 +370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pollPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="270" column="57" selection-start-line="270" selection-start-column="57" selection-end-line="270" selection-end-column="57" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/salePage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -494,32 +380,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AdminMainPage.html">
+    <entry file="file://$PROJECT_DIR$/completeInfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="253" column="7" lean-forward="true" selection-start-line="253" selection-start-column="7" selection-end-line="253" selection-end-column="7" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#11930#13174#0" />
-          </folding>
+        <state relative-caret-position="177">
+          <caret line="395" column="26" selection-start-line="395" selection-start-column="22" selection-end-line="395" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showShop.html">
+    <entry file="file://$PROJECT_DIR$/pollPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="169" column="29" lean-forward="true" selection-start-line="167" selection-start-column="19" selection-end-line="169" selection-end-column="29" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addShop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="385" column="15" lean-forward="true" selection-start-line="372" selection-start-column="12" selection-end-line="385" selection-end-column="15" />
+        <state relative-caret-position="238">
+          <caret line="162" selection-start-line="162" selection-end-line="165" selection-end-column="14" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
           </folding>
@@ -528,26 +399,159 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/addDiscount.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="454" column="48" lean-forward="true" selection-start-line="454" selection-start-column="48" selection-end-line="454" selection-end-column="48" />
+        <state relative-caret-position="275">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/advertisementPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="169" selection-start-line="169" selection-end-line="169" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supportPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showShopPatron.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="234" column="20" selection-start-line="234" selection-start-column="20" selection-end-line="234" selection-end-column="20" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showShop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="71" column="69" selection-start-line="71" selection-start-column="69" selection-end-line="71" selection-end-column="69" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HomePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="179" selection-start-line="179" selection-end-line="333" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminMainPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="121" column="85" lean-forward="true" selection-start-line="121" selection-start-column="85" selection-end-line="121" selection-end-column="85" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showCyrcleChart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showDiscount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editShop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="173" column="32" selection-start-line="173" selection-start-column="32" selection-end-line="173" selection-end-column="32" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showBarChart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addPoll.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="260" column="108" selection-start-line="260" selection-start-column="108" selection-end-line="260" selection-end-column="108" />
+        <state relative-caret-position="331">
+          <caret line="419" column="17" lean-forward="true" selection-start-line="407" selection-start-column="16" selection-end-line="419" selection-end-column="17" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#span#0;n#div#2;n#div#5;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#3;n#div#5;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addShop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="500" column="75" lean-forward="true" selection-start-line="500" selection-start-column="75" selection-end-line="500" selection-end-column="75" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showPoll.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="396" column="56" lean-forward="true" selection-start-line="396" selection-start-column="56" selection-end-line="396" selection-end-column="56" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

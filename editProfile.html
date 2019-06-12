@@ -139,14 +139,14 @@
                     من </a>
             </div>
             <br/>
+            <!--        <div class="rightMenuColor">-->
+            <!--            <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"-->
+            <!--                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من-->
+            <!--            </a>-->
+            <!--        </div>-->
+            <!--        <br/>-->
             <div class="rightMenuColor">
-                <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
-                                                                         style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
-                </a>
-            </div>
-            <br/>
-            <div class="rightMenuColor">
-                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-bullhorn"
                                                                               style="color:#7B8084"></span>&nbsp;&nbsp;
                     تبلیغات </a>
             </div>
@@ -436,7 +436,7 @@
                     url: my_address,
                     // data: signUp_complete_info_json,
                     success: function(resultData, status, xhr){
-                        alert(resultData.message);
+                        // alert(resultData.message);
                         if (resultData.result.toString() === "true") {
                             for (let val of (resultData.cities)) {
                                 const op = document.createElement("option");

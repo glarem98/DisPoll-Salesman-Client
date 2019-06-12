@@ -152,14 +152,14 @@
                     من </a>
             </div>
             <br/>
+            <!--        <div class="rightMenuColor">-->
+            <!--            <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"-->
+            <!--                                                                     style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من-->
+            <!--            </a>-->
+            <!--        </div>-->
+            <!--        <br/>-->
             <div class="rightMenuColor">
-                <a href="showDiscount.html" class="rightMenuColor"><span class="glyphicon glyphicon-usd"
-                                                                         style="color:#7B8084"></span>&nbsp;&nbsp; تخفیف های من
-                </a>
-            </div>
-            <br/>
-            <div class="rightMenuColor">
-                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-earphone"
+                <a href="advertisementPage.html" class="rightMenuColor"><span class="glyphicon glyphicon-bullhorn"
                                                                               style="color:#7B8084"></span>&nbsp;&nbsp;
                     تبلیغات </a>
             </div>
@@ -191,35 +191,47 @@
             <div class=" w3-padding ">
                 <div class="form-horizontal">
                     <h6 class=" w3-center" style="padding-bottom:15px ; padding-top:15px ;color:#181B20;padding-right:6px;"><b>  نظرسنجی ها  </b></h6>
-                    <div class="col-container">
+                    <div class="col-container " id="copyMe">
                         <div class="col-container">
                             <div style="direction:rtl !important ;" class="col w3-card-12">
                                 <div class="w3-border-black">
-                                    <div class="w3-center"> @questoin </div>
+                                    <div class="w3-center copyMeClass" id="questionDiv"> </div>
                                     <br />
-                                    <div>
-                                        این نظر سنجی از نوع @polltype
+                                    <div class="copyMeClass">
+                                        <span>
+                                            این نظرسنجی از نوع
+                                        </span>
+
+                                        <span id="typeDiv">
+
+                                        </span>
                                         <br />
                                     </div>
-                                    <div class="col-container">
+                                    <div class="col-container" >
                                         <div class="col">
-                                            <div id="multiChoice">
-                                                <!-- b tedade gozine ha -->
-                                                <div> @choiceBdy</div>
-                                                <br />
-                                                <div> @choiceBdy</div>
-                                                <br />
+                                            <div >
+                                                گزینه ها
+                                                <div >
+                                                    <ul id="multiChoiceDiv">
+
+                                                    </ul>
+
+                                                </div>
+
+                                            </div>
+                                            <div id="linearScaleDiv">
+
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
-                                                <div class="col-md-offset-7 col-md-11">
-                                                    <input type="submit" value="نمایش نمودار دایره ای" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
+                                                <div class="col-md-offset-7 col-md-11" onclick="goToCircle()">
+                                                    <input type="button" value="نمایش نمودار دایره ای" class="btn btn-default btnColors" id="circleChart" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <div class="col-md-offset-7 col-md-11">
-                                                    <input type="submit" value=" نمایش نمودار میله ای" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
+                                                <div class="col-md-offset-7 col-md-11" onclick="goToBar()">
+                                                    <input type="button" value=" نمایش نمودار میله ای" class="btn btn-default btnColors" id="barChart" />
                                                 </div>
                                             </div>
                                         </div>
@@ -230,43 +242,10 @@
                         </div>
                         <br />
 
-                        <div class="col-container">
-                            <div style="direction:rtl !important ;" class="col w3-card-12">
-                                <div class="w3-border-black">
-                                    <div class="w3-center"> @questoin </div>
-                                    <br />
-                                    <div>
-                                        این نظر سنجی از نوع @polltype
-                                        <br />
-                                    </div>
-                                    <div class="col-container">
-                                        <div class="col">
-                                            <div id="multiChoice">
-                                                <!-- b tedade gozine ha -->
-                                                <div> @choiceBdy</div>
-                                                <br />
-                                                <div> @choiceBdy</div>
-                                                <br />
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <div class="col-md-offset-7 col-md-11">
-                                                    <input type="submit" value="نمایش نمودار دایره ای" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-offset-7 col-md-11">
-                                                    <input type="submit" value=" نمایش نمودار میله ای" class="btn btn-default btnColors" id="editProfile-form-submit-btn" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
+                    </div>
+
+                    <div id="pasteHere">
 
                     </div>
 
@@ -311,6 +290,26 @@
         //Going to editShop by clicking on showShop button
         function goToEdit() {
             window.location.href = "addPoll.html";
+        }
+
+        /*
+        Function to insert one by one choice if they are not empty
+         */
+        function copyDiv() {
+
+            $("#copyMe").clone().prependTo("#pasteHere");
+            var $poll_form_choices1 = $(".copyMeClass");
+            // $poll_form_choices1[($poll_form_choices1.length)-1].removeAttribute("value");
+            $poll_form_choices1[($poll_form_choices1.length) - 1].value = "";
+
+        }
+
+        function goToCircle(){
+            window.location.href = "showCyrcleChart.html";
+        }
+
+        function goToBar(){
+            window.location.href = "showBarChart.html";
         }
 
 
@@ -376,6 +375,48 @@
     <script>
 
         $(document).ready(function () {
+
+            my_address = data + "/salesman/polls/";
+            alert("1");
+            $.ajax({
+                type: 'GET',
+                // dataType: 'json',
+                // contentType: 'application/json',
+                url: my_address,
+                headers: {
+                    'Authorization': window.sessionStorage.token
+                },
+                // data: signUp_complete_info_json,
+                success: function(resultData, status, xhr){
+                    alert(resultData.message);
+                    if (resultData.result.toString() === "true") {
+                        alert(resultData.polls);
+                        var var_json = JSON.stringify(resultData.polls);
+                        for (let val of (JSON.parse(var_json))) {
+                            $("#questionDiv").val(val.text);
+                            $("#typeDiv").val(val.type);
+                            if (val.type == "LinearScalePoll") {
+
+
+                            } else if (val.type == "MultipleChoicePoll") {
+                                for (let val1 of (val.options)) {
+                                    const a = document.createElement("li");
+                                    const aTextName = document.createTextNode(val1);
+                                    a.append(aTextName);
+                                }
+                            } else if (val.type == "CheckBoxPoll") {
+                                for (let val1 of (val.options)) {
+                                    const a = document.createElement("li");
+                                    const aTextName = document.createTextNode(val1);
+                                    a.append(aTextName);
+                                }
+                            }
+                        }
+                    }
+                },
+                error: function () {
+                    alert(" اتصال به اینترنت برقرار نیست. ");}
+            });
 
             /*
                Request for logout
