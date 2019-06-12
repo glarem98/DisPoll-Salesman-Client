@@ -274,12 +274,6 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-    <footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
-        تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
-        <br />
-        طراحی و پیاده سازی توسط Group G
-    </footer>
-
     <script>
         //Scripts for design and it's actions
 
@@ -508,6 +502,8 @@
                                     // alert(resultData.message);
                                     if (resultData.result.toString() === "true") {
                                         window.sessionStorage.setItem("shops", JSON.stringify(resultData.shops));
+                                        var e=document.querySelector("#shops");
+                                        e.innerHTML = "";
                                         setShopsRightMenu();
                                     }
                                 },

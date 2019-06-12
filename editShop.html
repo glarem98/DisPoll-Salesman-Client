@@ -208,7 +208,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-11">
-                             <input type="file" required name="shopImage" value=""
+                             <input type="file" name="shopImage" value=""
                                     class="form-control w3-margin"
                                     id="addShop-form-shopImage-inp"
                                     accept="image/*" />
@@ -251,7 +251,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="file" required name="codeImage" value=""
+                            <input type="file" name="codeImage" value=""
                                    class="form-control w3-margin"
                                    id="addShop-form-codeImage-inp"
                                    accept="image/*" />
@@ -262,7 +262,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-11">
                             <input type="submit" value="ذخیره" class="btn btn-default btnColors"
-                                   id="addShop-form-submit-btn" />
+                                   id="addShop-form-submit-btn"/>
                         </div>
                     </div>
 
@@ -283,6 +283,9 @@
     <script>
         //Scripts for design and it's actions
 
+        const data = 'http://185.88.179.80:8000';
+        var my_address;
+
         /*
         Function opening and closing subset of an tag
         parameter is id
@@ -299,6 +302,33 @@
             }
         }
 
+        /*
+         Function reading from session "shops" and filled the rightMenu sub myShops
+         */
+        function setShopsRightMenu() {
+            if (typeof (window.sessionStorage.shops) !== "undefined") {
+
+                var shop_var = JSON.parse(window.sessionStorage.shops);
+                for (let val of shop_var) {
+                    const a = document.createElement("a");
+                    const aTextName = document.createTextNode( val.name );
+                    const attrClass = document.createAttribute("class");
+                    attrClass.value = "rightMenuColor";
+                    const attrHref = document.createAttribute("href");
+                    attrHref.value = "showShop.html";
+                    const attrId = document.createAttribute("id");
+                    attrId.value = val.id;
+                    a.setAttributeNode(attrClass);
+                    a.setAttributeNode(attrHref);
+                    a.setAttributeNode(attrId);
+                    a.appendChild(aTextName);
+                    const addA = document.getElementById("add");
+                    const myShops = document.getElementById("shops");
+                    myShops.insertBefore(a, addA);
+
+                }
+            }
+        }
 
         $(document).ready(function () {
 
@@ -316,30 +346,15 @@
             }
 
             /*
-             Reading from session "shops" and filled the rightMenu sub myShops
+             Reading from session "shops" and filled the rightMenu sub myShops for first time
              */
-            if (typeof (window.sessionStorage.shops) !== "undefined") {
+            setShopsRightMenu()
 
-                var shop_var = JSON.parse(window.sessionStorage.shops);
-                for (let val of shop_var) {
-                    const a = document.createElement("a");
-                    const aTextName = document.createTextNode( val.name );
-                    const attrClass = document.createAttribute("class");
-                    attrClass.value = "rightMenuColor";
-                    const attrHref = document.createAttribute("href");
-                    attrHref.value = "showShop.html";
-                    const attrId = document.createAttribute("id");
-                    attrId.value = val.id;
-                    a.setAttributeNode(attrClass);
-                    a.setAttributeNode(attrHref);
-                    a.setAttributeNode(attrId);
-                    a.appendChild(aTextName);
-                    const addA = document.getElementById("add");
-                    const myShops = document.getElementById("shops");
-                    myShops.insertBefore(a, addA);
 
-                }
-            }
+            //Go to AdminMainPage by clicking on picture
+            $("#admin-img").click(function () {
+                window.location.href = "AdminMainPage.html"
+            });
 
 
             //Getting id of selected subset shop
@@ -352,6 +367,23 @@
                 })
             }
 
+            /*
+            Function to disable button if form is not valid
+             */
+            var $requiredInputs = $("#addShop-form").find("input:required");
+            $requiredInputs.keyup(function () {
+                var empty_test = false;
+                $requiredInputs.each(function () {
+                    if($(this).val()==='')
+                        empty_test = true;
+                });
+
+                if(empty_test === true)
+                    $("#addShop-form-submit-btn").attr("disabled", "disabled");
+                else {
+                    $("#addShop-form-submit-btn").removeAttr("disabled");
+                }
+            });
 
         });
 
@@ -362,89 +394,62 @@
 
         $(document).ready( function () {
 
-            /*
-            Reading from session "shops" and filled the rightMenu sub myShops
-            */
-            if (typeof (window.sessionStorage.shops) !== "undefined") {
-
-                var shop_var = JSON.parse(window.sessionStorage.shops);
-                for (let val of shop_var) {
-                    const a = document.createElement("a");
-                    const aTextName = document.createTextNode( val.name );
-                    const attrClass = document.createAttribute("class");
-                    attrClass.value = "rightMenuColor";
-                    const attrHref = document.createAttribute("href");
-                    attrHref.value = "showShop.html";
-                    const attrId = document.createAttribute("id");
-                    attrId.value = val.id;
-                    a.setAttributeNode(attrClass);
-                    a.setAttributeNode(attrHref);
-                    a.setAttributeNode(attrId);
-                    a.appendChild(aTextName);
-                    const addA = document.getElementById("add");
-                    const myShops = document.getElementById("shops");
-                    myShops.insertBefore(a, addA);
-
-                }
-            }
-
 
 
             const addShop_form_var = document.getElementById("addShop-form");
 
 
-            $.get("address.txt", function (data) {
-                const my_address = data + "/shop-kinds/";
-                $.ajax({
-                    type: 'GET',
-                    // dataType: 'json',
-                    // contentType: 'application/json',
-                    url: my_address,
-                    // data: signUp_complete_info_json,
-                    success: function(resultData, status, xhr){
-                        alert(resultData.message);
-                        if (resultData.result.toString() === "true") {
-                            for (let val of (resultData.shop_kinds)) {
-                                const op = document.createElement("option");
-                                const opText = document.createTextNode(val.name);
-                                const lastOp = document.getElementById("addShop-form-shopKinds-lastOp-op");
-                                op.value = val.id;
-                                op.appendChild(opText);
-                                addShop_form_var.shopKinds.insertBefore(op,lastOp);
-                            }
+        
+            my_address = data + "/shop-kinds/";
+            $.ajax({
+                type: 'GET',
+                // dataType: 'json',
+                // contentType: 'application/json',
+                url: my_address,
+                // data: signUp_complete_info_json,
+                success: function(resultData, status, xhr){
+                    // alert(resultData.message);
+                    if (resultData.result.toString() === "true") {
+                        for (let val of (resultData.shop_kinds)) {
+                            const op = document.createElement("option");
+                            const opText = document.createTextNode(val.name);
+                            const lastOp = document.getElementById("addShop-form-shopKinds-lastOp-op");
+                            op.value = val.id;
+                            op.appendChild(opText);
+                            addShop_form_var.shopKinds.insertBefore(op,lastOp);
                         }
-                    },
-                    error: function () {
-                        alert(" اتصال به اینترنت برقرار نیست. ");}
-                })
+                    }
+                },
+                error: function () {
+                    alert(" اتصال به اینترنت برقرار نیست. ");}
             });
+        
 
 
-            $.get("address.txt", function (data) {
-                const my_address = data + "/cities/";
-                $.ajax({
-                    type: 'GET',
-                    // dataType: 'json',
-                    // contentType: 'application/json',
-                    url: my_address,
-                    // data: signUp_complete_info_json,
-                    success: function(resultData, status, xhr){
-                        alert(resultData.message);
-                        if (resultData.result.toString() === "true") {
-                            for (let val of (resultData.cities)) {
-                                const op = document.createElement("option");
-                                const opText = document.createTextNode(val.name);
-                                const lastOp = document.getElementById("addShop-form-city-lastOp-op");
-                                op.value = val.id;
-                                op.appendChild(opText);
-                                addShop_form_var.city.insertBefore(op,lastOp);
-                            }
+            my_address = data + "/cities/";
+            $.ajax({
+                type: 'GET',
+                // dataType: 'json',
+                // contentType: 'application/json',
+                url: my_address,
+                // data: signUp_complete_info_json,
+                success: function(resultData, status, xhr){
+                    // alert(resultData.message);
+                    if (resultData.result.toString() === "true") {
+                        for (let val of (resultData.cities)) {
+                            const op = document.createElement("option");
+                            const opText = document.createTextNode(val.name);
+                            const lastOp = document.getElementById("addShop-form-city-lastOp-op");
+                            op.value = val.id;
+                            op.appendChild(opText);
+                            addShop_form_var.city.insertBefore(op,lastOp);
                         }
-                    },
-                    error: function () {
-                        alert(" اتصال به اینترنت برقرار نیست. ");}
-                })
+                    }
+                },
+                error: function () {
+                    alert(" اتصال به اینترنت برقرار نیست. ");}
             });
+
 
 
             $("#addShop-form").submit(function (e) {
@@ -471,24 +476,82 @@
                 formData.append("picture", picture);
 
 
-                $.get("address.txt", function (data) {
-                    const my_address = data + "/salesman/add-shop/";
+                
+                my_address = data + "/salesman/add-shop/";
+                $.ajax({
+                    type: 'POST',
+                    url: my_address,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    headers: {
+                        'Authorization': window.sessionStorage.token
+                    },
+                    crossDomain: true,
+                    xhrField: {withCredentials: true},
+                    success: function (resultData, status, xhr) {
+                        alert(resultData.message);
+                        if (resultData.result.toString() === "true") {
+
+                            my_address = data + "/salesman/shops/";
+                            $.ajax({
+                                type: 'GET',
+                                // dataType: 'json',
+                                // contentType: 'application/json',
+                                url: my_address,
+                                headers: {
+                                    'Authorization': window.sessionStorage.token
+                                },
+                                // data: signUp_complete_info_json,
+                                success: function(resultData, status, xhr){
+                                    // alert(resultData.message);
+                                    if (resultData.result.toString() === "true") {
+                                        window.sessionStorage.setItem("shops", JSON.stringify(resultData.shops));
+                                        var e=document.querySelector("#shops");
+                                        e.innerHTML = "";
+                                        setShopsRightMenu();
+                                    }
+                                },
+                                error: function () {
+                                    alert(" اتصال به اینترنت برقرار نیست. ");}
+                            })
+
+
+
+                            // window.location.href="AdminMainPage.html";
+                        }
+                    },
+                    error: function () {
+                        alert(" اتصال به اینترنت برقرار نیست. ");
+                    }
+                })
+
+                
+            });
+
+            /*
+         Request for logout
+         send authorization in header
+         */
+            $("#logout").click(function () {
+                var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
+                if (logout_var ==true){
+
+                    my_address = data + "/salesman/logout/";
                     $.ajax({
                         type: 'POST',
-                        url: my_address,
                         dataType: 'json',
-                        contentType: false,
-                        processData: false,
-                        data: formData,
-                        headers: {
-                            'Authorization': window.sessionStorage.token
+                        contentType: 'application/json',
+                        url: my_address,
+                        headers:{
+                            'Authorization' : window.sessionStorage.token
                         },
-                        crossDomain: true,
-                        xhrField: {withCredentials: true},
+                        data: JSON.stringify({}),
                         success: function (resultData, status, xhr) {
                             alert(resultData.message);
                             if (resultData.result.toString() === "true") {
-                                // window.location.href="AdminMainPage.html";
+                                window.location.href="HomePage.html";
                             }
                         },
                         error: function () {
@@ -496,39 +559,7 @@
                         }
                     })
 
-                });
-            });
 
-            /*
-               Request for logout
-               send authorization in header
-               */
-            $("#logout").click(function () {
-                var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
-                if (logout_var ==true){
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/logout/";
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',
-                            contentType: 'application/json',
-                            url: my_address,
-                            headers:{
-                                'Authorization' : window.sessionStorage.token
-                            },
-                            data: JSON.stringify({}),
-                            success: function (resultData, status, xhr) {
-                                alert(resultData.message);
-                                if (resultData.result.toString() === "true") {
-                                    window.location.href="HomePage.html";
-                                }
-                            },
-                            error: function () {
-                                alert(" اتصال به اینترنت برقرار نیست. ");
-                            }
-                        })
-
-                    });
 
                 }else{
                     alert(" از این که همراه ما خواهید بود متشکریم. ");

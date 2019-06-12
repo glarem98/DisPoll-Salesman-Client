@@ -213,14 +213,10 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-    <footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
-        تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
-        <br />
-        طراحی و پیاده سازی توسط Group G
-    </footer>
-
     <script>
         //Scripts for design and it's actions
+        const data = 'http://185.88.179.80:8000';
+        var my_address;
 
         /*
         Function opening and closing subset of an tag
@@ -325,8 +321,7 @@
                 var advertisement_formData = new FormData();
                 advertisement_formData.append("discount_code", sale_form_var.discounyCode.value);
 
-                $.get("address.txt", function (data) {
-                    const my_address = data + "/salesman/apply-discount/";
+                    my_address = data + "/salesman/apply-discount/";
                     $.ajax({
                         type: 'POST',
                         url: my_address,
@@ -349,8 +344,6 @@
                             alert(" اتصال به اینترنت برقرار نیست. ");}
                     })
 
-                });
-
                   });
 
             /*
@@ -360,8 +353,8 @@
             $("#logout").click(function () {
                 var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
                 if (logout_var ==true){
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/logout/";
+
+                        my_address = data + "/salesman/logout/";
                         $.ajax({
                             type: 'POST',
                             dataType: 'json',
@@ -381,8 +374,6 @@
                                 alert(" اتصال به اینترنت برقرار نیست. ");
                             }
                         })
-
-                    });
 
                 }else{
                     alert(" از این که همراه ما خواهید بود متشکریم. ");

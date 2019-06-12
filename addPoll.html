@@ -257,7 +257,13 @@
                                 <label> گزینه </label>
                             </span>
                         </div>
-                        <div class="col-md-2" id="addChoice" onclick="addChoice()">
+
+                        <div class="form-group">
+                            <div class="col-md-offset-5 col-md-11">
+                                <input type="button" value="+" class="btn btn-default btnColors" id="poll-form-submit-btn" />
+                            </div>
+                        </div>
+                        <div class="col-md-2" id="addChoice" >
                             <button style="margin:20px" class="btn btn-default btnColors" ><i class="fa fa-plus"><strong style="text-align:center;font-style:normal!important">+</strong></i></button>
                         </div>
                     </div>
@@ -299,14 +305,10 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-    <footer class="text-center w3-text-white w3-padding" style="background-color:#232935 !important">
-        تمامی حقوق مادی و معنوی این سایت متعلق به DisPoll است
-        <br />
-        طراحی و پیاده سازی توسط Group G
-    </footer>
-
     <script>
         //Scripts for design and it's actions
+        const data = 'http://185.88.179.80:8000';
+        var my_address;
 
         /*
         Function opening and closing subset of an tag
@@ -499,9 +501,8 @@
                     poll_formData.append("answer_texts", answerTexts_var);
                 }
 
-                $.get("address.txt", function (data) {
 
-                    const my_address = data + "/salesman/add-poll/";
+                    my_address = data + "/salesman/add-poll/";
 
                     $.ajax({
                         type: 'POST',
@@ -526,7 +527,6 @@
                         }
                     })
 
-                });
 
             });
 
@@ -537,8 +537,8 @@
             $("#logout").click(function () {
                 var logout_var = confirm(" آیا اطمینان از خروج دارید؟ ");
                 if (logout_var == true) {
-                    $.get("address.txt", function (data) {
-                        const my_address = data + "/salesman/logout/";
+
+                        my_address = data + "/salesman/logout/";
                         $.ajax({
                             type: 'POST',
                             dataType: 'json',
@@ -559,7 +559,6 @@
                             }
                         })
 
-                    });
 
                 } else {
                     alert(" از این که همراه ما خواهید بود متشکریم. ");
